@@ -1,0 +1,744 @@
+{
+  "airlines": [
+    {
+      "id": "aegean",
+      "name": "Aegean",
+      "dimensions": {
+        "height": 56.0,
+        "width": 45.0,
+        "depth": 25.0,
+        "unit": "cm"
+      }
+    },
+    {
+      "id": "aer-ling",
+      "name": "Aer Ling",
+      "dimensions": {
+        "height": 55.0,
+        "width": 40.0,
+        "depth": 24.0,
+        "unit": "cm"
+      }
+    },
+    {
+      "id": "aeromexico",
+      "name": "Aeromexico",
+      "dimensions": {
+        "height": 55.0,
+        "width": 40.0,
+        "depth": 25.0,
+        "unit": "cm"
+      }
+    },
+    {
+      "id": "air-canada",
+      "name": "Air Canada",
+      "dimensions": {
+        "height": 55.0,
+        "width": 40.0,
+        "depth": 23.0,
+        "unit": "cm"
+      }
+    },
+    {
+      "id": "air-china",
+      "name": "Air China",
+      "dimensions": {
+        "height": 55.0,
+        "width": 40.0,
+        "depth": 20.0,
+        "unit": "cm"
+      }
+    },
+    {
+      "id": "air-france",
+      "name": "Air France",
+      "dimensions": {
+        "height": 55.0,
+        "width": 35.0,
+        "depth": 25.0,
+        "unit": "cm"
+      }
+    },
+    {
+      "id": "air-transat",
+      "name": "Air Transat",
+      "dimensions": {
+        "height": 55.0,
+        "width": 40.0,
+        "depth": 23.0,
+        "unit": "cm"
+      }
+    },
+    {
+      "id": "airbaltic",
+      "name": "Airbaltic",
+      "dimensions": {
+        "height": 55.0,
+        "width": 40.0,
+        "depth": 23.0,
+        "unit": "cm"
+      }
+    },
+    {
+      "id": "alaska",
+      "name": "Alaska",
+      "dimensions": {
+        "height": 56.0,
+        "width": 36.0,
+        "depth": 23.0,
+        "unit": "cm"
+      }
+    },
+    {
+      "id": "allegiant",
+      "name": "Allegiant",
+      "dimensions": {
+        "height": 55.0,
+        "width": 40.0,
+        "depth": 25.0,
+        "unit": "cm"
+      }
+    },
+    {
+      "id": "american",
+      "name": "American",
+      "dimensions": {
+        "height": 56.0,
+        "width": 36.0,
+        "depth": 23.0,
+        "unit": "cm"
+      }
+    },
+    {
+      "id": "ana",
+      "name": "ANA",
+      "dimensions": {
+        "height": 55.0,
+        "width": 40.0,
+        "depth": 25.0,
+        "unit": "cm"
+      }
+    },
+    {
+      "id": "austrian",
+      "name": "Austrian",
+      "dimensions": {
+        "height": 55.0,
+        "width": 40.0,
+        "depth": 23.0,
+        "unit": "cm"
+      }
+    },
+    {
+      "id": "avianca",
+      "name": "Avianca",
+      "dimensions": {
+        "height": 55.0,
+        "width": 35.0,
+        "depth": 25.0,
+        "unit": "cm"
+      }
+    },
+    {
+      "id": "azores",
+      "name": "Azores",
+      "dimensions": {
+        "height": 55.0,
+        "width": 40.0,
+        "depth": 20.0,
+        "unit": "cm"
+      }
+    },
+    {
+      "id": "breeze-airways",
+      "name": "Breeze Airways",
+      "dimensions": {
+        "height": 56.0,
+        "width": 36.0,
+        "depth": 23.0,
+        "unit": "cm"
+      }
+    },
+    {
+      "id": "british-airways",
+      "name": "British Airways",
+      "dimensions": {
+        "height": 56.0,
+        "width": 45.0,
+        "depth": 25.0,
+        "unit": "cm"
+      }
+    },
+    {
+      "id": "brussels",
+      "name": "Brussels",
+      "dimensions": {
+        "height": 55.0,
+        "width": 40.0,
+        "depth": 23.0,
+        "unit": "cm"
+      }
+    },
+    {
+      "id": "caribbean",
+      "name": "Caribbean",
+      "dimensions": {
+        "height": 56.0,
+        "width": 35.0,
+        "depth": 23.0,
+        "unit": "cm"
+      }
+    },
+    {
+      "id": "cathay-pacific",
+      "name": "Cathay Pacific",
+      "dimensions": {
+        "height": 56.0,
+        "width": 36.0,
+        "depth": 23.0,
+        "unit": "cm"
+      }
+    },
+    {
+      "id": "china-airlines",
+      "name": "China Airlines",
+      "dimensions": {
+        "height": 56.0,
+        "width": 36.0,
+        "depth": 23.0,
+        "unit": "cm"
+      }
+    },
+    {
+      "id": "condor",
+      "name": "Condor",
+      "dimensions": {
+        "height": 55.0,
+        "width": 40.0,
+        "depth": 20.0,
+        "unit": "cm"
+      }
+    },
+    {
+      "id": "copa",
+      "name": "Copa",
+      "dimensions": {
+        "height": 55.0,
+        "width": 35.0,
+        "depth": 25.0,
+        "unit": "cm"
+      }
+    },
+    {
+      "id": "delta",
+      "name": "Delta",
+      "dimensions": {
+        "height": 56.0,
+        "width": 36.0,
+        "depth": 23.0,
+        "unit": "cm"
+      }
+    },
+    {
+      "id": "easyjet",
+      "name": "Easyjet",
+      "dimensions": {
+        "height": 56.0,
+        "width": 45.0,
+        "depth": 25.0,
+        "unit": "cm"
+      }
+    },
+    {
+      "id": "emirates",
+      "name": "Emirates",
+      "dimensions": {
+        "height": 55.0,
+        "width": 38.0,
+        "depth": 22.0,
+        "unit": "cm"
+      }
+    },
+    {
+      "id": "etihad-airways",
+      "name": "Etihad Airways",
+      "dimensions": {
+        "height": 56.0,
+        "width": 36.0,
+        "depth": 23.0,
+        "unit": "cm"
+      }
+    },
+    {
+      "id": "eva",
+      "name": "EVA",
+      "dimensions": {
+        "height": 56.0,
+        "width": 36.0,
+        "depth": 23.0,
+        "unit": "cm"
+      }
+    },
+    {
+      "id": "fiji",
+      "name": "FIJI",
+      "dimensions": {
+        "height": 55.0,
+        "width": 40.0,
+        "depth": 23.0,
+        "unit": "cm"
+      }
+    },
+    {
+      "id": "finnair",
+      "name": "Finnair",
+      "dimensions": {
+        "height": 55.0,
+        "width": 40.0,
+        "depth": 23.0,
+        "unit": "cm"
+      }
+    },
+    {
+      "id": "flair",
+      "name": "Flair",
+      "dimensions": {
+        "height": 55.0,
+        "width": 40.0,
+        "depth": 23.0,
+        "unit": "cm"
+      }
+    },
+    {
+      "id": "frontier",
+      "name": "Frontier",
+      "dimensions": {
+        "height": 61.0,
+        "width": 40.6,
+        "depth": 25.4,
+        "unit": "cm"
+      }
+    },
+    {
+      "id": "hawaiian",
+      "name": "Hawaiian",
+      "dimensions": {
+        "height": 56.0,
+        "width": 36.0,
+        "depth": 23.0,
+        "unit": "cm"
+      }
+    },
+    {
+      "id": "iberia",
+      "name": "Iberia",
+      "dimensions": {
+        "height": 56.0,
+        "width": 40.0,
+        "depth": 25.0,
+        "unit": "cm"
+      }
+    },
+    {
+      "id": "icelandair",
+      "name": "Icelandair",
+      "dimensions": {
+        "height": 55.0,
+        "width": 40.0,
+        "depth": 20.0,
+        "unit": "cm"
+      }
+    },
+    {
+      "id": "ita-airways",
+      "name": "ITA Airways",
+      "dimensions": {
+        "height": 55.0,
+        "width": 35.0,
+        "depth": 25.0,
+        "unit": "cm"
+      }
+    },
+    {
+      "id": "jal",
+      "name": "JAL",
+      "dimensions": {
+        "height": 55.0,
+        "width": 40.0,
+        "depth": 25.0,
+        "unit": "cm"
+      }
+    },
+    {
+      "id": "japan-airlines",
+      "name": "Japan Airlines",
+      "dimensions": {
+        "height": 55.0,
+        "width": 40.0,
+        "depth": 25.0,
+        "unit": "cm"
+      }
+    },
+    {
+      "id": "jetblue",
+      "name": "Jetblue",
+      "dimensions": {
+        "height": 56.0,
+        "width": 36.0,
+        "depth": 23.0,
+        "unit": "cm"
+      }
+    },
+    {
+      "id": "klm",
+      "name": "KLM",
+      "dimensions": {
+        "height": 55.0,
+        "width": 35.0,
+        "depth": 25.0,
+        "unit": "cm"
+      }
+    },
+    {
+      "id": "korean-air",
+      "name": "Korean Air",
+      "dimensions": {
+        "height": 55.0,
+        "width": 40.0,
+        "depth": 20.0,
+        "unit": "cm"
+      }
+    },
+    {
+      "id": "la-compagnie",
+      "name": "La Compagnie",
+      "dimensions": {
+        "height": 55.0,
+        "width": 35.0,
+        "depth": 25.0,
+        "unit": "cm"
+      }
+    },
+    {
+      "id": "latam",
+      "name": "LATAM",
+      "dimensions": {
+        "height": 55.0,
+        "width": 35.0,
+        "depth": 25.0,
+        "unit": "cm"
+      }
+    },
+    {
+      "id": "level",
+      "name": "LEVEL",
+      "dimensions": {
+        "height": 56.0,
+        "width": 40.0,
+        "depth": 25.0,
+        "unit": "cm"
+      }
+    },
+    {
+      "id": "lot",
+      "name": "LOT",
+      "dimensions": {
+        "height": 55.0,
+        "width": 40.0,
+        "depth": 23.0,
+        "unit": "cm"
+      }
+    },
+    {
+      "id": "lufthansa",
+      "name": "Lufthansa",
+      "dimensions": {
+        "height": 55.0,
+        "width": 40.0,
+        "depth": 23.0,
+        "unit": "cm"
+      }
+    },
+    {
+      "id": "norse",
+      "name": "Norse",
+      "dimensions": {
+        "height": 56.0,
+        "width": 45.0,
+        "depth": 25.0,
+        "unit": "cm"
+      }
+    },
+    {
+      "id": "norwegian",
+      "name": "Norwegian",
+      "dimensions": {
+        "height": 55.0,
+        "width": 40.0,
+        "depth": 23.0,
+        "unit": "cm"
+      }
+    },
+    {
+      "id": "philippine-airlines",
+      "name": "Philippine Airlines",
+      "dimensions": {
+        "height": 56.0,
+        "width": 36.0,
+        "depth": 23.0,
+        "unit": "cm"
+      }
+    },
+    {
+      "id": "play",
+      "name": "PLAY",
+      "dimensions": {
+        "height": 56.0,
+        "width": 45.0,
+        "depth": 25.0,
+        "unit": "cm"
+      }
+    },
+    {
+      "id": "porter",
+      "name": "Porter",
+      "dimensions": {
+        "height": 55.0,
+        "width": 40.0,
+        "depth": 23.0,
+        "unit": "cm"
+      }
+    },
+    {
+      "id": "qantas",
+      "name": "Qantas",
+      "dimensions": {
+        "height": 55.0,
+        "width": 35.0,
+        "depth": 22.0,
+        "unit": "cm"
+      }
+    },
+    {
+      "id": "qatar",
+      "name": "Qatar",
+      "dimensions": {
+        "height": 50.0,
+        "width": 37.0,
+        "depth": 25.0,
+        "unit": "cm"
+      }
+    },
+    {
+      "id": "royal-air-maroc",
+      "name": "Royal Air Maroc",
+      "dimensions": {
+        "height": 55.0,
+        "width": 40.0,
+        "depth": 25.0,
+        "unit": "cm"
+      }
+    },
+    {
+      "id": "ryanair",
+      "name": "Ryanair",
+      "dimensions": {
+        "height": 55.0,
+        "width": 40.0,
+        "depth": 20.0,
+        "unit": "cm"
+      }
+    },
+    {
+      "id": "sas",
+      "name": "SAS",
+      "dimensions": {
+        "height": 55.0,
+        "width": 40.0,
+        "depth": 23.0,
+        "unit": "cm"
+      }
+    },
+    {
+      "id": "singapore-airlines",
+      "name": "Singapore Airlines",
+      "dimensions": {
+        "height": 55.0,
+        "width": 35.0,
+        "depth": 25.0,
+        "unit": "cm"
+      }
+    },
+    {
+      "id": "southwest",
+      "name": "Southwest",
+      "dimensions": {
+        "height": 61.0,
+        "width": 40.6,
+        "depth": 25.4,
+        "unit": "cm"
+      }
+    },
+    {
+      "id": "spirit",
+      "name": "Spirit",
+      "dimensions": {
+        "height": 56.0,
+        "width": 46.0,
+        "depth": 25.0,
+        "unit": "cm"
+      }
+    },
+    {
+      "id": "sun-country",
+      "name": "Sun Country",
+      "dimensions": {
+        "height": 61.0,
+        "width": 40.64,
+        "depth": 27.94,
+        "unit": "cm"
+      }
+    },
+    {
+      "id": "sunwing",
+      "name": "Sunwing",
+      "dimensions": {
+        "height": 51.0,
+        "width": 40.0,
+        "depth": 23.0,
+        "unit": "cm"
+      }
+    },
+    {
+      "id": "swiss",
+      "name": "SWISS",
+      "dimensions": {
+        "height": 55.0,
+        "width": 40.0,
+        "depth": 23.0,
+        "unit": "cm"
+      }
+    },
+    {
+      "id": "tap",
+      "name": "TAP",
+      "dimensions": {
+        "height": 55.0,
+        "width": 40.0,
+        "depth": 25.0,
+        "unit": "cm"
+      }
+    },
+    {
+      "id": "tui",
+      "name": "TUI",
+      "dimensions": {
+        "height": 55.0,
+        "width": 40.0,
+        "depth": 20.0,
+        "unit": "cm"
+      }
+    },
+    {
+      "id": "turkish-airlines",
+      "name": "Turkish Airlines",
+      "dimensions": {
+        "height": 55.0,
+        "width": 40.0,
+        "depth": 23.0,
+        "unit": "cm"
+      }
+    },
+    {
+      "id": "united",
+      "name": "United",
+      "dimensions": {
+        "height": 56.0,
+        "width": 36.0,
+        "depth": 23.0,
+        "unit": "cm"
+      }
+    },
+    {
+      "id": "virgin-atlantic",
+      "name": "Virgin Atlantic",
+      "dimensions": {
+        "height": 56.0,
+        "width": 36.0,
+        "depth": 23.0,
+        "unit": "cm"
+      }
+    },
+    {
+      "id": "virgin-australia",
+      "name": "Virgin Australia",
+      "dimensions": {
+        "height": 56.0,
+        "width": 36.0,
+        "depth": 23.0,
+        "unit": "cm"
+      }
+    },
+    {
+      "id": "viva-aerobus",
+      "name": "Viva Aerobus",
+      "dimensions": {
+        "height": 55.0,
+        "width": 40.0,
+        "depth": 25.0,
+        "unit": "cm"
+      }
+    },
+    {
+      "id": "volaris",
+      "name": "Volaris",
+      "dimensions": {
+        "height": 55.0,
+        "width": 40.0,
+        "depth": 25.0,
+        "unit": "cm"
+      }
+    },
+    {
+      "id": "vueling",
+      "name": "Vueling",
+      "dimensions": {
+        "height": 55.0,
+        "width": 40.0,
+        "depth": 20.0,
+        "unit": "cm"
+      }
+    },
+    {
+      "id": "westjet-",
+      "name": "WestJet ",
+      "dimensions": {
+        "height": 56.0,
+        "width": 36.0,
+        "depth": 23.0,
+        "unit": "cm"
+      }
+    },
+    {
+      "id": "wizz-air",
+      "name": "Wizz Air",
+      "dimensions": {
+        "height": 55.0,
+        "width": 40.0,
+        "depth": 23.0,
+        "unit": "cm"
+      }
+    },
+    {
+      "id": "zipair",
+      "name": "ZIPAIR",
+      "dimensions": {
+        "height": 55.0,
+        "width": 40.0,
+        "depth": 25.0,
+        "unit": "cm"
+      }
+    }
+  ]
+}

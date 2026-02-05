@@ -1,0 +1,849 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Will Your Bag Fit? Carry-On Compliance Checker | Like Where You're Going</title>
+    <meta name="description" content="Check if your carry-on luggage fits airline size requirements. Compare against 74 airlines instantly.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,600;1,400&family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        :root {
+            /* Aly's website color palette - soft, natural, travel-inspired */
+            --primary-teal: #5a9a9f;
+            --dark-teal: #3d7175;
+            --soft-sage: #a8b5a0;
+            --cream: #f7f5f0;
+            --off-white: #fefdfb;
+            --warm-gray: #6d6d6d;
+            --text-dark: #333333;
+            --border-light: #e5e3dd;
+            --accent-coral: #d88c7b;
+        }
+        
+        body {
+            font-family: 'Montserrat', sans-serif;
+            background: var(--cream);
+            color: var(--text-dark);
+            line-height: 1.7;
+        }
+        
+        /* Header matching Aly's site style */
+        .site-header {
+            background: white;
+            padding: 20px 0;
+            border-bottom: 1px solid var(--border-light);
+        }
+        
+        .header-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 15px;
+        }
+        
+        .site-title {
+            font-family: 'Lora', serif;
+            font-size: 1.5rem;
+            color: var(--primary-teal);
+            text-decoration: none;
+            font-weight: 600;
+        }
+        
+        .header-links {
+            display: flex;
+            gap: 25px;
+            align-items: center;
+        }
+        
+        .header-link {
+            font-size: 0.95rem;
+            color: var(--warm-gray);
+            text-decoration: none;
+            transition: color 0.3s ease;
+            font-weight: 500;
+        }
+        
+        .header-link:hover {
+            color: var(--primary-teal);
+        }
+        
+        /* Hero section */
+        .hero {
+            background: linear-gradient(to bottom, white, var(--cream));
+            padding: 60px 20px;
+            text-align: center;
+        }
+        
+        .hero h1 {
+            font-family: 'Lora', serif;
+            font-size: clamp(2rem, 5vw, 3.5rem);
+            color: var(--text-dark);
+            margin-bottom: 15px;
+            font-weight: 600;
+            line-height: 1.2;
+        }
+        
+        .hero .subtitle {
+            font-size: 1.15rem;
+            color: var(--warm-gray);
+            max-width: 600px;
+            margin: 0 auto 25px;
+        }
+        
+        .author-note {
+            display: inline-block;
+            background: var(--off-white);
+            padding: 15px 25px;
+            border-radius: 30px;
+            font-size: 0.95rem;
+            color: var(--warm-gray);
+            border: 1px solid var(--border-light);
+            margin-top: 10px;
+        }
+        
+        .author-note a {
+            color: var(--primary-teal);
+            text-decoration: none;
+            font-weight: 600;
+        }
+        
+        .author-note a:hover {
+            text-decoration: underline;
+        }
+        
+        /* Container */
+        .container {
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 40px 20px;
+        }
+        
+        /* Main content card */
+        .content-card {
+            background: white;
+            border-radius: 8px;
+            box-shadow: 0 2px 12px rgba(0, 0, 0, 0.06);
+            overflow: hidden;
+            margin-bottom: 40px;
+        }
+        
+        /* Tabs */
+        .tabs {
+            display: flex;
+            border-bottom: 1px solid var(--border-light);
+            background: var(--off-white);
+        }
+        
+        .tab {
+            flex: 1;
+            padding: 20px;
+            background: none;
+            border: none;
+            font-family: 'Montserrat', sans-serif;
+            font-size: 1.05rem;
+            font-weight: 600;
+            cursor: pointer;
+            color: var(--warm-gray);
+            transition: all 0.3s ease;
+            position: relative;
+        }
+        
+        .tab:hover {
+            color: var(--primary-teal);
+            background: rgba(90, 154, 159, 0.05);
+        }
+        
+        .tab.active {
+            color: var(--primary-teal);
+            background: white;
+        }
+        
+        .tab.active::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            height: 3px;
+            background: var(--primary-teal);
+        }
+        
+        .tab-content {
+            display: none;
+            padding: 40px;
+        }
+        
+        .tab-content.active {
+            display: block;
+        }
+        
+        /* Input section */
+        .input-section {
+            background: var(--cream);
+            padding: 30px;
+            border-radius: 8px;
+            margin-bottom: 35px;
+            border: 1px solid var(--border-light);
+        }
+        
+        .input-section h3 {
+            font-family: 'Lora', serif;
+            font-size: 1.3rem;
+            color: var(--text-dark);
+            margin-bottom: 20px;
+            text-align: center;
+        }
+        
+        .unit-toggle {
+            display: flex;
+            gap: 10px;
+            justify-content: center;
+            margin-bottom: 25px;
+        }
+        
+        .unit-btn {
+            padding: 10px 28px;
+            background: white;
+            border: 2px solid var(--border-light);
+            border-radius: 25px;
+            font-family: 'Montserrat', sans-serif;
+            font-size: 0.95rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            color: var(--warm-gray);
+        }
+        
+        .unit-btn:hover {
+            border-color: var(--primary-teal);
+            color: var(--primary-teal);
+        }
+        
+        .unit-btn.active {
+            background: var(--primary-teal);
+            color: white;
+            border-color: var(--primary-teal);
+        }
+        
+        .dimensions-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+            gap: 20px;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+        
+        .dimension-input label {
+            display: block;
+            font-weight: 600;
+            margin-bottom: 8px;
+            color: var(--text-dark);
+            font-size: 0.9rem;
+        }
+        
+        .dimension-input input {
+            width: 100%;
+            padding: 12px 15px;
+            border: 2px solid var(--border-light);
+            border-radius: 6px;
+            font-size: 1.1rem;
+            font-family: 'Montserrat', sans-serif;
+            transition: all 0.3s ease;
+            background: white;
+        }
+        
+        .dimension-input input:focus {
+            outline: none;
+            border-color: var(--primary-teal);
+            box-shadow: 0 0 0 3px rgba(90, 154, 159, 0.1);
+        }
+        
+        /* Results */
+        .results-header {
+            text-align: center;
+            padding: 30px;
+            background: var(--primary-teal);
+            color: white;
+            border-radius: 8px;
+            margin-bottom: 30px;
+        }
+        
+        .results-header h2 {
+            font-family: 'Lora', serif;
+            font-size: 1.8rem;
+            margin-bottom: 10px;
+        }
+        
+        .compatibility-score {
+            font-size: 1.6rem;
+            font-weight: 700;
+            opacity: 0.95;
+        }
+        
+        .airline-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            gap: 18px;
+        }
+        
+        .airline-card {
+            background: white;
+            border: 1px solid var(--border-light);
+            border-radius: 6px;
+            padding: 20px;
+            transition: all 0.3s ease;
+        }
+        
+        .airline-card:hover {
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+            transform: translateY(-2px);
+        }
+        
+        .airline-card.fits {
+            border-left: 4px solid var(--soft-sage);
+            background: linear-gradient(to right, rgba(168, 181, 160, 0.05), white);
+        }
+        
+        .airline-card.no-fit {
+            opacity: 0.65;
+            border-left: 4px solid var(--accent-coral);
+        }
+        
+        .airline-name {
+            font-size: 1.1rem;
+            font-weight: 700;
+            margin-bottom: 8px;
+            color: var(--text-dark);
+        }
+        
+        .airline-dimensions {
+            font-size: 0.9rem;
+            color: var(--warm-gray);
+            margin-bottom: 10px;
+        }
+        
+        .fit-status {
+            display: inline-block;
+            padding: 5px 12px;
+            border-radius: 15px;
+            font-size: 0.85rem;
+            font-weight: 600;
+        }
+        
+        .fit-status.fits {
+            background: rgba(168, 181, 160, 0.2);
+            color: #4a6b45;
+        }
+        
+        .fit-status.no-fit {
+            background: rgba(216, 140, 123, 0.2);
+            color: #a85842;
+        }
+        
+        /* Luggage Library */
+        .library-intro {
+            text-align: center;
+            margin-bottom: 35px;
+        }
+        
+        .library-intro h2 {
+            font-family: 'Lora', serif;
+            font-size: 2rem;
+            color: var(--text-dark);
+            margin-bottom: 12px;
+        }
+        
+        .library-intro p {
+            font-size: 1.05rem;
+            color: var(--warm-gray);
+            max-width: 700px;
+            margin: 0 auto;
+        }
+        
+        .luggage-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 25px;
+        }
+        
+        .luggage-card {
+            background: white;
+            border: 1px solid var(--border-light);
+            border-radius: 8px;
+            padding: 25px;
+            transition: all 0.3s ease;
+            cursor: pointer;
+        }
+        
+        .luggage-card:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
+            border-color: var(--primary-teal);
+        }
+        
+        .luggage-name {
+            font-family: 'Lora', serif;
+            font-size: 1.3rem;
+            color: var(--primary-teal);
+            margin-bottom: 15px;
+            font-weight: 600;
+        }
+        
+        .luggage-dimensions {
+            display: flex;
+            justify-content: space-around;
+            padding: 18px;
+            background: var(--cream);
+            border-radius: 6px;
+            margin-bottom: 15px;
+        }
+        
+        .dimension-item {
+            text-align: center;
+        }
+        
+        .dimension-value {
+            font-size: 1.4rem;
+            font-weight: 700;
+            color: var(--primary-teal);
+        }
+        
+        .dimension-label {
+            font-size: 0.75rem;
+            color: var(--warm-gray);
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+        
+        .luggage-notes {
+            font-size: 0.95rem;
+            color: var(--warm-gray);
+            line-height: 1.5;
+            font-style: italic;
+        }
+        
+        .use-this-bag {
+            display: block;
+            width: 100%;
+            margin-top: 18px;
+            padding: 12px;
+            background: var(--primary-teal);
+            color: white;
+            border: none;
+            border-radius: 6px;
+            font-family: 'Montserrat', sans-serif;
+            font-size: 0.95rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+        
+        .use-this-bag:hover {
+            background: var(--dark-teal);
+            transform: scale(1.02);
+        }
+        
+        /* Empty state */
+        .empty-state {
+            text-align: center;
+            padding: 60px 20px;
+            color: var(--warm-gray);
+        }
+        
+        .empty-state-icon {
+            font-size: 3.5rem;
+            margin-bottom: 15px;
+            opacity: 0.4;
+        }
+        
+        .empty-state p {
+            font-size: 1.05rem;
+        }
+        
+        /* Footer */
+        footer {
+            background: white;
+            border-top: 1px solid var(--border-light);
+            padding: 40px 20px;
+            margin-top: 60px;
+        }
+        
+        .footer-content {
+            max-width: 1100px;
+            margin: 0 auto;
+            text-align: center;
+        }
+        
+        .footer-note {
+            font-size: 0.95rem;
+            color: var(--warm-gray);
+            margin-bottom: 20px;
+            font-style: italic;
+        }
+        
+        .footer-links {
+            display: flex;
+            gap: 30px;
+            justify-content: center;
+            flex-wrap: wrap;
+            margin-bottom: 20px;
+        }
+        
+        .footer-link {
+            color: var(--primary-teal);
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 0.95rem;
+        }
+        
+        .footer-link:hover {
+            text-decoration: underline;
+        }
+        
+        .footer-credit {
+            font-size: 0.85rem;
+            color: var(--warm-gray);
+            margin-top: 20px;
+        }
+        
+        /* Mobile responsive */
+        @media (max-width: 768px) {
+            .header-content {
+                justify-content: center;
+                text-align: center;
+            }
+            
+            .header-links {
+                width: 100%;
+                justify-content: center;
+            }
+            
+            .hero {
+                padding: 40px 20px;
+            }
+            
+            .hero h1 {
+                font-size: 2rem;
+            }
+            
+            .tab-content {
+                padding: 25px 20px;
+            }
+            
+            .input-section {
+                padding: 25px 20px;
+            }
+            
+            .dimensions-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .airline-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .luggage-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header class="site-header">
+        <div class="header-content">
+            <a href="https://likewhereyouregoing.com" class="site-title">Like Where You're Going</a>
+            <nav class="header-links">
+                <a href="https://likewhereyouregoing.com" class="header-link">Main Site</a>
+                <a href="https://www.youtube.com/@alysmalls" target="_blank" class="header-link">YouTube</a>
+            </nav>
+        </div>
+    </header>
+
+    <div class="hero">
+        <h1>Will Your Carry-On Fit?</h1>
+        <p class="subtitle">Check your bag against 74 airline size requirements instantly. No more gate-check surprises.</p>
+        <div class="author-note">
+            By <a href="https://likewhereyouregoing.com" target="_blank">Aly Smalls</a> • 
+            Watch my <a href="https://www.youtube.com/@alysmalls" target="_blank">bag tests on YouTube</a>
+        </div>
+    </div>
+
+    <div class="container">
+        <div class="content-card">
+            <div class="tabs">
+                <button class="tab active" data-tab="check">Check My Bag</button>
+                <button class="tab" data-tab="library">Recommended Bags</button>
+            </div>
+
+            <!-- Check My Bag Tab -->
+            <div id="check" class="tab-content active">
+                <div class="input-section">
+                    <h3>Enter Your Bag's Dimensions</h3>
+                    <div class="unit-toggle">
+                        <button class="unit-btn active" data-unit="cm">Centimeters</button>
+                        <button class="unit-btn" data-unit="in">Inches</button>
+                    </div>
+                    <div class="dimensions-grid">
+                        <div class="dimension-input">
+                            <label for="height">Height</label>
+                            <input type="number" id="height" placeholder="55" step="0.1" min="0">
+                        </div>
+                        <div class="dimension-input">
+                            <label for="width">Width</label>
+                            <input type="number" id="width" placeholder="40" step="0.1" min="0">
+                        </div>
+                        <div class="dimension-input">
+                            <label for="depth">Depth</label>
+                            <input type="number" id="depth" placeholder="20" step="0.1" min="0">
+                        </div>
+                    </div>
+                </div>
+
+                <div id="results-container">
+                    <div class="empty-state">
+                        <div class="empty-state-icon">🧳</div>
+                        <p>Enter your bag dimensions above to see which airlines it fits</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Luggage Library Tab -->
+            <div id="library" class="tab-content">
+                <div class="library-intro">
+                    <h2>My Tested & Recommended Bags</h2>
+                    <p>These bags fit the most airline size rules. I've tested many of these in real airline sizers — see the videos on my YouTube channel!</p>
+                </div>
+                <div id="luggage-container"></div>
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <div class="footer-content">
+            <p class="footer-note">Airlines can change their rules, and enforcement can vary. This tool is here to help you plan with confidence — not add stress. When in doubt, double-check before you fly.</p>
+            
+            <div class="footer-links">
+                <a href="https://likewhereyouregoing.com" target="_blank" class="footer-link">Like Where You're Going</a>
+                <a href="https://www.youtube.com/@alysmalls" target="_blank" class="footer-link">YouTube Channel</a>
+                <a href="https://likewhereyouregoing.com/about-me/" target="_blank" class="footer-link">About Aly</a>
+            </div>
+            
+            <p class="footer-credit">Created by Aly Smalls • © 2026</p>
+        </div>
+    </footer>
+
+    <script>
+        // Data embedded from JSON files
+        const AIRLINES_DATA = {"airlines": [{"id": "aegean", "name": "Aegean", "dimensions": {"height": 56.0, "width": 45.0, "depth": 25.0, "unit": "cm"}}, {"id": "aer-ling", "name": "Aer Ling", "dimensions": {"height": 55.0, "width": 40.0, "depth": 24.0, "unit": "cm"}}, {"id": "aeromexico", "name": "Aeromexico", "dimensions": {"height": 55.0, "width": 40.0, "depth": 25.0, "unit": "cm"}}, {"id": "air-canada", "name": "Air Canada", "dimensions": {"height": 55.0, "width": 40.0, "depth": 23.0, "unit": "cm"}}, {"id": "air-china", "name": "Air China", "dimensions": {"height": 55.0, "width": 40.0, "depth": 20.0, "unit": "cm"}}, {"id": "air-france", "name": "Air France", "dimensions": {"height": 55.0, "width": 35.0, "depth": 25.0, "unit": "cm"}}, {"id": "air-transat", "name": "Air Transat", "dimensions": {"height": 55.0, "width": 40.0, "depth": 23.0, "unit": "cm"}}, {"id": "airbaltic", "name": "Airbaltic", "dimensions": {"height": 55.0, "width": 40.0, "depth": 23.0, "unit": "cm"}}, {"id": "alaska", "name": "Alaska", "dimensions": {"height": 56.0, "width": 36.0, "depth": 23.0, "unit": "cm"}}, {"id": "allegiant", "name": "Allegiant", "dimensions": {"height": 55.0, "width": 40.0, "depth": 25.0, "unit": "cm"}}, {"id": "american", "name": "American", "dimensions": {"height": 56.0, "width": 36.0, "depth": 23.0, "unit": "cm"}}, {"id": "ana", "name": "ANA", "dimensions": {"height": 55.0, "width": 40.0, "depth": 25.0, "unit": "cm"}}, {"id": "austrian", "name": "Austrian", "dimensions": {"height": 55.0, "width": 40.0, "depth": 23.0, "unit": "cm"}}, {"id": "avianca", "name": "Avianca", "dimensions": {"height": 55.0, "width": 35.0, "depth": 25.0, "unit": "cm"}}, {"id": "azores", "name": "Azores", "dimensions": {"height": 55.0, "width": 40.0, "depth": 20.0, "unit": "cm"}}, {"id": "breeze-airways", "name": "Breeze Airways", "dimensions": {"height": 56.0, "width": 36.0, "depth": 23.0, "unit": "cm"}}, {"id": "british-airways", "name": "British Airways", "dimensions": {"height": 56.0, "width": 45.0, "depth": 25.0, "unit": "cm"}}, {"id": "brussels", "name": "Brussels", "dimensions": {"height": 55.0, "width": 40.0, "depth": 23.0, "unit": "cm"}}, {"id": "caribbean", "name": "Caribbean", "dimensions": {"height": 56.0, "width": 35.0, "depth": 23.0, "unit": "cm"}}, {"id": "cathay-pacific", "name": "Cathay Pacific", "dimensions": {"height": 56.0, "width": 36.0, "depth": 23.0, "unit": "cm"}}, {"id": "china-airlines", "name": "China Airlines", "dimensions": {"height": 56.0, "width": 36.0, "depth": 23.0, "unit": "cm"}}, {"id": "condor", "name": "Condor", "dimensions": {"height": 55.0, "width": 40.0, "depth": 20.0, "unit": "cm"}}, {"id": "copa", "name": "Copa", "dimensions": {"height": 55.0, "width": 35.0, "depth": 25.0, "unit": "cm"}}, {"id": "delta", "name": "Delta", "dimensions": {"height": 56.0, "width": 36.0, "depth": 23.0, "unit": "cm"}}, {"id": "easyjet", "name": "Easyjet", "dimensions": {"height": 56.0, "width": 45.0, "depth": 25.0, "unit": "cm"}}, {"id": "emirates", "name": "Emirates", "dimensions": {"height": 55.0, "width": 38.0, "depth": 22.0, "unit": "cm"}}, {"id": "etihad-airways", "name": "Etihad Airways", "dimensions": {"height": 56.0, "width": 36.0, "depth": 23.0, "unit": "cm"}}, {"id": "eva", "name": "EVA", "dimensions": {"height": 56.0, "width": 36.0, "depth": 23.0, "unit": "cm"}}, {"id": "fiji", "name": "FIJI", "dimensions": {"height": 55.0, "width": 40.0, "depth": 23.0, "unit": "cm"}}, {"id": "finnair", "name": "Finnair", "dimensions": {"height": 55.0, "width": 40.0, "depth": 23.0, "unit": "cm"}}, {"id": "flair", "name": "Flair", "dimensions": {"height": 55.0, "width": 40.0, "depth": 23.0, "unit": "cm"}}, {"id": "frontier", "name": "Frontier", "dimensions": {"height": 61.0, "width": 40.6, "depth": 25.4, "unit": "cm"}}, {"id": "hawaiian", "name": "Hawaiian", "dimensions": {"height": 56.0, "width": 36.0, "depth": 23.0, "unit": "cm"}}, {"id": "iberia", "name": "Iberia", "dimensions": {"height": 56.0, "width": 40.0, "depth": 25.0, "unit": "cm"}}, {"id": "icelandair", "name": "Icelandair", "dimensions": {"height": 55.0, "width": 40.0, "depth": 20.0, "unit": "cm"}}, {"id": "ita-airways", "name": "ITA Airways", "dimensions": {"height": 55.0, "width": 35.0, "depth": 25.0, "unit": "cm"}}, {"id": "jal", "name": "JAL", "dimensions": {"height": 55.0, "width": 40.0, "depth": 25.0, "unit": "cm"}}, {"id": "japan-airlines", "name": "Japan Airlines", "dimensions": {"height": 55.0, "width": 40.0, "depth": 25.0, "unit": "cm"}}, {"id": "jetblue", "name": "Jetblue", "dimensions": {"height": 56.0, "width": 36.0, "depth": 23.0, "unit": "cm"}}, {"id": "klm", "name": "KLM", "dimensions": {"height": 55.0, "width": 35.0, "depth": 25.0, "unit": "cm"}}, {"id": "korean-air", "name": "Korean Air", "dimensions": {"height": 55.0, "width": 40.0, "depth": 20.0, "unit": "cm"}}, {"id": "la-compagnie", "name": "La Compagnie", "dimensions": {"height": 55.0, "width": 35.0, "depth": 25.0, "unit": "cm"}}, {"id": "latam", "name": "LATAM", "dimensions": {"height": 55.0, "width": 35.0, "depth": 25.0, "unit": "cm"}}, {"id": "level", "name": "LEVEL", "dimensions": {"height": 56.0, "width": 40.0, "depth": 25.0, "unit": "cm"}}, {"id": "lot", "name": "LOT", "dimensions": {"height": 55.0, "width": 40.0, "depth": 23.0, "unit": "cm"}}, {"id": "lufthansa", "name": "Lufthansa", "dimensions": {"height": 55.0, "width": 40.0, "depth": 23.0, "unit": "cm"}}, {"id": "norse", "name": "Norse", "dimensions": {"height": 56.0, "width": 45.0, "depth": 25.0, "unit": "cm"}}, {"id": "norwegian", "name": "Norwegian", "dimensions": {"height": 55.0, "width": 40.0, "depth": 23.0, "unit": "cm"}}, {"id": "philippine-airlines", "name": "Philippine Airlines", "dimensions": {"height": 56.0, "width": 36.0, "depth": 23.0, "unit": "cm"}}, {"id": "play", "name": "PLAY", "dimensions": {"height": 56.0, "width": 45.0, "depth": 25.0, "unit": "cm"}}, {"id": "porter", "name": "Porter", "dimensions": {"height": 55.0, "width": 40.0, "depth": 23.0, "unit": "cm"}}, {"id": "qantas", "name": "Qantas", "dimensions": {"height": 55.0, "width": 35.0, "depth": 22.0, "unit": "cm"}}, {"id": "qatar", "name": "Qatar", "dimensions": {"height": 50.0, "width": 37.0, "depth": 25.0, "unit": "cm"}}, {"id": "royal-air-maroc", "name": "Royal Air Maroc", "dimensions": {"height": 55.0, "width": 40.0, "depth": 25.0, "unit": "cm"}}, {"id": "ryanair", "name": "Ryanair", "dimensions": {"height": 55.0, "width": 40.0, "depth": 20.0, "unit": "cm"}}, {"id": "sas", "name": "SAS", "dimensions": {"height": 55.0, "width": 40.0, "depth": 23.0, "unit": "cm"}}, {"id": "singapore-airlines", "name": "Singapore Airlines", "dimensions": {"height": 55.0, "width": 35.0, "depth": 25.0, "unit": "cm"}}, {"id": "southwest", "name": "Southwest", "dimensions": {"height": 61.0, "width": 40.6, "depth": 25.4, "unit": "cm"}}, {"id": "spirit", "name": "Spirit", "dimensions": {"height": 56.0, "width": 46.0, "depth": 25.0, "unit": "cm"}}, {"id": "sun-country", "name": "Sun Country", "dimensions": {"height": 61.0, "width": 40.64, "depth": 27.94, "unit": "cm"}}, {"id": "sunwing", "name": "Sunwing", "dimensions": {"height": 51.0, "width": 40.0, "depth": 23.0, "unit": "cm"}}, {"id": "swiss", "name": "SWISS", "dimensions": {"height": 55.0, "width": 40.0, "depth": 23.0, "unit": "cm"}}, {"id": "tap", "name": "TAP", "dimensions": {"height": 55.0, "width": 40.0, "depth": 25.0, "unit": "cm"}}, {"id": "tui", "name": "TUI", "dimensions": {"height": 55.0, "width": 40.0, "depth": 20.0, "unit": "cm"}}, {"id": "turkish-airlines", "name": "Turkish Airlines", "dimensions": {"height": 55.0, "width": 40.0, "depth": 23.0, "unit": "cm"}}, {"id": "united", "name": "United", "dimensions": {"height": 56.0, "width": 36.0, "depth": 23.0, "unit": "cm"}}, {"id": "virgin-atlantic", "name": "Virgin Atlantic", "dimensions": {"height": 56.0, "width": 36.0, "depth": 23.0, "unit": "cm"}}, {"id": "virgin-australia", "name": "Virgin Australia", "dimensions": {"height": 56.0, "width": 36.0, "depth": 23.0, "unit": "cm"}}, {"id": "viva-aerobus", "name": "Viva Aerobus", "dimensions": {"height": 55.0, "width": 40.0, "depth": 25.0, "unit": "cm"}}, {"id": "volaris", "name": "Volaris", "dimensions": {"height": 55.0, "width": 40.0, "depth": 25.0, "unit": "cm"}}, {"id": "vueling", "name": "Vueling", "dimensions": {"height": 55.0, "width": 40.0, "depth": 20.0, "unit": "cm"}}, {"id": "westjet-", "name": "WestJet ", "dimensions": {"height": 56.0, "width": 36.0, "depth": 23.0, "unit": "cm"}}, {"id": "wizz-air", "name": "Wizz Air", "dimensions": {"height": 55.0, "width": 40.0, "depth": 23.0, "unit": "cm"}}, {"id": "zipair", "name": "ZIPAIR", "dimensions": {"height": 55.0, "width": 40.0, "depth": 25.0, "unit": "cm"}}]};
+        const LUGGAGE_DATA = {"luggage": [{"id": "antler-cabin-suitcase-", "name": "Antler Cabin Suitcase", "dimensions": {"height": 55.0, "width": 40.0, "depth": 20.0, "unit": "cm"}, "notes": "Lightweight and minimalist, good maneuverability"}, {"id": "away-carry-on-", "name": "AWAY Carry-On", "dimensions": {"height": 55.0, "width": 36.7, "depth": 23.0, "unit": "cm"}, "notes": "A solid choice, especially for North American flights"}, {"id": "beis-small-carry-on", "name": "BEIS Small Carry-On", "dimensions": {"height": 53.0, "width": 33.0, "depth": 22.0, "unit": "cm"}, "notes": "One of the 'shortest' on my list, holds a surprising amount"}, {"id": "july-carry-on-light-expandable", "name": "July Carry On Light Expandable", "dimensions": {"height": 54.0, "width": 36.0, "depth": 22.0, "unit": "cm"}, "notes": "Choose this one if you need the most size but light weight"}, {"id": "july-carry-on-essential", "name": "July Carry-On Essential", "dimensions": {"height": 55.0, "width": 38.5, "depth": 21.5, "unit": "cm"}, "notes": "I haven't tried July luggage yet, but I've read many positive reviews"}, {"id": "monos-carry-on", "name": "Monos Carry-On", "dimensions": {"height": 55.88, "width": 35.56, "depth": 22.86, "unit": "cm"}, "notes": "I love my monos, has worked great all over Europe"}, {"id": "antler-soft-stripe-20", "name": "Antler Soft Stripe 2.0", "dimensions": {"height": 55.0, "width": 35.0, "depth": 20.0, "unit": "cm"}, "notes": "4.1 lb (1.9kg)"}, {"id": "away-softside-carry-on", "name": "AWAY Softside Carry-on", "dimensions": {"height": 55.5, "width": 38.0, "depth": 23.0, "unit": "cm"}, "notes": "I loved using this in Japan"}, {"id": "cotopaxi-allpa-35l-backpack", "name": "Cotopaxi Allpa 35L Backpack", "dimensions": {"height": 56.0, "width": 30.0, "depth": 25.0, "unit": "cm"}, "notes": "3 lb (1.33kg)"}, {"id": "bric's-x-travel-spinner", "name": "Bric's X-Travel Spinner", "dimensions": {"height": 53.0, "width": 33.0, "depth": 23.0, "unit": "cm"}, "notes": "One of my all-time 'go-tos' "}, {"id": "briggs-&-riley-global-20\"-carry-on-", "name": "Briggs & Riley Global 20\" Carry-on", "dimensions": {"height": 53.3, "width": 38.1, "depth": 22.9, "unit": "cm"}, "notes": "An investment, but one of the highest-rated brands in the luggage world"}, {"id": "travelpro-maxlite-5-softside-19\"-4-wheel", "name": "Travelpro Maxlite 5 Softside 19\" 4-wheel", "dimensions": {"height": 55.2, "width": 40.0, "depth": 19.6, "unit": "cm"}, "notes": "Trusty brand, good durability & lots of pockets"}, {"id": "travelpro-maxlite-5-softside-20\"-2-wheel", "name": "Travelpro Maxlite 5 Softside 20\" 2-wheel", "dimensions": {"height": 55.2, "width": 40.0, "depth": 19.6, "unit": "cm"}, "notes": "2-wheel has a litle more interior space than the 4 wheel"}, {"id": "amazon-basics-21\"", "name": "Amazon Basics 21\"", "dimensions": {"height": 55.0, "width": 37.5, "depth": 25.0, "unit": "cm"}, "notes": "I haven't tested the quality, but reviews are decent and price is right!"}, {"id": "bagsmart-blast-43l-roller-backpack", "name": "Bagsmart Blast 43L Roller Backpack", "dimensions": {"height": 55.0, "width": 35.0, "depth": 23.0, "unit": "cm"}, "notes": "Roller bag & backpack all-in-one for ultimate flexibility "}, {"id": "hanke-20-inch-top-opening", "name": "Hanke 20 Inch Top-Opening", "dimensions": {"height": 55.88, "width": 37.0, "depth": 24.0, "unit": "cm"}, "notes": "A rare hardshell that is 'top-open' design "}, {"id": "quince-small-carry-on-suitcase", "name": "Quince Small Carry-On Suitcase", "dimensions": {"height": 55.88, "width": 36.5, "depth": 23.0, "unit": "cm"}, "notes": "A perfect 'dupe' of the AWAY hardshell (make sure you choose this size)"}]};
+        
+        let currentUnit = 'cm';
+        
+        // Initialize
+        document.addEventListener('DOMContentLoaded', () => {
+            setupTabs();
+            setupUnitToggle();
+            setupInputListeners();
+            renderLuggageLibrary();
+        });
+        
+        function setupTabs() {
+            const tabs = document.querySelectorAll('.tab');
+            const contents = document.querySelectorAll('.tab-content');
+            
+            tabs.forEach(tab => {
+                tab.addEventListener('click', () => {
+                    const targetId = tab.dataset.tab;
+                    
+                    tabs.forEach(t => t.classList.remove('active'));
+                    contents.forEach(c => c.classList.remove('active'));
+                    
+                    tab.classList.add('active');
+                    document.getElementById(targetId).classList.add('active');
+                });
+            });
+        }
+        
+        function setupUnitToggle() {
+            const unitBtns = document.querySelectorAll('.unit-btn');
+            
+            unitBtns.forEach(btn => {
+                btn.addEventListener('click', () => {
+                    unitBtns.forEach(b => b.classList.remove('active'));
+                    btn.classList.add('active');
+                    
+                    const oldUnit = currentUnit;
+                    currentUnit = btn.dataset.unit;
+                    
+                    convertInputValues(oldUnit, currentUnit);
+                    checkCompatibility();
+                });
+            });
+        }
+        
+        function convertInputValues(fromUnit, toUnit) {
+            const inputs = ['height', 'width', 'depth'];
+            
+            inputs.forEach(id => {
+                const input = document.getElementById(id);
+                if (input.value) {
+                    const value = parseFloat(input.value);
+                    if (fromUnit === 'cm' && toUnit === 'in') {
+                        input.value = (value / 2.54).toFixed(1);
+                    } else if (fromUnit === 'in' && toUnit === 'cm') {
+                        input.value = (value * 2.54).toFixed(1);
+                    }
+                }
+            });
+        }
+        
+        function setupInputListeners() {
+            const inputs = ['height', 'width', 'depth'];
+            inputs.forEach(id => {
+                document.getElementById(id).addEventListener('input', checkCompatibility);
+            });
+        }
+        
+        function checkCompatibility() {
+            const height = parseFloat(document.getElementById('height').value);
+            const width = parseFloat(document.getElementById('width').value);
+            const depth = parseFloat(document.getElementById('depth').value);
+            
+            if (!height || !width || !depth) {
+                document.getElementById('results-container').innerHTML = `
+                    <div class="empty-state">
+                        <div class="empty-state-icon">🧳</div>
+                        <p>Enter your bag dimensions above to see which airlines it fits</p>
+                    </div>
+                `;
+                return;
+            }
+            
+            // Convert to cm for comparison
+            let heightCm = currentUnit === 'in' ? height * 2.54 : height;
+            let widthCm = currentUnit === 'in' ? width * 2.54 : width;
+            let depthCm = currentUnit === 'in' ? depth * 2.54 : depth;
+            
+            const results = AIRLINES_DATA.airlines.map(airline => {
+                const fits = heightCm <= airline.dimensions.height + 0.01 &&
+                            widthCm <= airline.dimensions.width + 0.01 &&
+                            depthCm <= airline.dimensions.depth + 0.01;
+                
+                return { ...airline, fits };
+            });
+            
+            const fitsCount = results.filter(r => r.fits).length;
+            const totalCount = results.length;
+            const percentage = Math.round((fitsCount / totalCount) * 100);
+            
+            renderResults(results, fitsCount, totalCount, percentage);
+        }
+        
+        function renderResults(results, fitsCount, totalCount, percentage) {
+            const container = document.getElementById('results-container');
+            
+            const fittingAirlines = results.filter(r => r.fits);
+            const nonFittingAirlines = results.filter(r => !r.fits);
+            
+            container.innerHTML = `
+                <div class="results-header">
+                    <h2>Your Bag's Compatibility</h2>
+                    <div class="compatibility-score">
+                        Fits ${fitsCount} out of ${totalCount} airlines (${percentage}%)
+                    </div>
+                </div>
+                
+                <div class="airline-grid">
+                    ${fittingAirlines.map(airline => `
+                        <div class="airline-card fits">
+                            <div class="airline-name">${airline.name}</div>
+                            <div class="airline-dimensions">
+                                Max: ${airline.dimensions.height} × ${airline.dimensions.width} × ${airline.dimensions.depth} cm
+                            </div>
+                            <span class="fit-status fits">✓ Fits</span>
+                        </div>
+                    `).join('')}
+                    
+                    ${nonFittingAirlines.map(airline => `
+                        <div class="airline-card no-fit">
+                            <div class="airline-name">${airline.name}</div>
+                            <div class="airline-dimensions">
+                                Max: ${airline.dimensions.height} × ${airline.dimensions.width} × ${airline.dimensions.depth} cm
+                            </div>
+                            <span class="fit-status no-fit">✗ Too Large</span>
+                        </div>
+                    `).join('')}
+                </div>
+            `;
+        }
+        
+        function renderLuggageLibrary() {
+            const container = document.getElementById('luggage-container');
+            
+            container.innerHTML = `
+                <div class="luggage-grid">
+                    ${LUGGAGE_DATA.luggage.map(bag => `
+                        <div class="luggage-card">
+                            <div class="luggage-name">${bag.name}</div>
+                            <div class="luggage-dimensions">
+                                <div class="dimension-item">
+                                    <div class="dimension-value">${bag.dimensions.height}</div>
+                                    <div class="dimension-label">Height cm</div>
+                                </div>
+                                <div class="dimension-item">
+                                    <div class="dimension-value">${bag.dimensions.width}</div>
+                                    <div class="dimension-label">Width cm</div>
+                                </div>
+                                <div class="dimension-item">
+                                    <div class="dimension-value">${bag.dimensions.depth}</div>
+                                    <div class="dimension-label">Depth cm</div>
+                                </div>
+                            </div>
+                            ${bag.notes ? `<div class="luggage-notes">${bag.notes}</div>` : ''}
+                            <button class="use-this-bag" onclick="useBagDimensions(${bag.dimensions.height}, ${bag.dimensions.width}, ${bag.dimensions.depth})">
+                                Check This Bag
+                            </button>
+                        </div>
+                    `).join('')}
+                </div>
+            `;
+        }
+        
+        function useBagDimensions(height, width, depth) {
+            // Switch to Check My Bag tab
+            document.querySelector('[data-tab="check"]').click();
+            
+            // Set values (convert if needed)
+            if (currentUnit === 'in') {
+                document.getElementById('height').value = (height / 2.54).toFixed(1);
+                document.getElementById('width').value = (width / 2.54).toFixed(1);
+                document.getElementById('depth').value = (depth / 2.54).toFixed(1);
+            } else {
+                document.getElementById('height').value = height;
+                document.getElementById('width').value = width;
+                document.getElementById('depth').value = depth;
+            }
+            
+            // Trigger check
+            checkCompatibility();
+            
+            // Smooth scroll to results
+            setTimeout(() => {
+                window.scrollTo({ top: 0, behavior: 'smooth' });
+            }, 100);
+        }
+    </script>
+</body>
+</html>
