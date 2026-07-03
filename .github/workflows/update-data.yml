@@ -65,7 +65,7 @@ $(cat problems.txt)
 \`\`\`
 
 Fix the row(s) in the Google Sheet, then re-run the **Update data from Google Sheet** workflow from the Actions tab (or wait for tomorrow's automatic run)."
-          existing=$(gh issue list --label data-sync --state open --json number --jq '.[0].number' || true)
+          existing=$(gh issue list --label data-sync --state open --json number --jq '.[0].number // empty' || true)
           if [ -n "$existing" ]; then
             gh issue comment "$existing" --body "$body"
           else

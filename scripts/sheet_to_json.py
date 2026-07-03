@@ -72,7 +72,9 @@ def _num(row_name, field, value, errors, required=True, ranges=None):
                 "was it typed in the right column and in centimeters?)"
             )
             return None
-    return round(n, 2)
+    n = round(n, 2)
+    # keep whole numbers as ints so JSON round-trips byte-identically
+    return int(n) if n == int(n) else n
 
 
 def _rows(text):
@@ -228,6 +230,7 @@ def main() -> int:
         return 1
 
     out = Path(args.out_dir)
+    out.mkdir(parents=True, exist_ok=True)
     (out / "airlines.json").write_text(
         json.dumps(airlines, indent=2, ensure_ascii=False) + "\n", encoding="utf-8")
     (out / "luggage.json").write_text(

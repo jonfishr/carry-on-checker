@@ -28,17 +28,22 @@ jobs:
           GH_TOKEN: ${{ github.token }}
         run: |
           body="$(tail -n +2 report.txt)"
-          gh label create policy-watch --description "Airline policy page changed" --color FBCA04 2>/dev/null || true
-          gh issue create \
-            --title "Some airline baggage pages changed — worth a quick look" \
-            --label policy-watch \
-            --body "$body"
+          existing=$(gh issue list --label policy-watch --state open --json number --jq '.[0].number // empty' || true)
+          if [ -n "$existing" ]; then
+            gh issue comment "$existing" --body "$body"
+          else
+            gh label create policy-watch --description "Airline policy page changed" --color FBCA04 2>/dev/null || true
+            gh issue create \
+              --title "Some airline baggage pages changed — worth a quick look" \
+              --label policy-watch \
+              --body "$body"
+          fi
 
       - name: Commit updated snapshots
         run: |
-          if git diff --quiet .github/staleness-hashes.json; then exit 0; fi
+          git add .github/staleness-hashes.json
+          if git diff --cached --quiet; then exit 0; fi
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add .github/staleness-hashes.json
           git commit -m "Update policy-page snapshots"
           git push

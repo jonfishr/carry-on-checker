@@ -16,7 +16,7 @@ the site just makes them instant.
 
 - Checks your bag's dimensions against **70 airlines** in real time, in cm or inches
 - Three-tier verdicts using Aly's methodology:
-  **✅ Fits** · **⚠️ Close call** (≤ 2.5 cm / 1 in over — usually fine in real
+  **✅ Fits** · **⚠️ Close call** (≤ 1 in / 2.54 cm over — usually fine in real
   sizers) · **❌ Too big** — with exactly which dimension is over, and by how much
 - Explains the **height → width → depth** hierarchy (why an over-depth bag
   beats an over-height bag)

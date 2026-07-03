@@ -5,9 +5,9 @@
       "name": "Aegean",
       "region": "Europe",
       "dimensions": {
-        "height": 56.0,
-        "width": 45.0,
-        "depth": 25.0,
+        "height": 56,
+        "width": 45,
+        "depth": 25,
         "unit": "cm"
       },
       "weight_limit_kg": 8,
@@ -20,16 +20,16 @@
       "name": "Aer Lingus",
       "region": "Europe",
       "dimensions": {
-        "height": 55.0,
-        "width": 40.0,
-        "depth": 24.0,
+        "height": 55,
+        "width": 40,
+        "depth": 24,
         "unit": "cm"
       },
       "weight_limit_kg": 10,
       "personal_item": {
-        "height": 25.0,
-        "width": 33.0,
-        "depth": 20.0,
+        "height": 25,
+        "width": 33,
+        "depth": 20,
         "unit": "cm"
       },
       "notes": "Aer Lingus Regional flights now share the same 10 kg allowance as the mainline.",
@@ -41,9 +41,9 @@
       "name": "Aeromexico",
       "region": "Latin America & Caribbean",
       "dimensions": {
-        "height": 55.0,
-        "width": 40.0,
-        "depth": 25.0,
+        "height": 55,
+        "width": 40,
+        "depth": 25,
         "unit": "cm"
       },
       "weight_limit_kg": 10,
@@ -56,15 +56,15 @@
       "name": "Air Canada",
       "region": "North America",
       "dimensions": {
-        "height": 55.0,
-        "width": 40.0,
-        "depth": 23.0,
+        "height": 55,
+        "width": 40,
+        "depth": 23,
         "unit": "cm"
       },
       "personal_item": {
-        "height": 33.0,
-        "width": 43.0,
-        "depth": 16.0,
+        "height": 33,
+        "width": 43,
+        "depth": 16,
         "unit": "cm"
       },
       "notes": "Economy Basic fares (bought after Jan 3, 2025) don't include a carry-on within Canada/US/Mexico/Caribbean — personal item only.",
@@ -76,9 +76,9 @@
       "name": "Air China",
       "region": "Asia-Pacific",
       "dimensions": {
-        "height": 55.0,
-        "width": 40.0,
-        "depth": 20.0,
+        "height": 55,
+        "width": 40,
+        "depth": 20,
         "unit": "cm"
       },
       "weight_limit_kg": 5,
@@ -91,16 +91,16 @@
       "name": "Air France",
       "region": "Europe",
       "dimensions": {
-        "height": 55.0,
-        "width": 35.0,
-        "depth": 25.0,
+        "height": 55,
+        "width": 35,
+        "depth": 25,
         "unit": "cm"
       },
       "weight_limit_kg": 12,
       "personal_item": {
-        "height": 40.0,
-        "width": 30.0,
-        "depth": 15.0,
+        "height": 40,
+        "width": 30,
+        "depth": 15,
         "unit": "cm"
       },
       "notes": "The 12 kg allowance covers your cabin bag and personal item together (18 kg in business).",
@@ -112,16 +112,16 @@
       "name": "Air Transat",
       "region": "North America",
       "dimensions": {
-        "height": 55.0,
-        "width": 40.0,
-        "depth": 23.0,
+        "height": 55,
+        "width": 40,
+        "depth": 23,
         "unit": "cm"
       },
       "weight_limit_kg": 10,
       "personal_item": {
-        "height": 43.0,
-        "width": 31.0,
-        "depth": 13.0,
+        "height": 43,
+        "width": 31,
+        "depth": 13,
         "unit": "cm"
       },
       "notes": "The cheapest Eco Budget fares on south/US routes include only a personal item; Club Class gets 15 kg.",
@@ -133,16 +133,16 @@
       "name": "airBaltic",
       "region": "Europe",
       "dimensions": {
-        "height": 55.0,
-        "width": 40.0,
-        "depth": 23.0,
+        "height": 55,
+        "width": 40,
+        "depth": 23,
         "unit": "cm"
       },
       "weight_limit_kg": 8,
       "personal_item": {
-        "height": 40.0,
-        "width": 30.0,
-        "depth": 15.0,
+        "height": 40,
+        "width": 30,
+        "depth": 15,
         "unit": "cm"
       },
       "notes": "The cheapest Economy MINI fare includes a personal item only; business allows up to 24 kg.",
@@ -154,9 +154,9 @@
       "name": "Alaska",
       "region": "North America",
       "dimensions": {
-        "height": 56.0,
-        "width": 36.0,
-        "depth": 23.0,
+        "height": 56,
+        "width": 36,
+        "depth": 23,
         "unit": "cm"
       },
       "notes": "No published weight limit — you just need to lift it into the bin yourself. Free on every fare, even the cheapest.",
@@ -168,15 +168,15 @@
       "name": "Allegiant",
       "region": "North America",
       "dimensions": {
-        "height": 55.0,
-        "width": 40.0,
-        "depth": 25.0,
+        "height": 55,
+        "width": 40,
+        "depth": 25,
         "unit": "cm"
       },
       "personal_item": {
-        "height": 45.0,
-        "width": 35.0,
-        "depth": 20.0,
+        "height": 45,
+        "width": 35,
+        "depth": 20,
         "unit": "cm"
       },
       "notes": "Carry-on bags always cost extra on Allegiant (cheaper if paid online in advance) — only the personal item is free.",
@@ -188,15 +188,15 @@
       "name": "American",
       "region": "North America",
       "dimensions": {
-        "height": 56.0,
-        "width": 36.0,
-        "depth": 23.0,
+        "height": 56,
+        "width": 36,
+        "depth": 23,
         "unit": "cm"
       },
       "personal_item": {
-        "height": 45.0,
-        "width": 35.0,
-        "depth": 20.0,
+        "height": 45,
+        "width": 35,
+        "depth": 20,
         "unit": "cm"
       },
       "notes": "No published weight limit — the bag just has to fit the sizer.",
@@ -208,9 +208,9 @@
       "name": "ANA",
       "region": "Asia-Pacific",
       "dimensions": {
-        "height": 55.0,
-        "width": 40.0,
-        "depth": 25.0,
+        "height": 55,
+        "width": 40,
+        "depth": 25,
         "unit": "cm"
       },
       "weight_limit_kg": 10,
@@ -223,16 +223,16 @@
       "name": "Austrian",
       "region": "Europe",
       "dimensions": {
-        "height": 55.0,
-        "width": 40.0,
-        "depth": 23.0,
+        "height": 55,
+        "width": 40,
+        "depth": 23,
         "unit": "cm"
       },
       "weight_limit_kg": 8,
       "personal_item": {
-        "height": 40.0,
-        "width": 30.0,
-        "depth": 15.0,
+        "height": 40,
+        "width": 30,
+        "depth": 15,
         "unit": "cm"
       },
       "notes": "Economy Basic fares on short-haul flights include only a personal item (40×30×15 cm), not a full cabin bag.",
@@ -244,16 +244,16 @@
       "name": "Avianca",
       "region": "Latin America & Caribbean",
       "dimensions": {
-        "height": 55.0,
-        "width": 35.0,
-        "depth": 25.0,
+        "height": 55,
+        "width": 35,
+        "depth": 25,
         "unit": "cm"
       },
       "weight_limit_kg": 10,
       "personal_item": {
-        "height": 45.0,
-        "width": 35.0,
-        "depth": 20.0,
+        "height": 45,
+        "width": 35,
+        "depth": 20,
         "unit": "cm"
       },
       "notes": "Basic fares don't include a carry-on — it costs extra. The personal item is free on every fare.",
@@ -265,16 +265,16 @@
       "name": "Azores",
       "region": "Europe",
       "dimensions": {
-        "height": 55.0,
-        "width": 40.0,
-        "depth": 20.0,
+        "height": 55,
+        "width": 40,
+        "depth": 20,
         "unit": "cm"
       },
       "weight_limit_kg": 8,
       "personal_item": {
-        "height": 40.0,
-        "width": 30.0,
-        "depth": 15.0,
+        "height": 40,
+        "width": 30,
+        "depth": 15,
         "unit": "cm"
       },
       "notes": "8 kg on economy fares; Comfort Plus allows 15 kg. Your personal item counts within the weight allowance.",
@@ -286,16 +286,16 @@
       "name": "Breeze Airways",
       "region": "North America",
       "dimensions": {
-        "height": 56.0,
-        "width": 36.0,
-        "depth": 23.0,
+        "height": 56,
+        "width": 36,
+        "depth": 23,
         "unit": "cm"
       },
       "weight_limit_kg": 15.9,
       "personal_item": {
-        "height": 43.0,
-        "width": 33.0,
-        "depth": 20.0,
+        "height": 43,
+        "width": 33,
+        "depth": 20,
         "unit": "cm"
       },
       "notes": "Carry-on isn't included in the base Nice fare — it's an add-on or comes in bundles. The personal item is always free.",
@@ -307,16 +307,15 @@
       "name": "British Airways",
       "region": "Europe",
       "dimensions": {
-        "height": 56.0,
-        "width": 45.0,
-        "depth": 25.0,
+        "height": 56,
+        "width": 45,
+        "depth": 25,
         "unit": "cm"
       },
-      "weight_limit_kg": 23,
       "personal_item": {
-        "height": 40.0,
-        "width": 30.0,
-        "depth": 15.0,
+        "height": 40,
+        "width": 30,
+        "depth": 15,
         "unit": "cm"
       },
       "notes": "No hard weight limit — you just need to lift it into the bin yourself. One of the most generous size allowances out there.",
@@ -328,16 +327,16 @@
       "name": "Brussels",
       "region": "Europe",
       "dimensions": {
-        "height": 55.0,
-        "width": 40.0,
-        "depth": 23.0,
+        "height": 55,
+        "width": 40,
+        "depth": 23,
         "unit": "cm"
       },
       "weight_limit_kg": 8,
       "personal_item": {
-        "height": 40.0,
-        "width": 30.0,
-        "depth": 15.0,
+        "height": 40,
+        "width": 30,
+        "depth": 15,
         "unit": "cm"
       },
       "notes": "Economy Basic fares on short-haul flights include only a personal item (40×30×15 cm), not a full cabin bag.",
@@ -349,16 +348,16 @@
       "name": "Caribbean",
       "region": "Latin America & Caribbean",
       "dimensions": {
-        "height": 56.0,
-        "width": 35.0,
-        "depth": 23.0,
+        "height": 56,
+        "width": 35,
+        "depth": 23,
         "unit": "cm"
       },
       "weight_limit_kg": 10,
       "personal_item": {
-        "height": 43.0,
-        "width": 33.0,
-        "depth": 15.0,
+        "height": 43,
+        "width": 33,
+        "depth": 15,
         "unit": "cm"
       },
       "source_url": "https://www.caribbean-airlines.com/#/baggage/carry-on",
@@ -369,16 +368,16 @@
       "name": "Cathay Pacific",
       "region": "Asia-Pacific",
       "dimensions": {
-        "height": 56.0,
-        "width": 36.0,
-        "depth": 23.0,
+        "height": 56,
+        "width": 36,
+        "depth": 23,
         "unit": "cm"
       },
       "weight_limit_kg": 7,
       "personal_item": {
-        "height": 40.0,
-        "width": 30.0,
-        "depth": 15.0,
+        "height": 40,
+        "width": 30,
+        "depth": 15,
         "unit": "cm"
       },
       "notes": "Allowance varies by cabin class and route — 7 kg in economy. Cathay's own baggage calculator is the source of truth.",
@@ -390,16 +389,16 @@
       "name": "China Airlines",
       "region": "Asia-Pacific",
       "dimensions": {
-        "height": 56.0,
-        "width": 36.0,
-        "depth": 23.0,
+        "height": 56,
+        "width": 36,
+        "depth": 23,
         "unit": "cm"
       },
       "weight_limit_kg": 7,
       "personal_item": {
-        "height": 40.0,
-        "width": 30.0,
-        "depth": 15.0,
+        "height": 40,
+        "width": 30,
+        "depth": 15,
         "unit": "cm"
       },
       "notes": "7 kg across all classes; business class gets a second carry-on.",
@@ -411,16 +410,16 @@
       "name": "Condor",
       "region": "Europe",
       "dimensions": {
-        "height": 55.0,
-        "width": 40.0,
-        "depth": 23.0,
+        "height": 55,
+        "width": 40,
+        "depth": 23,
         "unit": "cm"
       },
       "weight_limit_kg": 8,
       "personal_item": {
-        "height": 40.0,
-        "width": 30.0,
-        "depth": 15.0,
+        "height": 40,
+        "width": 30,
+        "depth": 15,
         "unit": "cm"
       },
       "notes": "Condor enlarged its carry-on depth to 23 cm in May 2026 — older guides may still say 20 cm.",
@@ -432,16 +431,16 @@
       "name": "Copa",
       "region": "Latin America & Caribbean",
       "dimensions": {
-        "height": 56.0,
-        "width": 36.0,
-        "depth": 23.0,
+        "height": 56,
+        "width": 36,
+        "depth": 23,
         "unit": "cm"
       },
       "weight_limit_kg": 10,
       "personal_item": {
-        "height": 43.0,
-        "width": 25.0,
-        "depth": 22.0,
+        "height": 43,
+        "width": 25,
+        "depth": 22,
         "unit": "cm"
       },
       "notes": "Copa publishes this in inches (22 × 14 × 9 in) — the cm figures here are converted.",
@@ -453,9 +452,9 @@
       "name": "Delta",
       "region": "North America",
       "dimensions": {
-        "height": 56.0,
-        "width": 35.0,
-        "depth": 23.0,
+        "height": 56,
+        "width": 35,
+        "depth": 23,
         "unit": "cm"
       },
       "notes": "Published as 22 × 14 × 9 in including wheels and handles. No weight limit. Tiny Delta Connection planes (50 seats or fewer) take a personal item only.",
@@ -467,16 +466,16 @@
       "name": "easyJet",
       "region": "Europe",
       "dimensions": {
-        "height": 56.0,
-        "width": 45.0,
-        "depth": 25.0,
+        "height": 56,
+        "width": 45,
+        "depth": 25,
         "unit": "cm"
       },
       "weight_limit_kg": 15,
       "personal_item": {
-        "height": 45.0,
-        "width": 36.0,
-        "depth": 20.0,
+        "height": 45,
+        "width": 36,
+        "depth": 20,
         "unit": "cm"
       },
       "notes": "Everyone gets the small underseat bag (45×36×20 cm) free; this big cabin bag requires an add-on, an Inclusive Plus fare, or easyJet Plus membership.",
@@ -488,9 +487,9 @@
       "name": "Emirates",
       "region": "Middle East & Africa",
       "dimensions": {
-        "height": 55.0,
-        "width": 38.0,
-        "depth": 22.0,
+        "height": 55,
+        "width": 38,
+        "depth": 22,
         "unit": "cm"
       },
       "weight_limit_kg": 7,
@@ -503,16 +502,16 @@
       "name": "Etihad Airways",
       "region": "Middle East & Africa",
       "dimensions": {
-        "height": 56.0,
-        "width": 36.0,
-        "depth": 23.0,
+        "height": 56,
+        "width": 36,
+        "depth": 23,
         "unit": "cm"
       },
       "weight_limit_kg": 7,
       "personal_item": {
-        "height": 39.0,
-        "width": 23.0,
-        "depth": 19.0,
+        "height": 39,
+        "width": 23,
+        "depth": 19,
         "unit": "cm"
       },
       "notes": "Economy gets one 7 kg bag with no separate personal item; business/first get two bags plus a personal item.",
@@ -524,9 +523,9 @@
       "name": "EVA Air",
       "region": "Asia-Pacific",
       "dimensions": {
-        "height": 56.0,
-        "width": 36.0,
-        "depth": 23.0,
+        "height": 56,
+        "width": 36,
+        "depth": 23,
         "unit": "cm"
       },
       "weight_limit_kg": 7,
@@ -539,9 +538,9 @@
       "name": "Fiji Airways",
       "region": "Asia-Pacific",
       "dimensions": {
-        "height": 55.0,
-        "width": 40.0,
-        "depth": 23.0,
+        "height": 55,
+        "width": 40,
+        "depth": 23,
         "unit": "cm"
       },
       "weight_limit_kg": 7,
@@ -554,16 +553,16 @@
       "name": "Finnair",
       "region": "Europe",
       "dimensions": {
-        "height": 55.0,
-        "width": 40.0,
-        "depth": 23.0,
+        "height": 55,
+        "width": 40,
+        "depth": 23,
         "unit": "cm"
       },
       "weight_limit_kg": 12,
       "personal_item": {
-        "height": 40.0,
-        "width": 30.0,
-        "depth": 15.0,
+        "height": 40,
+        "width": 30,
+        "depth": 15,
         "unit": "cm"
       },
       "notes": "The 8–12 kg allowance (depending on ticket type) covers your cabin bag and small bag together.",
@@ -575,16 +574,16 @@
       "name": "Flair",
       "region": "North America",
       "dimensions": {
-        "height": 55.0,
-        "width": 40.0,
-        "depth": 23.0,
+        "height": 55,
+        "width": 40,
+        "depth": 23,
         "unit": "cm"
       },
       "weight_limit_kg": 10,
       "personal_item": {
-        "height": 43.0,
-        "width": 33.0,
-        "depth": 15.0,
+        "height": 43,
+        "width": 33,
+        "depth": 15,
         "unit": "cm"
       },
       "notes": "Carry-on costs extra unless your bundle includes it — only the personal item (43×33×15 cm) is free on every ticket.",
@@ -596,7 +595,7 @@
       "name": "Frontier",
       "region": "North America",
       "dimensions": {
-        "height": 61.0,
+        "height": 61,
         "width": 40.6,
         "depth": 25.4,
         "unit": "cm"
@@ -617,9 +616,9 @@
       "name": "Hawaiian",
       "region": "North America",
       "dimensions": {
-        "height": 56.0,
-        "width": 36.0,
-        "depth": 23.0,
+        "height": 56,
+        "width": 36,
+        "depth": 23,
         "unit": "cm"
       },
       "notes": "Published as 22 × 14 × 9 in including wheels and handles; no stated weight limit.",
@@ -631,16 +630,16 @@
       "name": "Iberia",
       "region": "Europe",
       "dimensions": {
-        "height": 56.0,
-        "width": 40.0,
-        "depth": 25.0,
+        "height": 56,
+        "width": 40,
+        "depth": 25,
         "unit": "cm"
       },
       "weight_limit_kg": 10,
       "personal_item": {
-        "height": 40.0,
-        "width": 30.0,
-        "depth": 15.0,
+        "height": 40,
+        "width": 30,
+        "depth": 15,
         "unit": "cm"
       },
       "notes": "Business allows 14 kg on long-haul. Iberia flights operated by Vueling use the smaller 55×40×20 cm limit.",
@@ -652,9 +651,9 @@
       "name": "Icelandair",
       "region": "Europe",
       "dimensions": {
-        "height": 55.0,
-        "width": 40.0,
-        "depth": 20.0,
+        "height": 55,
+        "width": 40,
+        "depth": 20,
         "unit": "cm"
       },
       "weight_limit_kg": 10,
@@ -667,16 +666,16 @@
       "name": "ITA Airways",
       "region": "Europe",
       "dimensions": {
-        "height": 55.0,
-        "width": 35.0,
-        "depth": 25.0,
+        "height": 55,
+        "width": 35,
+        "depth": 25,
         "unit": "cm"
       },
       "weight_limit_kg": 8,
       "personal_item": {
-        "height": 45.0,
-        "width": 36.0,
-        "depth": 20.0,
+        "height": 45,
+        "width": 36,
+        "depth": 20,
         "unit": "cm"
       },
       "notes": "ITA is known to actually weigh bags — keep to the 8 kg limit.",
@@ -688,9 +687,9 @@
       "name": "Japan Airlines",
       "region": "Asia-Pacific",
       "dimensions": {
-        "height": 55.0,
-        "width": 40.0,
-        "depth": 25.0,
+        "height": 55,
+        "width": 40,
+        "depth": 25,
         "unit": "cm"
       },
       "weight_limit_kg": 10,
@@ -703,14 +702,14 @@
       "name": "JetBlue",
       "region": "North America",
       "dimensions": {
-        "height": 56.0,
-        "width": 36.0,
-        "depth": 23.0,
+        "height": 56,
+        "width": 36,
+        "depth": 23,
         "unit": "cm"
       },
       "personal_item": {
         "height": 43.2,
-        "width": 33.0,
+        "width": 33,
         "depth": 20.3,
         "unit": "cm"
       },
@@ -723,16 +722,16 @@
       "name": "KLM",
       "region": "Europe",
       "dimensions": {
-        "height": 55.0,
-        "width": 35.0,
-        "depth": 25.0,
+        "height": 55,
+        "width": 35,
+        "depth": 25,
         "unit": "cm"
       },
       "weight_limit_kg": 12,
       "personal_item": {
-        "height": 40.0,
-        "width": 30.0,
-        "depth": 15.0,
+        "height": 40,
+        "width": 30,
+        "depth": 15,
         "unit": "cm"
       },
       "notes": "The 12 kg allowance covers your cabin bag and small bag together (18 kg in business).",
@@ -744,9 +743,9 @@
       "name": "Korean Air",
       "region": "Asia-Pacific",
       "dimensions": {
-        "height": 55.0,
-        "width": 40.0,
-        "depth": 20.0,
+        "height": 55,
+        "width": 40,
+        "depth": 20,
         "unit": "cm"
       },
       "weight_limit_kg": 10,
@@ -759,9 +758,9 @@
       "name": "La Compagnie",
       "region": "Europe",
       "dimensions": {
-        "height": 55.0,
-        "width": 35.0,
-        "depth": 25.0,
+        "height": 55,
+        "width": 35,
+        "depth": 25,
         "unit": "cm"
       },
       "weight_limit_kg": 18,
@@ -774,9 +773,9 @@
       "name": "LATAM",
       "region": "Latin America & Caribbean",
       "dimensions": {
-        "height": 55.0,
-        "width": 35.0,
-        "depth": 25.0,
+        "height": 55,
+        "width": 35,
+        "depth": 25,
         "unit": "cm"
       },
       "weight_limit_kg": 10,
@@ -789,16 +788,16 @@
       "name": "LEVEL",
       "region": "Europe",
       "dimensions": {
-        "height": 56.0,
-        "width": 40.0,
-        "depth": 25.0,
+        "height": 56,
+        "width": 40,
+        "depth": 25,
         "unit": "cm"
       },
       "weight_limit_kg": 10,
       "personal_item": {
-        "height": 40.0,
-        "width": 30.0,
-        "depth": 15.0,
+        "height": 40,
+        "width": 30,
+        "depth": 15,
         "unit": "cm"
       },
       "source_url": "https://www.flylevel.com/en/why-level/baggage",
@@ -809,16 +808,16 @@
       "name": "LOT",
       "region": "Europe",
       "dimensions": {
-        "height": 55.0,
-        "width": 40.0,
-        "depth": 23.0,
+        "height": 55,
+        "width": 40,
+        "depth": 23,
         "unit": "cm"
       },
       "weight_limit_kg": 8,
       "personal_item": {
-        "height": 40.0,
-        "width": 35.0,
-        "depth": 12.0,
+        "height": 40,
+        "width": 35,
+        "depth": 12,
         "unit": "cm"
       },
       "notes": "The three sides can't total more than 118 cm. Personal item up to 2 kg.",
@@ -830,16 +829,16 @@
       "name": "Lufthansa",
       "region": "Europe",
       "dimensions": {
-        "height": 55.0,
-        "width": 40.0,
-        "depth": 23.0,
+        "height": 55,
+        "width": 40,
+        "depth": 23,
         "unit": "cm"
       },
       "weight_limit_kg": 8,
       "personal_item": {
-        "height": 40.0,
-        "width": 30.0,
-        "depth": 15.0,
+        "height": 40,
+        "width": 30,
+        "depth": 15,
         "unit": "cm"
       },
       "notes": "Economy Basic fares on short-haul flights include only a personal item (40×30×15 cm), not a full cabin bag.",
@@ -851,16 +850,16 @@
       "name": "Norse",
       "region": "Europe",
       "dimensions": {
-        "height": 56.0,
-        "width": 45.0,
-        "depth": 25.0,
+        "height": 56,
+        "width": 45,
+        "depth": 25,
         "unit": "cm"
       },
       "weight_limit_kg": 10,
       "personal_item": {
-        "height": 40.0,
-        "width": 30.0,
-        "depth": 15.0,
+        "height": 40,
+        "width": 30,
+        "depth": 15,
         "unit": "cm"
       },
       "notes": "The cheapest Light fares don't include the big cabin bag — it's a paid add-on; only the personal item is free.",
@@ -872,16 +871,16 @@
       "name": "Norwegian",
       "region": "Europe",
       "dimensions": {
-        "height": 55.0,
-        "width": 40.0,
-        "depth": 23.0,
+        "height": 55,
+        "width": 40,
+        "depth": 23,
         "unit": "cm"
       },
       "weight_limit_kg": 10,
       "personal_item": {
-        "height": 40.0,
-        "width": 30.0,
-        "depth": 20.0,
+        "height": 40,
+        "width": 30,
+        "depth": 20,
         "unit": "cm"
       },
       "notes": "The 10 kg limit covers the cabin bag and underseat bag (40×30×20 cm) together.",
@@ -893,9 +892,9 @@
       "name": "Philippine Airlines",
       "region": "Asia-Pacific",
       "dimensions": {
-        "height": 56.0,
-        "width": 36.0,
-        "depth": 23.0,
+        "height": 56,
+        "width": 36,
+        "depth": 23,
         "unit": "cm"
       },
       "weight_limit_kg": 7,
@@ -908,15 +907,15 @@
       "name": "Porter",
       "region": "North America",
       "dimensions": {
-        "height": 55.0,
-        "width": 40.0,
-        "depth": 23.0,
+        "height": 55,
+        "width": 40,
+        "depth": 23,
         "unit": "cm"
       },
       "personal_item": {
-        "height": 43.0,
-        "width": 33.0,
-        "depth": 16.0,
+        "height": 43,
+        "width": 33,
+        "depth": 16,
         "unit": "cm"
       },
       "notes": "Basic fares include only the personal item — the full carry-on costs extra. Otherwise no weight limit.",
@@ -928,9 +927,9 @@
       "name": "Qantas",
       "region": "Asia-Pacific",
       "dimensions": {
-        "height": 56.0,
-        "width": 36.0,
-        "depth": 23.0,
+        "height": 56,
+        "width": 36,
+        "depth": 23,
         "unit": "cm"
       },
       "weight_limit_kg": 7,
@@ -943,9 +942,9 @@
       "name": "Qatar",
       "region": "Middle East & Africa",
       "dimensions": {
-        "height": 50.0,
-        "width": 37.0,
-        "depth": 25.0,
+        "height": 50,
+        "width": 37,
+        "depth": 25,
         "unit": "cm"
       },
       "weight_limit_kg": 7,
@@ -958,16 +957,16 @@
       "name": "Royal Air Maroc",
       "region": "Middle East & Africa",
       "dimensions": {
-        "height": 55.0,
-        "width": 40.0,
-        "depth": 25.0,
+        "height": 55,
+        "width": 40,
+        "depth": 25,
         "unit": "cm"
       },
       "weight_limit_kg": 10,
       "personal_item": {
-        "height": 40.0,
-        "width": 30.0,
-        "depth": 15.0,
+        "height": 40,
+        "width": 30,
+        "depth": 15,
         "unit": "cm"
       },
       "notes": "10 kg in economy, 12 kg in business, plus a small 2 kg personal item.",
@@ -979,16 +978,16 @@
       "name": "Ryanair",
       "region": "Europe",
       "dimensions": {
-        "height": 55.0,
-        "width": 40.0,
-        "depth": 20.0,
+        "height": 55,
+        "width": 40,
+        "depth": 20,
         "unit": "cm"
       },
       "weight_limit_kg": 10,
       "personal_item": {
-        "height": 40.0,
-        "width": 30.0,
-        "depth": 20.0,
+        "height": 40,
+        "width": 30,
+        "depth": 20,
         "unit": "cm"
       },
       "notes": "This bag needs the paid 'Priority & 2 Cabin Bags' add-on. Every fare includes a free personal bag (40×30×20 cm) that fits under the seat.",
@@ -1000,16 +999,16 @@
       "name": "SAS",
       "region": "Europe",
       "dimensions": {
-        "height": 55.0,
-        "width": 40.0,
-        "depth": 23.0,
+        "height": 55,
+        "width": 40,
+        "depth": 23,
         "unit": "cm"
       },
       "weight_limit_kg": 8,
       "personal_item": {
-        "height": 40.0,
-        "width": 30.0,
-        "depth": 15.0,
+        "height": 40,
+        "width": 30,
+        "depth": 15,
         "unit": "cm"
       },
       "notes": "The cheapest Go Light fares in Europe include only the underseat bag — and gate sizers are enforced.",
@@ -1021,16 +1020,16 @@
       "name": "Singapore Airlines",
       "region": "Asia-Pacific",
       "dimensions": {
-        "height": 55.0,
-        "width": 40.0,
-        "depth": 20.0,
+        "height": 55,
+        "width": 40,
+        "depth": 20,
         "unit": "cm"
       },
       "weight_limit_kg": 7,
       "personal_item": {
-        "height": 40.0,
-        "width": 30.0,
-        "depth": 10.0,
+        "height": 40,
+        "width": 30,
+        "depth": 10,
         "unit": "cm"
       },
       "notes": "Singapore's real rule is a 115 cm total (height + width + depth), max 7 kg — this box is their published example, but any shape totalling 115 cm works.",
@@ -1042,7 +1041,7 @@
       "name": "Southwest",
       "region": "North America",
       "dimensions": {
-        "height": 61.0,
+        "height": 61,
         "width": 40.6,
         "depth": 25.4,
         "unit": "cm"
@@ -1056,7 +1055,7 @@
       "name": "Sun Country",
       "region": "North America",
       "dimensions": {
-        "height": 61.0,
+        "height": 61,
         "width": 40.6,
         "depth": 27.9,
         "unit": "cm"
@@ -1064,7 +1063,7 @@
       "weight_limit_kg": 15.9,
       "personal_item": {
         "height": 43.2,
-        "width": 33.0,
+        "width": 33,
         "depth": 22.9,
         "unit": "cm"
       },
@@ -1077,16 +1076,16 @@
       "name": "SWISS",
       "region": "Europe",
       "dimensions": {
-        "height": 55.0,
-        "width": 40.0,
-        "depth": 23.0,
+        "height": 55,
+        "width": 40,
+        "depth": 23,
         "unit": "cm"
       },
       "weight_limit_kg": 8,
       "personal_item": {
-        "height": 40.0,
-        "width": 30.0,
-        "depth": 15.0,
+        "height": 40,
+        "width": 30,
+        "depth": 15,
         "unit": "cm"
       },
       "notes": "Measured with wheels, side pockets and handles included.",
@@ -1098,16 +1097,16 @@
       "name": "TAP",
       "region": "Europe",
       "dimensions": {
-        "height": 55.0,
-        "width": 40.0,
-        "depth": 25.0,
+        "height": 55,
+        "width": 40,
+        "depth": 25,
         "unit": "cm"
       },
       "weight_limit_kg": 10,
       "personal_item": {
-        "height": 40.0,
-        "width": 30.0,
-        "depth": 15.0,
+        "height": 40,
+        "width": 30,
+        "depth": 15,
         "unit": "cm"
       },
       "notes": "A small personal item (max 2 kg) rides free alongside the cabin bag.",
@@ -1119,16 +1118,16 @@
       "name": "TUI",
       "region": "Europe",
       "dimensions": {
-        "height": 55.0,
-        "width": 40.0,
-        "depth": 20.0,
+        "height": 55,
+        "width": 40,
+        "depth": 20,
         "unit": "cm"
       },
       "weight_limit_kg": 10,
       "personal_item": {
-        "height": 40.0,
-        "width": 30.0,
-        "depth": 20.0,
+        "height": 40,
+        "width": 30,
+        "depth": 20,
         "unit": "cm"
       },
       "notes": "Plus a small underseat bag (40×30×20 cm). You need to lift the big one into the bin yourself.",
@@ -1140,16 +1139,16 @@
       "name": "Turkish Airlines",
       "region": "Europe",
       "dimensions": {
-        "height": 55.0,
-        "width": 40.0,
-        "depth": 23.0,
+        "height": 55,
+        "width": 40,
+        "depth": 23,
         "unit": "cm"
       },
       "weight_limit_kg": 8,
       "personal_item": {
-        "height": 40.0,
-        "width": 30.0,
-        "depth": 15.0,
+        "height": 40,
+        "width": 30,
+        "depth": 15,
         "unit": "cm"
       },
       "notes": "Wheels and handles included. Business class gets two cabin bags.",
@@ -1161,15 +1160,15 @@
       "name": "United",
       "region": "North America",
       "dimensions": {
-        "height": 56.0,
-        "width": 36.0,
-        "depth": 23.0,
+        "height": 56,
+        "width": 36,
+        "depth": 23,
         "unit": "cm"
       },
       "personal_item": {
-        "height": 43.0,
-        "width": 25.0,
-        "depth": 22.0,
+        "height": 43,
+        "width": 25,
+        "depth": 22,
         "unit": "cm"
       },
       "notes": "Published as 22 × 14 × 9 in including wheels and handles. No weight limit. Basic Economy on most domestic routes gets a personal item only.",
@@ -1181,16 +1180,16 @@
       "name": "Virgin Atlantic",
       "region": "Europe",
       "dimensions": {
-        "height": 56.0,
-        "width": 36.0,
-        "depth": 23.0,
+        "height": 56,
+        "width": 36,
+        "depth": 23,
         "unit": "cm"
       },
       "weight_limit_kg": 10,
       "personal_item": {
-        "height": 40.0,
-        "width": 30.0,
-        "depth": 15.0,
+        "height": 40,
+        "width": 30,
+        "depth": 15,
         "unit": "cm"
       },
       "notes": "10 kg in economy and premium; Upper Class gets two bags at 16 kg combined. A free underseat item comes with every fare.",
@@ -1202,16 +1201,16 @@
       "name": "Virgin Australia",
       "region": "Asia-Pacific",
       "dimensions": {
-        "height": 56.0,
-        "width": 36.0,
-        "depth": 23.0,
+        "height": 56,
+        "width": 36,
+        "depth": 23,
         "unit": "cm"
       },
       "weight_limit_kg": 8,
       "personal_item": {
-        "height": 45.0,
-        "width": 33.0,
-        "depth": 20.0,
+        "height": 45,
+        "width": 33,
+        "depth": 20,
         "unit": "cm"
       },
       "notes": "Since Feb 2026, economy gets one 56×36×23 cm bag at 8 kg (a two-smaller-bags option remains for business and top-tier flyers).",
@@ -1223,16 +1222,16 @@
       "name": "Viva Aerobus",
       "region": "Latin America & Caribbean",
       "dimensions": {
-        "height": 55.0,
-        "width": 40.0,
-        "depth": 25.0,
+        "height": 55,
+        "width": 40,
+        "depth": 25,
         "unit": "cm"
       },
       "weight_limit_kg": 10,
       "personal_item": {
-        "height": 45.0,
-        "width": 35.0,
-        "depth": 20.0,
+        "height": 45,
+        "width": 35,
+        "depth": 20,
         "unit": "cm"
       },
       "notes": "The lowest Zero fare includes only the personal item — the full carry-on needs a higher fare or an added fee.",
@@ -1244,16 +1243,16 @@
       "name": "Volaris",
       "region": "Latin America & Caribbean",
       "dimensions": {
-        "height": 55.0,
-        "width": 40.0,
-        "depth": 25.0,
+        "height": 55,
+        "width": 40,
+        "depth": 25,
         "unit": "cm"
       },
       "weight_limit_kg": 20,
       "personal_item": {
-        "height": 45.0,
-        "width": 35.0,
-        "depth": 20.0,
+        "height": 45,
+        "width": 35,
+        "depth": 20,
         "unit": "cm"
       },
       "notes": "On Zero/Básica fares only the personal item is free — the carry-on costs extra unless you book the Plus fare.",
@@ -1265,16 +1264,16 @@
       "name": "Vueling",
       "region": "Europe",
       "dimensions": {
-        "height": 55.0,
-        "width": 40.0,
-        "depth": 20.0,
+        "height": 55,
+        "width": 40,
+        "depth": 20,
         "unit": "cm"
       },
       "weight_limit_kg": 10,
       "personal_item": {
-        "height": 40.0,
-        "width": 30.0,
-        "depth": 20.0,
+        "height": 40,
+        "width": 30,
+        "depth": 20,
         "unit": "cm"
       },
       "notes": "The cheapest Fly Light fare only includes the small underseat bag — this cabin bag costs extra or comes with higher fares.",
@@ -1286,15 +1285,15 @@
       "name": "WestJet",
       "region": "North America",
       "dimensions": {
-        "height": 56.0,
-        "width": 36.0,
-        "depth": 23.0,
+        "height": 56,
+        "width": 36,
+        "depth": 23,
         "unit": "cm"
       },
       "personal_item": {
-        "height": 41.0,
-        "width": 33.0,
-        "depth": 15.0,
+        "height": 41,
+        "width": 33,
+        "depth": 15,
         "unit": "cm"
       },
       "notes": "No weight limit — you just need to lift it into the bin yourself. UltraBasic fares only include a personal item (no carry-on) except on Europe/Asia routes.",
@@ -1306,16 +1305,16 @@
       "name": "Wizz Air",
       "region": "Europe",
       "dimensions": {
-        "height": 55.0,
-        "width": 40.0,
-        "depth": 23.0,
+        "height": 55,
+        "width": 40,
+        "depth": 23,
         "unit": "cm"
       },
       "weight_limit_kg": 10,
       "personal_item": {
-        "height": 40.0,
-        "width": 30.0,
-        "depth": 20.0,
+        "height": 40,
+        "width": 30,
+        "depth": 20,
         "unit": "cm"
       },
       "notes": "The trolley bag is only free with WIZZ Priority — the free allowance on every fare is the underseat bag (40×30×20 cm). Wheels and handles get up to 5 cm of grace.",
@@ -1327,16 +1326,16 @@
       "name": "ZIPAIR",
       "region": "Asia-Pacific",
       "dimensions": {
-        "height": 55.0,
-        "width": 40.0,
-        "depth": 25.0,
+        "height": 55,
+        "width": 40,
+        "depth": 25,
         "unit": "cm"
       },
       "weight_limit_kg": 7,
       "personal_item": {
-        "height": 45.0,
-        "width": 35.0,
-        "depth": 25.0,
+        "height": 45,
+        "width": 35,
+        "depth": 25,
         "unit": "cm"
       },
       "notes": "Two cabin pieces allowed with a combined 7 kg free limit — you can pre-pay to raise it to 15 kg.",
