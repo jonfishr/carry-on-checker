@@ -1,8 +1,9 @@
 {
   "luggage": [
     {
-      "id": "antler-cabin-suitcase-",
+      "id": "antler-cabin-suitcase",
       "name": "Antler Cabin Suitcase",
+      "category": "hardside",
       "dimensions": {
         "height": 55.0,
         "width": 40.0,
@@ -12,8 +13,9 @@
       "notes": "Lightweight and minimalist, good maneuverability"
     },
     {
-      "id": "away-carry-on-",
+      "id": "away-carry-on",
       "name": "AWAY Carry-On",
+      "category": "hardside",
       "dimensions": {
         "height": 55.0,
         "width": 36.7,
@@ -25,6 +27,7 @@
     {
       "id": "beis-small-carry-on",
       "name": "BEIS Small Carry-On",
+      "category": "hardside",
       "dimensions": {
         "height": 53.0,
         "width": 33.0,
@@ -36,6 +39,7 @@
     {
       "id": "july-carry-on-light-expandable",
       "name": "July Carry On Light Expandable",
+      "category": "hardside",
       "dimensions": {
         "height": 54.0,
         "width": 36.0,
@@ -47,6 +51,7 @@
     {
       "id": "july-carry-on-essential",
       "name": "July Carry-On Essential",
+      "category": "hardside",
       "dimensions": {
         "height": 55.0,
         "width": 38.5,
@@ -58,6 +63,7 @@
     {
       "id": "monos-carry-on",
       "name": "Monos Carry-On",
+      "category": "hardside",
       "dimensions": {
         "height": 55.88,
         "width": 35.56,
@@ -69,17 +75,20 @@
     {
       "id": "antler-soft-stripe-20",
       "name": "Antler Soft Stripe 2.0",
+      "category": "softside",
       "dimensions": {
         "height": 55.0,
         "width": 35.0,
         "depth": 20.0,
         "unit": "cm"
       },
+      "weight_kg": 1.9,
       "notes": "4.1 lb (1.9kg)"
     },
     {
       "id": "away-softside-carry-on",
       "name": "AWAY Softside Carry-on",
+      "category": "softside",
       "dimensions": {
         "height": 55.5,
         "width": 38.0,
@@ -91,28 +100,32 @@
     {
       "id": "cotopaxi-allpa-35l-backpack",
       "name": "Cotopaxi Allpa 35L Backpack",
+      "category": "softside",
       "dimensions": {
         "height": 56.0,
         "width": 30.0,
         "depth": 25.0,
         "unit": "cm"
       },
+      "weight_kg": 1.33,
       "notes": "3 lb (1.33kg)"
     },
     {
-      "id": "bric's-x-travel-spinner",
+      "id": "brics-x-travel-spinner",
       "name": "Bric's X-Travel Spinner",
+      "category": "softside",
       "dimensions": {
         "height": 53.0,
         "width": 33.0,
         "depth": 23.0,
         "unit": "cm"
       },
-      "notes": "One of my all-time 'go-tos' "
+      "notes": "One of my all-time 'go-tos'"
     },
     {
-      "id": "briggs-&-riley-global-20\"-carry-on-",
+      "id": "briggs-riley-global-20-carry-on",
       "name": "Briggs & Riley Global 20\" Carry-on",
+      "category": "softside",
       "dimensions": {
         "height": 53.3,
         "width": 38.1,
@@ -122,8 +135,9 @@
       "notes": "An investment, but one of the highest-rated brands in the luggage world"
     },
     {
-      "id": "travelpro-maxlite-5-softside-19\"-4-wheel",
+      "id": "travelpro-maxlite-5-softside-19-4-wheel",
       "name": "Travelpro Maxlite 5 Softside 19\" 4-wheel",
+      "category": "softside",
       "dimensions": {
         "height": 55.2,
         "width": 40.0,
@@ -133,8 +147,9 @@
       "notes": "Trusty brand, good durability & lots of pockets"
     },
     {
-      "id": "travelpro-maxlite-5-softside-20\"-2-wheel",
+      "id": "travelpro-maxlite-5-softside-20-2-wheel",
       "name": "Travelpro Maxlite 5 Softside 20\" 2-wheel",
+      "category": "softside",
       "dimensions": {
         "height": 55.2,
         "width": 40.0,
@@ -144,8 +159,9 @@
       "notes": "2-wheel has a litle more interior space than the 4 wheel"
     },
     {
-      "id": "amazon-basics-21\"",
+      "id": "amazon-basics-21",
       "name": "Amazon Basics 21\"",
+      "category": "value",
       "dimensions": {
         "height": 55.0,
         "width": 37.5,
@@ -157,28 +173,31 @@
     {
       "id": "bagsmart-blast-43l-roller-backpack",
       "name": "Bagsmart Blast 43L Roller Backpack",
+      "category": "value",
       "dimensions": {
         "height": 55.0,
         "width": 35.0,
         "depth": 23.0,
         "unit": "cm"
       },
-      "notes": "Roller bag & backpack all-in-one for ultimate flexibility "
+      "notes": "Roller bag & backpack all-in-one for ultimate flexibility"
     },
     {
       "id": "hanke-20-inch-top-opening",
       "name": "Hanke 20 Inch Top-Opening",
+      "category": "value",
       "dimensions": {
         "height": 55.88,
         "width": 37.0,
         "depth": 24.0,
         "unit": "cm"
       },
-      "notes": "A rare hardshell that is 'top-open' design "
+      "notes": "A rare hardshell that is 'top-open' design"
     },
     {
       "id": "quince-small-carry-on-suitcase",
       "name": "Quince Small Carry-On Suitcase",
+      "category": "value",
       "dimensions": {
         "height": 55.88,
         "width": 36.5,

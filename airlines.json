@@ -3,6 +3,7 @@
     {
       "id": "aegean",
       "name": "Aegean",
+      "region": "Europe",
       "dimensions": {
         "height": 56.0,
         "width": 45.0,
@@ -11,8 +12,9 @@
       }
     },
     {
-      "id": "aer-ling",
-      "name": "Aer Ling",
+      "id": "aer-lingus",
+      "name": "Aer Lingus",
+      "region": "Europe",
       "dimensions": {
         "height": 55.0,
         "width": 40.0,
@@ -23,6 +25,7 @@
     {
       "id": "aeromexico",
       "name": "Aeromexico",
+      "region": "Latin America & Caribbean",
       "dimensions": {
         "height": 55.0,
         "width": 40.0,
@@ -33,6 +36,7 @@
     {
       "id": "air-canada",
       "name": "Air Canada",
+      "region": "North America",
       "dimensions": {
         "height": 55.0,
         "width": 40.0,
@@ -43,6 +47,7 @@
     {
       "id": "air-china",
       "name": "Air China",
+      "region": "Asia-Pacific",
       "dimensions": {
         "height": 55.0,
         "width": 40.0,
@@ -53,6 +58,7 @@
     {
       "id": "air-france",
       "name": "Air France",
+      "region": "Europe",
       "dimensions": {
         "height": 55.0,
         "width": 35.0,
@@ -63,6 +69,7 @@
     {
       "id": "air-transat",
       "name": "Air Transat",
+      "region": "North America",
       "dimensions": {
         "height": 55.0,
         "width": 40.0,
@@ -72,7 +79,8 @@
     },
     {
       "id": "airbaltic",
-      "name": "Airbaltic",
+      "name": "airBaltic",
+      "region": "Europe",
       "dimensions": {
         "height": 55.0,
         "width": 40.0,
@@ -83,6 +91,7 @@
     {
       "id": "alaska",
       "name": "Alaska",
+      "region": "North America",
       "dimensions": {
         "height": 56.0,
         "width": 36.0,
@@ -93,6 +102,7 @@
     {
       "id": "allegiant",
       "name": "Allegiant",
+      "region": "North America",
       "dimensions": {
         "height": 55.0,
         "width": 40.0,
@@ -103,6 +113,7 @@
     {
       "id": "american",
       "name": "American",
+      "region": "North America",
       "dimensions": {
         "height": 56.0,
         "width": 36.0,
@@ -113,6 +124,7 @@
     {
       "id": "ana",
       "name": "ANA",
+      "region": "Asia-Pacific",
       "dimensions": {
         "height": 55.0,
         "width": 40.0,
@@ -123,6 +135,7 @@
     {
       "id": "austrian",
       "name": "Austrian",
+      "region": "Europe",
       "dimensions": {
         "height": 55.0,
         "width": 40.0,
@@ -133,6 +146,7 @@
     {
       "id": "avianca",
       "name": "Avianca",
+      "region": "Latin America & Caribbean",
       "dimensions": {
         "height": 55.0,
         "width": 35.0,
@@ -143,6 +157,7 @@
     {
       "id": "azores",
       "name": "Azores",
+      "region": "Europe",
       "dimensions": {
         "height": 55.0,
         "width": 40.0,
@@ -153,6 +168,7 @@
     {
       "id": "breeze-airways",
       "name": "Breeze Airways",
+      "region": "North America",
       "dimensions": {
         "height": 56.0,
         "width": 36.0,
@@ -163,6 +179,7 @@
     {
       "id": "british-airways",
       "name": "British Airways",
+      "region": "Europe",
       "dimensions": {
         "height": 56.0,
         "width": 45.0,
@@ -173,6 +190,7 @@
     {
       "id": "brussels",
       "name": "Brussels",
+      "region": "Europe",
       "dimensions": {
         "height": 55.0,
         "width": 40.0,
@@ -183,6 +201,7 @@
     {
       "id": "caribbean",
       "name": "Caribbean",
+      "region": "Latin America & Caribbean",
       "dimensions": {
         "height": 56.0,
         "width": 35.0,
@@ -193,6 +212,7 @@
     {
       "id": "cathay-pacific",
       "name": "Cathay Pacific",
+      "region": "Asia-Pacific",
       "dimensions": {
         "height": 56.0,
         "width": 36.0,
@@ -203,6 +223,7 @@
     {
       "id": "china-airlines",
       "name": "China Airlines",
+      "region": "Asia-Pacific",
       "dimensions": {
         "height": 56.0,
         "width": 36.0,
@@ -213,6 +234,7 @@
     {
       "id": "condor",
       "name": "Condor",
+      "region": "Europe",
       "dimensions": {
         "height": 55.0,
         "width": 40.0,
@@ -223,6 +245,7 @@
     {
       "id": "copa",
       "name": "Copa",
+      "region": "Latin America & Caribbean",
       "dimensions": {
         "height": 55.0,
         "width": 35.0,
@@ -233,6 +256,7 @@
     {
       "id": "delta",
       "name": "Delta",
+      "region": "North America",
       "dimensions": {
         "height": 56.0,
         "width": 36.0,
@@ -242,7 +266,8 @@
     },
     {
       "id": "easyjet",
-      "name": "Easyjet",
+      "name": "easyJet",
+      "region": "Europe",
       "dimensions": {
         "height": 56.0,
         "width": 45.0,
@@ -253,6 +278,7 @@
     {
       "id": "emirates",
       "name": "Emirates",
+      "region": "Middle East & Africa",
       "dimensions": {
         "height": 55.0,
         "width": 38.0,
@@ -263,6 +289,7 @@
     {
       "id": "etihad-airways",
       "name": "Etihad Airways",
+      "region": "Middle East & Africa",
       "dimensions": {
         "height": 56.0,
         "width": 36.0,
@@ -272,7 +299,8 @@
     },
     {
       "id": "eva",
-      "name": "EVA",
+      "name": "EVA Air",
+      "region": "Asia-Pacific",
       "dimensions": {
         "height": 56.0,
         "width": 36.0,
@@ -282,7 +310,8 @@
     },
     {
       "id": "fiji",
-      "name": "FIJI",
+      "name": "Fiji Airways",
+      "region": "Asia-Pacific",
       "dimensions": {
         "height": 55.0,
         "width": 40.0,
@@ -293,6 +322,7 @@
     {
       "id": "finnair",
       "name": "Finnair",
+      "region": "Europe",
       "dimensions": {
         "height": 55.0,
         "width": 40.0,
@@ -303,6 +333,7 @@
     {
       "id": "flair",
       "name": "Flair",
+      "region": "North America",
       "dimensions": {
         "height": 55.0,
         "width": 40.0,
@@ -313,6 +344,7 @@
     {
       "id": "frontier",
       "name": "Frontier",
+      "region": "North America",
       "dimensions": {
         "height": 61.0,
         "width": 40.6,
@@ -323,6 +355,7 @@
     {
       "id": "hawaiian",
       "name": "Hawaiian",
+      "region": "North America",
       "dimensions": {
         "height": 56.0,
         "width": 36.0,
@@ -333,6 +366,7 @@
     {
       "id": "iberia",
       "name": "Iberia",
+      "region": "Europe",
       "dimensions": {
         "height": 56.0,
         "width": 40.0,
@@ -343,6 +377,7 @@
     {
       "id": "icelandair",
       "name": "Icelandair",
+      "region": "Europe",
       "dimensions": {
         "height": 55.0,
         "width": 40.0,
@@ -353,6 +388,7 @@
     {
       "id": "ita-airways",
       "name": "ITA Airways",
+      "region": "Europe",
       "dimensions": {
         "height": 55.0,
         "width": 35.0,
@@ -361,18 +397,9 @@
       }
     },
     {
-      "id": "jal",
-      "name": "JAL",
-      "dimensions": {
-        "height": 55.0,
-        "width": 40.0,
-        "depth": 25.0,
-        "unit": "cm"
-      }
-    },
-    {
       "id": "japan-airlines",
       "name": "Japan Airlines",
+      "region": "Asia-Pacific",
       "dimensions": {
         "height": 55.0,
         "width": 40.0,
@@ -382,7 +409,8 @@
     },
     {
       "id": "jetblue",
-      "name": "Jetblue",
+      "name": "JetBlue",
+      "region": "North America",
       "dimensions": {
         "height": 56.0,
         "width": 36.0,
@@ -393,6 +421,7 @@
     {
       "id": "klm",
       "name": "KLM",
+      "region": "Europe",
       "dimensions": {
         "height": 55.0,
         "width": 35.0,
@@ -403,6 +432,7 @@
     {
       "id": "korean-air",
       "name": "Korean Air",
+      "region": "Asia-Pacific",
       "dimensions": {
         "height": 55.0,
         "width": 40.0,
@@ -413,6 +443,7 @@
     {
       "id": "la-compagnie",
       "name": "La Compagnie",
+      "region": "Europe",
       "dimensions": {
         "height": 55.0,
         "width": 35.0,
@@ -423,6 +454,7 @@
     {
       "id": "latam",
       "name": "LATAM",
+      "region": "Latin America & Caribbean",
       "dimensions": {
         "height": 55.0,
         "width": 35.0,
@@ -433,6 +465,7 @@
     {
       "id": "level",
       "name": "LEVEL",
+      "region": "Europe",
       "dimensions": {
         "height": 56.0,
         "width": 40.0,
@@ -443,6 +476,7 @@
     {
       "id": "lot",
       "name": "LOT",
+      "region": "Europe",
       "dimensions": {
         "height": 55.0,
         "width": 40.0,
@@ -453,6 +487,7 @@
     {
       "id": "lufthansa",
       "name": "Lufthansa",
+      "region": "Europe",
       "dimensions": {
         "height": 55.0,
         "width": 40.0,
@@ -463,6 +498,7 @@
     {
       "id": "norse",
       "name": "Norse",
+      "region": "Europe",
       "dimensions": {
         "height": 56.0,
         "width": 45.0,
@@ -473,6 +509,7 @@
     {
       "id": "norwegian",
       "name": "Norwegian",
+      "region": "Europe",
       "dimensions": {
         "height": 55.0,
         "width": 40.0,
@@ -483,6 +520,7 @@
     {
       "id": "philippine-airlines",
       "name": "Philippine Airlines",
+      "region": "Asia-Pacific",
       "dimensions": {
         "height": 56.0,
         "width": 36.0,
@@ -493,6 +531,7 @@
     {
       "id": "play",
       "name": "PLAY",
+      "region": "Europe",
       "dimensions": {
         "height": 56.0,
         "width": 45.0,
@@ -503,6 +542,7 @@
     {
       "id": "porter",
       "name": "Porter",
+      "region": "North America",
       "dimensions": {
         "height": 55.0,
         "width": 40.0,
@@ -513,6 +553,7 @@
     {
       "id": "qantas",
       "name": "Qantas",
+      "region": "Asia-Pacific",
       "dimensions": {
         "height": 55.0,
         "width": 35.0,
@@ -523,6 +564,7 @@
     {
       "id": "qatar",
       "name": "Qatar",
+      "region": "Middle East & Africa",
       "dimensions": {
         "height": 50.0,
         "width": 37.0,
@@ -533,6 +575,7 @@
     {
       "id": "royal-air-maroc",
       "name": "Royal Air Maroc",
+      "region": "Middle East & Africa",
       "dimensions": {
         "height": 55.0,
         "width": 40.0,
@@ -543,6 +586,7 @@
     {
       "id": "ryanair",
       "name": "Ryanair",
+      "region": "Europe",
       "dimensions": {
         "height": 55.0,
         "width": 40.0,
@@ -553,6 +597,7 @@
     {
       "id": "sas",
       "name": "SAS",
+      "region": "Europe",
       "dimensions": {
         "height": 55.0,
         "width": 40.0,
@@ -563,6 +608,7 @@
     {
       "id": "singapore-airlines",
       "name": "Singapore Airlines",
+      "region": "Asia-Pacific",
       "dimensions": {
         "height": 55.0,
         "width": 35.0,
@@ -573,6 +619,7 @@
     {
       "id": "southwest",
       "name": "Southwest",
+      "region": "North America",
       "dimensions": {
         "height": 61.0,
         "width": 40.6,
@@ -583,6 +630,7 @@
     {
       "id": "spirit",
       "name": "Spirit",
+      "region": "North America",
       "dimensions": {
         "height": 56.0,
         "width": 46.0,
@@ -593,6 +641,7 @@
     {
       "id": "sun-country",
       "name": "Sun Country",
+      "region": "North America",
       "dimensions": {
         "height": 61.0,
         "width": 40.64,
@@ -603,6 +652,7 @@
     {
       "id": "sunwing",
       "name": "Sunwing",
+      "region": "North America",
       "dimensions": {
         "height": 51.0,
         "width": 40.0,
@@ -613,6 +663,7 @@
     {
       "id": "swiss",
       "name": "SWISS",
+      "region": "Europe",
       "dimensions": {
         "height": 55.0,
         "width": 40.0,
@@ -623,6 +674,7 @@
     {
       "id": "tap",
       "name": "TAP",
+      "region": "Europe",
       "dimensions": {
         "height": 55.0,
         "width": 40.0,
@@ -633,6 +685,7 @@
     {
       "id": "tui",
       "name": "TUI",
+      "region": "Europe",
       "dimensions": {
         "height": 55.0,
         "width": 40.0,
@@ -643,6 +696,7 @@
     {
       "id": "turkish-airlines",
       "name": "Turkish Airlines",
+      "region": "Europe",
       "dimensions": {
         "height": 55.0,
         "width": 40.0,
@@ -653,6 +707,7 @@
     {
       "id": "united",
       "name": "United",
+      "region": "North America",
       "dimensions": {
         "height": 56.0,
         "width": 36.0,
@@ -663,6 +718,7 @@
     {
       "id": "virgin-atlantic",
       "name": "Virgin Atlantic",
+      "region": "Europe",
       "dimensions": {
         "height": 56.0,
         "width": 36.0,
@@ -673,6 +729,7 @@
     {
       "id": "virgin-australia",
       "name": "Virgin Australia",
+      "region": "Asia-Pacific",
       "dimensions": {
         "height": 56.0,
         "width": 36.0,
@@ -683,6 +740,7 @@
     {
       "id": "viva-aerobus",
       "name": "Viva Aerobus",
+      "region": "Latin America & Caribbean",
       "dimensions": {
         "height": 55.0,
         "width": 40.0,
@@ -693,6 +751,7 @@
     {
       "id": "volaris",
       "name": "Volaris",
+      "region": "Latin America & Caribbean",
       "dimensions": {
         "height": 55.0,
         "width": 40.0,
@@ -703,6 +762,7 @@
     {
       "id": "vueling",
       "name": "Vueling",
+      "region": "Europe",
       "dimensions": {
         "height": 55.0,
         "width": 40.0,
@@ -711,8 +771,9 @@
       }
     },
     {
-      "id": "westjet-",
-      "name": "WestJet ",
+      "id": "westjet",
+      "name": "WestJet",
+      "region": "North America",
       "dimensions": {
         "height": 56.0,
         "width": 36.0,
@@ -723,6 +784,7 @@
     {
       "id": "wizz-air",
       "name": "Wizz Air",
+      "region": "Europe",
       "dimensions": {
         "height": 55.0,
         "width": 40.0,
@@ -733,6 +795,7 @@
     {
       "id": "zipair",
       "name": "ZIPAIR",
+      "region": "Asia-Pacific",
       "dimensions": {
         "height": 55.0,
         "width": 40.0,
