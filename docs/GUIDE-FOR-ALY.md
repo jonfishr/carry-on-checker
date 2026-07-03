@@ -72,9 +72,9 @@ price of one coffee per year, and only if you want it.
    ✅ / ⚠️ / ❌ groups, with a note on *which* dimension is over and by how
    much. Each airline links to its official baggage page and shows when the
    number was last checked.
-2. **Recommended Bags** — your tested bags with your notes, grouped the
-   way you grouped them. "Check This Bag" pops its measurements into the
-   checker.
+2. **Bag Library** — popular carry-ons grouped by type, with your tested
+   bags starred ⭐ as *Aly's picks* and shown first. "Check This Bag" pops
+   a bag's measurements into the checker.
 3. **How It Works** — explains the close-call rule and the measurement
    hierarchy in your voice, plus your "plan with confidence — not add
    stress" disclaimer.
