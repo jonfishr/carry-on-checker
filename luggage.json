@@ -10,7 +10,8 @@
         "depth": 25,
         "unit": "cm"
       },
-      "notes": "I haven't tested the quality, but reviews are decent and price is right!"
+      "notes": "I haven't tested the quality, but reviews are decent and price is right!",
+      "product_url": "https://www.amazon.com/Amazon-Basics-Expandable-Hardside-Scratch-Resistant/dp/B071VG5N9D"
     },
     {
       "id": "antler-cabin-suitcase",
@@ -22,7 +23,8 @@
         "depth": 20,
         "unit": "cm"
       },
-      "notes": "Lightweight and minimalist, good maneuverability"
+      "notes": "Lightweight and minimalist, good maneuverability",
+      "product_url": "https://www.antler.co.uk/products/clifton-cabin-suitcase-black"
     },
     {
       "id": "antler-soft-stripe-2-0",
@@ -35,7 +37,22 @@
         "unit": "cm"
       },
       "weight_kg": 1.9,
-      "notes": "4.1 lb (1.9kg)"
+      "notes": "4.1 lb (1.9kg)",
+      "product_url": "https://www.antler.co.uk/products/lightest-cabin-suitcase-black-soft-stripe-2"
+    },
+    {
+      "id": "away-bigger-carry-on",
+      "name": "AWAY Bigger Carry-On",
+      "category": "hardside",
+      "dimensions": {
+        "height": 57.66,
+        "width": 39.12,
+        "depth": 24.38,
+        "unit": "cm"
+      },
+      "weight_kg": 3.58,
+      "notes": "Roomier 49L sibling of the AWAY Carry-On — taller and deeper, so expect more close calls",
+      "product_url": "https://www.awaytravel.com/suitcases/bigger-carry-on"
     },
     {
       "id": "away-carry-on",
@@ -47,7 +64,8 @@
         "depth": 23,
         "unit": "cm"
       },
-      "notes": "A solid choice, especially for North American flights"
+      "notes": "A solid choice, especially for North American flights",
+      "product_url": "https://www.awaytravel.com/products/carry-on-jet-black"
     },
     {
       "id": "away-softside-carry-on",
@@ -59,7 +77,8 @@
         "depth": 23,
         "unit": "cm"
       },
-      "notes": "I loved using this in Japan"
+      "notes": "I loved using this in Japan",
+      "product_url": "https://www.awaytravel.com/products/softside-carry-on-jet-black"
     },
     {
       "id": "bagsmart-blast-43l-roller-backpack",
@@ -71,7 +90,22 @@
         "depth": 23,
         "unit": "cm"
       },
-      "notes": "Roller bag & backpack all-in-one for ultimate flexibility"
+      "notes": "Roller bag & backpack all-in-one for ultimate flexibility",
+      "product_url": "https://www.bagsmart.com/products/blast-roller-backpack"
+    },
+    {
+      "id": "beis-carry-on-roller",
+      "name": "BEIS Carry-On Roller",
+      "category": "hardside",
+      "dimensions": {
+        "height": 57.91,
+        "width": 39.88,
+        "depth": 24.89,
+        "unit": "cm"
+      },
+      "weight_kg": 3.79,
+      "notes": "Expandable — unzips to grow about 2 in deeper",
+      "product_url": "https://beistravel.com/products/the-carry-on-roller-in-black"
     },
     {
       "id": "beis-small-carry-on",
@@ -83,7 +117,22 @@
         "depth": 22,
         "unit": "cm"
       },
-      "notes": "One of the 'shortest' on my list, holds a surprising amount"
+      "notes": "One of the 'shortest' on my list, holds a surprising amount",
+      "product_url": "https://beistravel.com/products/the-small-carry-on-roller-in-black"
+    },
+    {
+      "id": "brics-bellagio-21-carry-on",
+      "name": "Bric's Bellagio 21\" Carry-On",
+      "category": "luxury",
+      "dimensions": {
+        "height": 53.34,
+        "width": 38.1,
+        "depth": 22.86,
+        "unit": "cm"
+      },
+      "weight_kg": 3.2,
+      "notes": "Polycarbonate trunk with Tuscan leather trim; ~$700",
+      "product_url": "https://bricstore.com/products/bellagio-21-spinner"
     },
     {
       "id": "brics-x-travel-spinner",
@@ -95,7 +144,22 @@
         "depth": 23,
         "unit": "cm"
       },
-      "notes": "One of my all-time 'go-tos'"
+      "notes": "One of my all-time 'go-tos'",
+      "product_url": "https://bricstore.com/products/x-travel-spinner-carry-on"
+    },
+    {
+      "id": "briggs-riley-baseline-essential-22-carry-on",
+      "name": "Briggs & Riley Baseline Essential 22\" Carry-On",
+      "category": "softside",
+      "dimensions": {
+        "height": 55.88,
+        "width": 35.56,
+        "depth": 22.86,
+        "unit": "cm"
+      },
+      "weight_kg": 4.4,
+      "notes": "Compression-expansion system; lifetime warranty even covers airline damage",
+      "product_url": "https://www.briggs-riley.com/products/essential-2-wheel-carry-on"
     },
     {
       "id": "briggs-riley-global-20-carry-on",
@@ -107,7 +171,36 @@
         "depth": 22.9,
         "unit": "cm"
       },
-      "notes": "An investment, but one of the highest-rated brands in the luggage world"
+      "notes": "An investment, but one of the highest-rated brands in the luggage world",
+      "product_url": "https://www.briggs-riley.com/products/global-carry-on-spinner"
+    },
+    {
+      "id": "calpak-ambeur-carry-on",
+      "name": "Calpak Ambeur Carry-On",
+      "category": "hardside",
+      "dimensions": {
+        "height": 53.34,
+        "width": 34.93,
+        "depth": 22.86,
+        "unit": "cm"
+      },
+      "weight_kg": 3.45,
+      "notes": "Metallic-finish 39L hardside",
+      "product_url": "https://www.calpaktravel.com/products/ambeur-carry-on-luggage/gold"
+    },
+    {
+      "id": "carl-friedrik-the-carry-on",
+      "name": "Carl Friedrik The Carry-On",
+      "category": "luxury",
+      "dimensions": {
+        "height": 56,
+        "width": 37,
+        "depth": 23,
+        "unit": "cm"
+      },
+      "weight_kg": 4.3,
+      "notes": "Polycarbonate with aluminium frame and leather trim; ~$700",
+      "product_url": "https://www.carlfriedrik.com/products/the-carry-on-suitcase"
     },
     {
       "id": "cotopaxi-allpa-35l-backpack",
@@ -120,7 +213,50 @@
         "unit": "cm"
       },
       "weight_kg": 1.33,
-      "notes": "3 lb (1.33kg)"
+      "notes": "3 lb (1.33kg)",
+      "product_url": "https://www.cotopaxi.com/products/allpa-35l-travel-pack-4"
+    },
+    {
+      "id": "delsey-helium-dlx-21-expandable-carry-on",
+      "name": "Delsey Helium DLX 21\" Expandable Carry-On",
+      "category": "softside",
+      "dimensions": {
+        "height": 59.69,
+        "width": 36.2,
+        "depth": 25.4,
+        "unit": "cm"
+      },
+      "weight_kg": 3.05,
+      "notes": "40L expanding to 49L — budget-friendly softside standout",
+      "product_url": "https://us.delsey.com/products/402397805-helium-dlx-21inch-expandable-carry-on-spinner"
+    },
+    {
+      "id": "globe-trotter-original-carry-on",
+      "name": "Globe-Trotter Original Carry-On",
+      "category": "luxury",
+      "dimensions": {
+        "height": 56,
+        "width": 42,
+        "depth": 21,
+        "unit": "cm"
+      },
+      "weight_kg": 3.7,
+      "notes": "Handmade vulcanised fibreboard; 42 cm wide — over many airlines' 40 cm width limit; ~$2,000",
+      "product_url": "https://us.globe-trotter.com/products/original-4-wheels-carry-on-navy-black"
+    },
+    {
+      "id": "goyard-bourget-pm-trolley",
+      "name": "Goyard Bourget PM Trolley",
+      "category": "luxury",
+      "dimensions": {
+        "height": 50,
+        "width": 36,
+        "depth": 24,
+        "unit": "cm"
+      },
+      "weight_kg": 6.2,
+      "notes": "Goyardine canvas, boutique-only; 6.2 kg before you pack anything",
+      "product_url": "https://www.goyard.com/us_en/trolley-bourget-pm-3.html"
     },
     {
       "id": "hanke-20-inch-top-opening",
@@ -132,7 +268,22 @@
         "depth": 24,
         "unit": "cm"
       },
-      "notes": "A rare hardshell that is 'top-open' design"
+      "notes": "A rare hardshell that is 'top-open' design",
+      "product_url": "https://www.amazon.com/Hanke-Luggage-Suitcases-Suitcase-Lightweight/dp/B0BXL2RVPP"
+    },
+    {
+      "id": "july-carry-on",
+      "name": "July Carry-On",
+      "category": "hardside",
+      "dimensions": {
+        "height": 54.61,
+        "width": 38.1,
+        "depth": 21.59,
+        "unit": "cm"
+      },
+      "weight_kg": 3.36,
+      "notes": "July's flagship 42L hardside",
+      "product_url": "https://july.com/us/luggage/carry-on/"
     },
     {
       "id": "july-carry-on-essential",
@@ -144,7 +295,8 @@
         "depth": 21.5,
         "unit": "cm"
       },
-      "notes": "I haven't tried July luggage yet, but I've read many positive reviews"
+      "notes": "I haven't tried July luggage yet, but I've read many positive reviews",
+      "product_url": "https://july.com/us/luggage/carry-on-essentials/"
     },
     {
       "id": "july-carry-on-light-expandable",
@@ -156,7 +308,22 @@
         "depth": 22,
         "unit": "cm"
       },
-      "notes": "Choose this one if you need the most size but light weight"
+      "notes": "Choose this one if you need the most size but light weight",
+      "product_url": "https://july.com/us/luggage/carry-on-light-expandable/"
+    },
+    {
+      "id": "louis-vuitton-horizon-55",
+      "name": "Louis Vuitton Horizon 55",
+      "category": "luxury",
+      "dimensions": {
+        "height": 55,
+        "width": 38,
+        "depth": 21,
+        "unit": "cm"
+      },
+      "weight_kg": 3.2,
+      "notes": "Marc Newson design with a flat interior; ~$3,450",
+      "product_url": "https://us.louisvuitton.com/eng-us/products/horizon-55-monogram-eclipse-nvprod6440158v/M13771"
     },
     {
       "id": "monos-carry-on",
@@ -168,7 +335,78 @@
         "depth": 22.86,
         "unit": "cm"
       },
-      "notes": "I love my monos, has worked great all over Europe"
+      "notes": "I love my monos, has worked great all over Europe",
+      "product_url": "https://monos.com/products/carry-on"
+    },
+    {
+      "id": "monos-carry-on-pro",
+      "name": "Monos Carry-On Pro",
+      "category": "hardside",
+      "dimensions": {
+        "height": 55.88,
+        "width": 35.56,
+        "depth": 22.86,
+        "unit": "cm"
+      },
+      "weight_kg": 3.54,
+      "notes": "The Monos Carry-On with a front laptop compartment",
+      "product_url": "https://monos.com/products/carry-on-pro"
+    },
+    {
+      "id": "montblanc-my4810-cabin-trolley",
+      "name": "Montblanc MY4810 Cabin Trolley",
+      "category": "luxury",
+      "dimensions": {
+        "height": 55,
+        "width": 38,
+        "depth": 23,
+        "unit": "cm"
+      },
+      "weight_kg": 3.95,
+      "notes": "Polycarbonate with leather trim, 37L; ~$1,100",
+      "product_url": "https://www.montblanc.com/en-us/my4810-cabin-trolley-MB131957.html"
+    },
+    {
+      "id": "osprey-farpoint-40-travel-pack",
+      "name": "Osprey Farpoint 40 Travel Pack",
+      "category": "softside",
+      "dimensions": {
+        "height": 55,
+        "width": 35,
+        "depth": 23,
+        "unit": "cm"
+      },
+      "weight_kg": 1.58,
+      "notes": "Classic 40L travel backpack — no wheels, so nothing sticking out",
+      "product_url": "https://www.osprey.com/us/en/product/farpoint-40-FARPNT40.html"
+    },
+    {
+      "id": "paravel-aviator-carry-on",
+      "name": "Paravel Aviator Carry-On",
+      "category": "hardside",
+      "dimensions": {
+        "height": 55.1,
+        "width": 34.8,
+        "depth": 22.8,
+        "unit": "cm"
+      },
+      "weight_kg": 3.72,
+      "notes": "Carbon-neutral, made from recycled polycarbonate",
+      "product_url": "https://tourparavel.com/products/the-aviator-carry-on"
+    },
+    {
+      "id": "peak-design-travel-backpack-45l",
+      "name": "Peak Design Travel Backpack 45L",
+      "category": "softside",
+      "dimensions": {
+        "height": 55.88,
+        "width": 33.02,
+        "depth": 24.13,
+        "unit": "cm"
+      },
+      "weight_kg": 2.05,
+      "notes": "35L in carry-on mode; expands to 45L and ~28 cm deep — check before you expand",
+      "product_url": "https://www.peakdesign.com/products/travel-backpack"
     },
     {
       "id": "quince-small-carry-on-suitcase",
@@ -180,7 +418,64 @@
         "depth": 23,
         "unit": "cm"
       },
-      "notes": "A perfect 'dupe' of the AWAY hardshell (make sure you choose this size)"
+      "notes": "A perfect 'dupe' of the AWAY hardshell (make sure you choose this size)",
+      "product_url": "https://www.quince.com/unisex/small-carry-on-hard-shell-suitcase"
+    },
+    {
+      "id": "rimowa-essential-cabin",
+      "name": "Rimowa Essential Cabin",
+      "category": "luxury",
+      "dimensions": {
+        "height": 55,
+        "width": 39,
+        "depth": 23,
+        "unit": "cm"
+      },
+      "weight_kg": 3.2,
+      "notes": "Rimowa's polycarbonate cabin — lighter and less spendy than the aluminum Original; ~$950",
+      "product_url": "https://www.rimowa.com/us/en/luggage/colour/black/cabin/83253631.html"
+    },
+    {
+      "id": "rimowa-original-cabin",
+      "name": "Rimowa Original Cabin",
+      "category": "luxury",
+      "dimensions": {
+        "height": 55,
+        "width": 40,
+        "depth": 23,
+        "unit": "cm"
+      },
+      "weight_kg": 4.3,
+      "notes": "The aluminum icon; ~$1,550",
+      "product_url": "https://www.rimowa.com/us/en/luggage/colour/silver/cabin/92553004.html"
+    },
+    {
+      "id": "samsonite-freeform-carry-on-spinner",
+      "name": "Samsonite Freeform Carry-On Spinner",
+      "category": "hardside",
+      "dimensions": {
+        "height": 58.42,
+        "width": 38.1,
+        "depth": 25.4,
+        "unit": "cm"
+      },
+      "weight_kg": 2.95,
+      "notes": "Light for a hardside and budget-friendly — a recurring 'best value' pick",
+      "product_url": "https://shop.samsonite.com/luggage-carry-on-luggage/freeform-carry-on-spinner/78255XXXX.html"
+    },
+    {
+      "id": "solgaard-carry-on-closet-large",
+      "name": "Solgaard Carry-On Closet (Large)",
+      "category": "hardside",
+      "dimensions": {
+        "height": 57,
+        "width": 37,
+        "depth": 24,
+        "unit": "cm"
+      },
+      "weight_kg": 3.67,
+      "notes": "Built-in shelf system unpacks like a closet",
+      "product_url": "https://solgaard.co/products/carry-on-closet"
     },
     {
       "id": "travelpro-maxlite-5-softside-19-4-wheel",
@@ -192,7 +487,8 @@
         "depth": 19.6,
         "unit": "cm"
       },
-      "notes": "Trusty brand, good durability & lots of pockets"
+      "notes": "Trusty brand, good durability & lots of pockets",
+      "product_url": "https://travelpro.com/products/maxlite%C2%AE-5-international-expandable-carry-on-spinner"
     },
     {
       "id": "travelpro-maxlite-5-softside-20-2-wheel",
@@ -204,7 +500,50 @@
         "depth": 19.6,
         "unit": "cm"
       },
-      "notes": "2-wheel has a litle more interior space than the 4 wheel"
+      "notes": "2-wheel has a litle more interior space than the 4 wheel",
+      "product_url": "https://travelpro.com/products/maxlite%C2%AE-5-international-expandable-carry-on-rollaboard%C2%AE"
+    },
+    {
+      "id": "travelpro-platinum-elite-21-carry-on-spinner",
+      "name": "Travelpro Platinum Elite 21\" Carry-On Spinner",
+      "category": "softside",
+      "dimensions": {
+        "height": 59.69,
+        "width": 36.83,
+        "depth": 22.86,
+        "unit": "cm"
+      },
+      "weight_kg": 3.54,
+      "notes": "Wirecutter's top carry-on pick several years running; replaceable wheels",
+      "product_url": "https://travelpro.com/products/platinum-elite-21-expandable-carry-on-spinner"
+    },
+    {
+      "id": "tumi-19-degree-international-carry-on",
+      "name": "Tumi 19 Degree International Carry-On",
+      "category": "luxury",
+      "dimensions": {
+        "height": 55,
+        "width": 35.5,
+        "depth": 23,
+        "unit": "cm"
+      },
+      "weight_kg": 3.6,
+      "notes": "Sculpted polycarbonate; expands to ~28 cm deep — check before you expand; ~$800",
+      "product_url": "https://www.tumi.com/p/expandable-carry-on-01396831041/"
+    },
+    {
+      "id": "tumi-alpha-international-dual-access-carry-on",
+      "name": "Tumi Alpha International Dual Access Carry-On",
+      "category": "luxury",
+      "dimensions": {
+        "height": 56,
+        "width": 35.5,
+        "depth": 23,
+        "unit": "cm"
+      },
+      "weight_kg": 5.17,
+      "notes": "Ballistic nylon with front laptop access; heavy at 5.2 kg — mind airline weight limits; ~$1,100",
+      "product_url": "https://www.tumi.com/p/international-dual-access-4-wheeled-carry-on-01227481840/"
     }
   ]
 }

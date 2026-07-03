@@ -13,14 +13,14 @@ from pathlib import Path
 
 ROOT = Path(__file__).resolve().parent.parent
 
-CATEGORY_LABELS = {"hardside": "Hard-shell", "softside": "Soft-side", "value": "Value"}
+CATEGORY_LABELS = {"hardside": "Hard-shell", "softside": "Soft-side", "value": "Value", "luxury": "Luxury"}
 
 AIRLINE_FIELDS = [
     "Airline", "Region", "Height (cm)", "Width (cm)", "Depth (cm)",
     "Weight limit (kg)", "Personal item height (cm)", "Personal item width (cm)",
     "Personal item depth (cm)", "Notes", "Official source", "Last verified",
 ]
-LUGGAGE_FIELDS = ["Bag", "Category", "Height (cm)", "Width (cm)", "Depth (cm)", "Weight (kg)", "Notes"]
+LUGGAGE_FIELDS = ["Bag", "Category", "Height (cm)", "Width (cm)", "Depth (cm)", "Weight (kg)", "Notes", "Product link"]
 
 
 def _fmt(n):
@@ -67,6 +67,7 @@ def luggage_to_csv(data: dict) -> str:
             "Depth (cm)": _fmt(d.get("depth")),
             "Weight (kg)": _fmt(b.get("weight_kg")),
             "Notes": b.get("notes", ""),
+            "Product link": b.get("product_url", ""),
         })
     return buf.getvalue()
 
