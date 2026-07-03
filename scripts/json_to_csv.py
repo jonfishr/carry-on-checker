@@ -20,7 +20,7 @@ AIRLINE_FIELDS = [
     "Weight limit (kg)", "Personal item height (cm)", "Personal item width (cm)",
     "Personal item depth (cm)", "Notes", "Official source", "Last verified",
 ]
-LUGGAGE_FIELDS = ["Bag", "Category", "Height (cm)", "Width (cm)", "Depth (cm)", "Weight (kg)", "Notes", "Product link"]
+LUGGAGE_FIELDS = ["Bag", "Aly's pick", "Category", "Height (cm)", "Width (cm)", "Depth (cm)", "Weight (kg)", "Notes", "Product link"]
 
 
 def _fmt(n):
@@ -61,6 +61,7 @@ def luggage_to_csv(data: dict) -> str:
         d = b.get("dimensions", {})
         w.writerow({
             "Bag": b["name"],
+            "Aly's pick": "Yes" if b.get("recommended") else "",
             "Category": CATEGORY_LABELS.get(b.get("category"), b.get("category", "")),
             "Height (cm)": _fmt(d.get("height")),
             "Width (cm)": _fmt(d.get("width")),

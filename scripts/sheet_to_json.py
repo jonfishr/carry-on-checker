@@ -171,6 +171,12 @@ def parse_luggage_csv(text: str) -> dict:
         seen[bid] = line_no
 
         entry = {"id": bid, "name": name}
+        rec_val = row.get("Aly's pick", "")
+        rec_raw = rec_val.strip().lower().replace("⭐", "star")
+        if rec_raw in {"yes", "y", "true", "x", "star", "1"}:
+            entry["recommended"] = True
+        elif rec_raw not in {"", "no", "n", "false", "0"}:
+            errors.append(f"{name}: Aly's pick should be Yes or blank, got {rec_val!r}")
         cat_raw = row.get("Category", "").lower().replace("🧳", "").replace("🎒", "").replace("💸", "").replace("✨", "").strip()
         cat = CATEGORY_ALIASES.get(cat_raw)
         if not cat:

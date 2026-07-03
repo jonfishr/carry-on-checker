@@ -3,6 +3,7 @@
     {
       "id": "amazon-basics-21",
       "name": "Amazon Basics 21\"",
+      "recommended": true,
       "category": "value",
       "dimensions": {
         "height": 55,
@@ -16,6 +17,7 @@
     {
       "id": "antler-cabin-suitcase",
       "name": "Antler Cabin Suitcase",
+      "recommended": true,
       "category": "hardside",
       "dimensions": {
         "height": 55,
@@ -29,6 +31,7 @@
     {
       "id": "antler-soft-stripe-2-0",
       "name": "Antler Soft Stripe 2.0",
+      "recommended": true,
       "category": "softside",
       "dimensions": {
         "height": 55,
@@ -57,6 +60,7 @@
     {
       "id": "away-carry-on",
       "name": "AWAY Carry-On",
+      "recommended": true,
       "category": "hardside",
       "dimensions": {
         "height": 55,
@@ -70,6 +74,7 @@
     {
       "id": "away-softside-carry-on",
       "name": "AWAY Softside Carry-on",
+      "recommended": true,
       "category": "softside",
       "dimensions": {
         "height": 55.5,
@@ -83,6 +88,7 @@
     {
       "id": "bagsmart-blast-43l-roller-backpack",
       "name": "Bagsmart Blast 43L Roller Backpack",
+      "recommended": true,
       "category": "value",
       "dimensions": {
         "height": 55,
@@ -110,6 +116,7 @@
     {
       "id": "beis-small-carry-on",
       "name": "BEIS Small Carry-On",
+      "recommended": true,
       "category": "hardside",
       "dimensions": {
         "height": 53,
@@ -137,6 +144,7 @@
     {
       "id": "brics-x-travel-spinner",
       "name": "Bric's X-Travel Spinner",
+      "recommended": true,
       "category": "softside",
       "dimensions": {
         "height": 53,
@@ -164,6 +172,7 @@
     {
       "id": "briggs-riley-global-20-carry-on",
       "name": "Briggs & Riley Global 20\" Carry-on",
+      "recommended": true,
       "category": "softside",
       "dimensions": {
         "height": 53.3,
@@ -205,6 +214,7 @@
     {
       "id": "cotopaxi-allpa-35l-backpack",
       "name": "Cotopaxi Allpa 35L Backpack",
+      "recommended": true,
       "category": "softside",
       "dimensions": {
         "height": 56,
@@ -261,6 +271,7 @@
     {
       "id": "hanke-20-inch-top-opening",
       "name": "Hanke 20 Inch Top-Opening",
+      "recommended": true,
       "category": "value",
       "dimensions": {
         "height": 55.88,
@@ -288,6 +299,7 @@
     {
       "id": "july-carry-on-essential",
       "name": "July Carry-On Essential",
+      "recommended": true,
       "category": "hardside",
       "dimensions": {
         "height": 55,
@@ -301,6 +313,7 @@
     {
       "id": "july-carry-on-light-expandable",
       "name": "July Carry On Light Expandable",
+      "recommended": true,
       "category": "hardside",
       "dimensions": {
         "height": 54,
@@ -328,6 +341,7 @@
     {
       "id": "monos-carry-on",
       "name": "Monos Carry-On",
+      "recommended": true,
       "category": "hardside",
       "dimensions": {
         "height": 55.88,
@@ -411,6 +425,7 @@
     {
       "id": "quince-small-carry-on-suitcase",
       "name": "Quince Small Carry-On Suitcase",
+      "recommended": true,
       "category": "value",
       "dimensions": {
         "height": 55.88,
@@ -480,6 +495,7 @@
     {
       "id": "travelpro-maxlite-5-softside-19-4-wheel",
       "name": "Travelpro Maxlite 5 Softside 19\" 4-wheel",
+      "recommended": true,
       "category": "softside",
       "dimensions": {
         "height": 55.2,
@@ -493,6 +509,7 @@
     {
       "id": "travelpro-maxlite-5-softside-20-2-wheel",
       "name": "Travelpro Maxlite 5 Softside 20\" 2-wheel",
+      "recommended": true,
       "category": "softside",
       "dimensions": {
         "height": 55.2,
