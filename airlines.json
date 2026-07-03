@@ -298,7 +298,7 @@
       }
     },
     {
-      "id": "eva",
+      "id": "eva-air",
       "name": "EVA Air",
       "region": "Asia-Pacific",
       "dimensions": {
@@ -309,7 +309,7 @@
       }
     },
     {
-      "id": "fiji",
+      "id": "fiji-airways",
       "name": "Fiji Airways",
       "region": "Asia-Pacific",
       "dimensions": {

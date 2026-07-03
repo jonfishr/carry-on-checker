@@ -1,0 +1,87 @@
+name: Update data from Google Sheet
+
+on:
+  schedule:
+    - cron: "17 9 * * *"   # daily, 9:17 UTC
+  workflow_dispatch: {}
+
+permissions:
+  contents: write
+  issues: write
+
+jobs:
+  sync:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Check configuration
+        id: config
+        env:
+          AIRLINES_CSV_URL: ${{ vars.AIRLINES_CSV_URL }}
+          LUGGAGE_CSV_URL: ${{ vars.LUGGAGE_CSV_URL }}
+        run: |
+          if [ -z "$AIRLINES_CSV_URL" ] || [ -z "$LUGGAGE_CSV_URL" ]; then
+            echo "Sheet URLs not configured (repo variables AIRLINES_CSV_URL / LUGGAGE_CSV_URL). Skipping sync."
+            echo "configured=false" >> "$GITHUB_OUTPUT"
+          else
+            echo "configured=true" >> "$GITHUB_OUTPUT"
+          fi
+
+      - name: Convert sheet to JSON
+        id: convert
+        if: steps.config.outputs.configured == 'true'
+        env:
+          AIRLINES_CSV_URL: ${{ vars.AIRLINES_CSV_URL }}
+          LUGGAGE_CSV_URL: ${{ vars.LUGGAGE_CSV_URL }}
+        run: |
+          set +e
+          python3 scripts/sheet_to_json.py \
+            --airlines-csv "$AIRLINES_CSV_URL" \
+            --luggage-csv "$LUGGAGE_CSV_URL" 2> problems.txt
+          status=$?
+          set -e
+          if [ $status -ne 0 ]; then
+            echo "failed=true" >> "$GITHUB_OUTPUT"
+            echo "--- validation problems ---"
+            cat problems.txt
+          else
+            echo "failed=false" >> "$GITHUB_OUTPUT"
+            python3 scripts/embed_fallback.py
+            python3 scripts/json_to_csv.py
+            python3 -m unittest discover scripts
+          fi
+
+      - name: Open issue about invalid sheet data
+        if: steps.config.outputs.configured == 'true' && steps.convert.outputs.failed == 'true'
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          title="Sheet sync: the Google Sheet has a problem that needs a human"
+          body="The daily data sync could not update the site because the spreadsheet has at least one problem. **The site is unaffected — it keeps the previous data.**
+
+\`\`\`
+$(cat problems.txt)
+\`\`\`
+
+Fix the row(s) in the Google Sheet, then re-run the **Update data from Google Sheet** workflow from the Actions tab (or wait for tomorrow's automatic run)."
+          existing=$(gh issue list --label data-sync --state open --json number --jq '.[0].number' || true)
+          if [ -n "$existing" ]; then
+            gh issue comment "$existing" --body "$body"
+          else
+            gh label create data-sync --description "Automated data pipeline reports" --color D93F0B 2>/dev/null || true
+            gh issue create --title "$title" --label data-sync --body "$body"
+          fi
+
+      - name: Commit and push changes
+        if: steps.config.outputs.configured == 'true' && steps.convert.outputs.failed == 'false'
+        run: |
+          if git diff --quiet; then
+            echo "No data changes today."
+            exit 0
+          fi
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add airlines.json luggage.json index.html docs/sheet-template
+          git commit -m "Data sync from Google Sheet"
+          git push

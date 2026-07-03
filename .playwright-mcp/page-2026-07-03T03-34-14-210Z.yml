@@ -1,0 +1,252 @@
+- generic [active] [ref=e1]:
+  - link "Skip to main navigation" [ref=e2] [cursor=pointer]:
+    - /url: ""
+  - link "Skip to content" [ref=e3] [cursor=pointer]:
+    - /url: ""
+  - link "Skip to help" [ref=e4] [cursor=pointer]:
+    - /url: ""
+  - link "Skip to footer" [ref=e5] [cursor=pointer]:
+    - /url: ""
+  - navigation [ref=e6]:
+    - text: 
+    - generic [ref=e9]:
+      - generic [ref=e10]: L
+      - search [ref=e11]:
+        - textbox "Search" [ref=e12]:
+          - /placeholder: Recherche
+      - button "language" [expanded] [ref=e14] [cursor=pointer]:
+        - generic [ref=e15]: language
+    - generic [ref=e17]:
+      - link "Caribbean Airlines Logo" [ref=e19] [cursor=pointer]:
+        - /url: "#"
+        - img "Caribbean Airlines Logo" [ref=e20]
+      - navigation [ref=e21]:
+        - list [ref=e22]:
+          - listitem [ref=e23] [cursor=pointer]:
+            - text: p
+            - text: Z T T H H J J O
+          - listitem [ref=e25] [cursor=pointer]:
+            - text: l
+            - text: Z t t D D G G B B a
+          - listitem [ref=e27] [cursor=pointer]:
+            - text: 
+            - text: Z
+          - listitem [ref=e29] [cursor=pointer]:
+            - text: 
+            - text: Z    z a B B  r s M  0
+          - listitem [ref=e31] [cursor=pointer]:
+            - text: 
+            - text: Z P O P O
+          - listitem [ref=e33] [cursor=pointer]:
+            - text: 
+            - text: Z I F U a
+          - listitem [ref=e35] [cursor=pointer]:
+            - text: 
+            - link [ref=e36]:
+              - /url: "#/help"
+            - text: 
+          - text:     Z
+        - generic [ref=e37]:
+          - generic:
+            - generic:
+              - link:
+                - /url: ""
+              - generic [ref=e38]: "|"
+              - link:
+                - /url: https://caribbeanairlines.frequentflyer.aero/pub/#/main/not-authenticated/enrollment
+  - main [ref=e39]:
+    - list [ref=e44]:
+      - listitem:
+        - link:
+          - /url: "#"
+      - text: /
+      - listitem [ref=e45]:
+        - text: /
+        - link "baggage" [ref=e46] [cursor=pointer]:
+          - /url: "#/baggage"
+      - listitem [ref=e47]: /
+    - text:   
+  - generic:    
+  - status [ref=e55]:
+    - generic [ref=e56]:
+      - img "Caribbean Airlines logo" [ref=e57]
+      - generic [ref=e58]: Loading, please wait...
+  - contentinfo [ref=e60]:
+    - generic [ref=e62]:
+      - generic [ref=e64]:
+        - generic [ref=e65]:
+          - heading [level=1]
+        - generic [ref=e67]:
+          - generic [ref=e69]: L
+          - textbox "Search" [ref=e70]:
+            - /placeholder: ""
+      - list [ref=e73]:
+        - listitem [ref=e74]:
+          - link [ref=e75] [cursor=pointer]:
+            - /url: "#/contact-directory"
+        - listitem [ref=e76]:
+          - link [ref=e77] [cursor=pointer]:
+            - /url: "#/plan-your-trip/flight-status"
+        - listitem [ref=e78]:
+          - link [ref=e79] [cursor=pointer]:
+            - /url: "#/requests-and-special-assistance"
+        - listitem [ref=e80]:
+          - link [ref=e81] [cursor=pointer]:
+            - /url: "#/loyalty-programmes/caribbean-miles"
+        - listitem [ref=e82]:
+          - link [ref=e83] [cursor=pointer]:
+            - /url: "#/baggage"
+    - generic [ref=e85]:
+      - generic [ref=e86]:
+        - generic [ref=e87]:
+          - heading [level=2] [ref=e88]
+          - list [ref=e89]:
+            - listitem [ref=e90]:
+              - link:
+                - /url: "#/requests-and-special-assistance/accessibility-statement"
+            - listitem [ref=e91]:
+              - link:
+                - /url: "#/requests-and-special-assistance/canada-accessibility-plan"
+            - listitem [ref=e92]:
+              - link:
+                - /url: "#/phone-contact-directory"
+            - listitem [ref=e93]:
+              - link:
+                - /url: "#/contact-directory"
+            - listitem [ref=e94]:
+              - link:
+                - /url: "#/customer-service-information/customer-service-plan"
+            - listitem [ref=e95]:
+              - link:
+                - /url: "#/customer-service-information/delay-contingency-plans"
+            - listitem [ref=e96]:
+              - link:
+                - /url: "#/baggage/checked-baggage"
+            - listitem [ref=e97]:
+              - link:
+                - /url: "#/requests-and-special-assistance/special-services-and-disability-assistance-info"
+            - listitem [ref=e98]:
+              - link:
+                - /url: "#/reservations/payment-options"
+            - listitem [ref=e99]:
+              - link:
+                - /url: "#/customer-service-information/charges-and-changes"
+        - generic [ref=e100]:
+          - heading [level=2] [ref=e101]
+          - list [ref=e102]:
+            - listitem [ref=e103]:
+              - link:
+                - /url: "#/about-us"
+            - listitem [ref=e104]:
+              - link:
+                - /url: https://careers.caribbean-airlines.com/#/vacancies
+            - listitem [ref=e105]:
+              - link:
+                - /url: "#/caribbean-experience/media-releases"
+            - listitem [ref=e106]:
+              - link:
+                - /url: https://cs.caribbean-airlines.com/
+          - heading [level=2] [ref=e107]
+          - list [ref=e108]:
+            - listitem [ref=e109]:
+              - link:
+                - /url: "#/legal-and-privacy/legal-and-privacy-policy"
+            - listitem [ref=e110]:
+              - link:
+                - /url: "#/legal-and-privacy/cookie-policy"
+            - listitem [ref=e111]
+        - generic [ref=e112]:
+          - heading [level=2] [ref=e113]
+          - list [ref=e114]:
+            - listitem [ref=e115]:
+              - link:
+                - /url: https://giftcards.caribbean-airlines.com/en-gb/
+            - listitem [ref=e116]:
+              - link:
+                - /url: "#/reservations/caribbean-layaway"
+            - listitem [ref=e117]:
+              - link:
+                - /url: "#/caribbean-flight-notifications"
+            - listitem [ref=e118]:
+              - link:
+                - /url: "#/cabins-and-inflight-services/caribbean-plus"
+            - listitem [ref=e119]:
+              - link:
+                - /url: "#/manage-reservations/caribbean-your-space"
+            - listitem [ref=e120]:
+              - link:
+                - /url: "#/manage-reservations/caribbean-upgrade"
+            - listitem [ref=e121]:
+              - link:
+                - /url: "#/cabins-and-inflight-services/inflight-dining"
+            - listitem [ref=e122]:
+              - link:
+                - /url: "#/mobile-app"
+            - listitem [ref=e123]:
+              - link:
+                - /url: https://cargo.caribbean-airlines.com
+            - listitem [ref=e124]:
+              - link:
+                - /url: https://dutyfree.caribbean-airlines.com/?utm_source=corporatewebsitefooter&utm_medium=website&utm_campaign=dfwebsite&utm_term=trinitravelers&utm_content=dutyfreewebsite
+            - listitem [ref=e125]:
+              - link:
+                - /url: https://jetpak.caribbean-airlines.com
+            - listitem [ref=e126]:
+              - link:
+                - /url: "#/cabins-and-inflight-services/caribbean-view"
+            - listitem [ref=e127]:
+              - link:
+                - /url: "#/loyalty-programmes/caribbean-miles"
+            - listitem [ref=e128]:
+              - link:
+                - /url: "#/loyalty-programmes/caribbean-club"
+        - generic [ref=e129]:
+          - heading [level=2] [ref=e130]
+          - list [ref=e131]:
+            - listitem [ref=e132]:
+              - link:
+                - /url: "#/partnership-opportunities/advertising"
+            - listitem [ref=e133]:
+              - link:
+                - /url: https://procurement.caribbean-airlines.com/
+          - heading [level=2] [ref=e134]
+          - list [ref=e135]:
+            - listitem [ref=e136]:
+              - link:
+                - /url: "#/subscribe-to-our-newsletter"
+      - text:       
+      - generic [ref=e139]:
+        - generic [ref=e140]:
+          - heading [level=2] [ref=e142]
+          - generic [ref=e143]:
+            - link [ref=e145] [cursor=pointer]:
+              - /url: https://apps.apple.com/tt/app/caribbean-airlines/id1469028823
+              - img
+            - link [ref=e147] [cursor=pointer]:
+              - /url: https://play.google.com/store/apps/details?id=com.caribbeanairlines.app
+              - img
+        - generic [ref=e148]:
+          - generic [ref=e150]:
+            - link "Facebook logo" [ref=e152] [cursor=pointer]:
+              - /url: https://www.facebook.com/caribbeanairlines/
+              - img "Facebook logo" [ref=e153]
+            - link "Twitter logo" [ref=e155] [cursor=pointer]:
+              - /url: https://twitter.com/iflycaribbean
+              - img "Twitter logo" [ref=e156]
+            - link "Instagram logo" [ref=e158] [cursor=pointer]:
+              - /url: https://www.instagram.com/iflycaribbean/
+              - img "Instagram logo" [ref=e159]
+          - generic [ref=e161]:
+            - link "LinkedIn logo" [ref=e163] [cursor=pointer]:
+              - /url: https://www.linkedin.com/company/caribbean-airlines-ltd.
+              - img "LinkedIn logo"
+            - link "Youtube logo" [ref=e165] [cursor=pointer]:
+              - /url: https://www.youtube.com/user/iflycaribbean
+              - img "Youtube logo"
+            - link "TikTok logo" [ref=e167] [cursor=pointer]:
+              - /url: https://www.tiktok.com/@caribbean_airlines
+              - img "TikTok logo"
+    - generic [ref=e170]:
+      - img "identity_logo"
+    - img "wings"
+    - generic [ref=e172]: Ⓒ Caribbean Airlines 2026. All rights Reserved.
