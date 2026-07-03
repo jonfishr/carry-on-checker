@@ -14,7 +14,7 @@ AIRLINE_HEADER = (
     "Notes,Official source,Last verified"
 )
 LUGGAGE_HEADER = (
-    "Bag,Category,Height (cm),Width (cm),Depth (cm),Weight (kg),Notes,Product link"
+    "Bag,Aly's pick,Category,Height (cm),Width (cm),Depth (cm),Weight (kg),Notes,Product link"
 )
 
 
@@ -81,30 +81,47 @@ class AirlineParsing(unittest.TestCase):
 
 class LuggageParsing(unittest.TestCase):
     def test_happy_path_with_category_alias(self):
-        data = parse_luggage(['Monos Carry-On,Hard-shell,55.88,35.56,22.86,,"I love my monos"'])
+        data = parse_luggage(['Monos Carry-On,,Hard-shell,55.88,35.56,22.86,,"I love my monos"'])
         b = data["luggage"][0]
         self.assertEqual(b["id"], "monos-carry-on")
         self.assertEqual(b["category"], "hardside")
         self.assertEqual(b["notes"], "I love my monos")
+        self.assertNotIn("recommended", b)
 
     def test_unknown_category_rejected(self):
         with self.assertRaises(s2j.ValidationError):
-            parse_luggage(["Some Bag,Enormous,55,35,22,,"])
+            parse_luggage(["Some Bag,,Enormous,55,35,22,,"])
 
     def test_weight_parsed(self):
-        data = parse_luggage(["Cotopaxi Allpa,Soft-side,56,30,25,1.33,"])
+        data = parse_luggage(["Cotopaxi Allpa,,Soft-side,56,30,25,1.33,"])
         self.assertEqual(data["luggage"][0]["weight_kg"], 1.33)
 
     def test_luxury_category_and_product_link(self):
-        data = parse_luggage(['Rimowa Original Cabin,Luxury,55,39,23,4.3,"Aluminum shell",https://www.rimowa.com/original-cabin'])
+        data = parse_luggage(['Rimowa Original Cabin,,Luxury,55,39,23,4.3,"Aluminum shell",https://www.rimowa.com/original-cabin'])
         b = data["luggage"][0]
         self.assertEqual(b["category"], "luxury")
         self.assertEqual(b["product_url"], "https://www.rimowa.com/original-cabin")
 
     def test_bad_product_link_rejected(self):
         with self.assertRaises(s2j.ValidationError) as ctx:
-            parse_luggage(["Some Bag,Hard-shell,55,35,22,,,not a link"])
+            parse_luggage(["Some Bag,,Hard-shell,55,35,22,,,not a link"])
         self.assertIn("product link", str(ctx.exception).lower())
+
+    def test_recommended_accepts_friendly_values(self):
+        data = parse_luggage([
+            "Monos Carry-On,Yes,Hard-shell,55.88,35.56,22.86,,",
+            "Cotopaxi Allpa,⭐,Soft-side,56,30,25,,",
+            "Some Bag,no,Hard-shell,55,35,22,,",
+        ])
+        by_id = {b["id"]: b for b in data["luggage"]}
+        self.assertTrue(by_id["monos-carry-on"]["recommended"])
+        self.assertTrue(by_id["cotopaxi-allpa"]["recommended"])
+        self.assertNotIn("recommended", by_id["some-bag"])
+
+    def test_recommended_typo_rejected(self):
+        with self.assertRaises(s2j.ValidationError) as ctx:
+            parse_luggage(["Some Bag,Yess,Hard-shell,55,35,22,,"])
+        self.assertIn("aly's pick", str(ctx.exception).lower())
 
     def test_missing_product_link_column_is_fine(self):
         old_header = "Bag,Category,Height (cm),Width (cm),Depth (cm),Weight (kg),Notes"

@@ -104,6 +104,10 @@ The optional **Product link** column makes the bag's name on the site link
 to that page (a store page, or your own review/affiliate link — leave it
 blank and the name is just text).
 
+The **Aly's pick** column is your star button: type `Yes` (or just `⭐`)
+next to a bag and it gets a "⭐ Aly's pick" badge on the site and moves to
+the front of its section. Leave it blank for regular list entries.
+
 ### Remove something
 
 Delete the whole row in the sheet (right-click the row number → *Delete
