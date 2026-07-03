@@ -58,19 +58,21 @@ jobs:
           GH_TOKEN: ${{ github.token }}
         run: |
           title="Sheet sync: the Google Sheet has a problem that needs a human"
-          body="The daily data sync could not update the site because the spreadsheet has at least one problem. **The site is unaffected — it keeps the previous data.**
-
-\`\`\`
-$(cat problems.txt)
-\`\`\`
-
-Fix the row(s) in the Google Sheet, then re-run the **Update data from Google Sheet** workflow from the Actions tab (or wait for tomorrow's automatic run)."
+          {
+            echo "The daily data sync could not update the site because the spreadsheet has at least one problem. **The site is unaffected — it keeps the previous data.**"
+            echo
+            echo '```'
+            cat problems.txt
+            echo '```'
+            echo
+            echo "Fix the row(s) in the Google Sheet, then re-run the **Update data from Google Sheet** workflow from the Actions tab (or wait for tomorrow's automatic run)."
+          } > body.md
           existing=$(gh issue list --label data-sync --state open --json number --jq '.[0].number // empty' || true)
           if [ -n "$existing" ]; then
-            gh issue comment "$existing" --body "$body"
+            gh issue comment "$existing" --body-file body.md
           else
             gh label create data-sync --description "Automated data pipeline reports" --color D93F0B 2>/dev/null || true
-            gh issue create --title "$title" --label data-sync --body "$body"
+            gh issue create --title "$title" --label data-sync --body-file body.md
           fi
 
       - name: Commit and push changes
