@@ -14,7 +14,7 @@ AIRLINE_HEADER = (
     "Notes,Official source,Last verified"
 )
 LUGGAGE_HEADER = (
-    "Bag,Category,Height (cm),Width (cm),Depth (cm),Weight (kg),Notes"
+    "Bag,Category,Height (cm),Width (cm),Depth (cm),Weight (kg),Notes,Product link"
 )
 
 
@@ -94,6 +94,22 @@ class LuggageParsing(unittest.TestCase):
     def test_weight_parsed(self):
         data = parse_luggage(["Cotopaxi Allpa,Soft-side,56,30,25,1.33,"])
         self.assertEqual(data["luggage"][0]["weight_kg"], 1.33)
+
+    def test_luxury_category_and_product_link(self):
+        data = parse_luggage(['Rimowa Original Cabin,Luxury,55,39,23,4.3,"Aluminum shell",https://www.rimowa.com/original-cabin'])
+        b = data["luggage"][0]
+        self.assertEqual(b["category"], "luxury")
+        self.assertEqual(b["product_url"], "https://www.rimowa.com/original-cabin")
+
+    def test_bad_product_link_rejected(self):
+        with self.assertRaises(s2j.ValidationError) as ctx:
+            parse_luggage(["Some Bag,Hard-shell,55,35,22,,,not a link"])
+        self.assertIn("product link", str(ctx.exception).lower())
+
+    def test_missing_product_link_column_is_fine(self):
+        old_header = "Bag,Category,Height (cm),Width (cm),Depth (cm),Weight (kg),Notes"
+        data = s2j.parse_luggage_csv(old_header + "\nMonos Carry-On,Hard-shell,55.88,35.56,22.86,,\n")
+        self.assertNotIn("product_url", data["luggage"][0])
 
 
 class RoundTrip(unittest.TestCase):

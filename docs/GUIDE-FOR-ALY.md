@@ -98,8 +98,11 @@ price of one coffee per year, and only if you want it.
 ### Add or change a bag
 
 Same idea on the **Luggage** tab: bag name, category (`Hard-shell`,
-`Soft-side`, or `Value`), the three measurements in cm, and your note in
-your own words — your notes show up on the site exactly as written.
+`Soft-side`, `Value`, or `Luxury`), the three measurements in cm, and your
+note in your own words — your notes show up on the site exactly as written.
+The optional **Product link** column makes the bag's name on the site link
+to that page (a store page, or your own review/affiliate link — leave it
+blank and the name is just text).
 
 ### Remove something
 

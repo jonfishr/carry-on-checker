@@ -40,6 +40,7 @@ CATEGORY_ALIASES = {
     "hardside": "hardside", "hard-shell": "hardside", "hard shell": "hardside", "hardshell": "hardside",
     "softside": "softside", "soft-side": "softside", "soft side": "softside", "soft": "softside",
     "value": "value", "value pick": "value", "value picks": "value",
+    "luxury": "luxury", "luxury pick": "luxury", "luxury picks": "luxury",
 }
 
 
@@ -170,11 +171,11 @@ def parse_luggage_csv(text: str) -> dict:
         seen[bid] = line_no
 
         entry = {"id": bid, "name": name}
-        cat_raw = row.get("Category", "").lower().replace("🧳", "").replace("🎒", "").replace("💸", "").strip()
+        cat_raw = row.get("Category", "").lower().replace("🧳", "").replace("🎒", "").replace("💸", "").replace("✨", "").strip()
         cat = CATEGORY_ALIASES.get(cat_raw)
         if not cat:
             errors.append(f"{name}: category {row.get('Category')!r} not recognized "
-                          "(use Hard-shell, Soft-side, or Value)")
+                          "(use Hard-shell, Soft-side, Value, or Luxury)")
         else:
             entry["category"] = cat
 
@@ -192,6 +193,12 @@ def parse_luggage_csv(text: str) -> dict:
         notes = row.get("Notes", "")
         if notes:
             entry["notes"] = notes
+        url = row.get("Product link", "")
+        if url:
+            if not url.startswith("http"):
+                errors.append(f"{name}: product link should be a link, got {url!r}")
+            else:
+                entry["product_url"] = url
         luggage.append(entry)
 
     if errors:
