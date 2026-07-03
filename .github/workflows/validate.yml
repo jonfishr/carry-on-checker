@@ -1,0 +1,38 @@
+name: Validate data
+
+on:
+  push:
+    branches: [main]
+  pull_request: {}
+  workflow_dispatch: {}
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Run converter test suite (includes JSON round-trip validation)
+        run: python3 -m unittest discover scripts -v
+
+      - name: Check data files parse and pass validation rules
+        run: |
+          python3 scripts/json_to_csv.py
+          python3 scripts/sheet_to_json.py \
+            --airlines-csv docs/sheet-template/airlines.csv \
+            --luggage-csv docs/sheet-template/luggage.csv \
+            --out-dir /tmp/roundtrip
+          diff /tmp/roundtrip/airlines.json airlines.json
+          diff /tmp/roundtrip/luggage.json luggage.json
+          git diff --exit-code docs/sheet-template || {
+            echo "::error::sheet-template CSVs are stale — run scripts/json_to_csv.py and commit."
+            exit 1
+          }
+
+      - name: Check embedded fallback is in sync with JSON files
+        run: |
+          python3 scripts/embed_fallback.py
+          git diff --exit-code index.html || {
+            echo "::error::index.html fallback data is stale — run scripts/embed_fallback.py and commit."
+            exit 1
+          }

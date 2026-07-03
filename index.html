@@ -3,240 +3,263 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Will Your Bag Fit? Carry-On Compliance Checker | Like Where You're Going</title>
-    <meta name="description" content="Check if your carry-on luggage fits airline size requirements. Compare against 74 airlines instantly.">
+    <title>Will Your Bag Fit? Carry-On Checker | Like Where You're Going</title>
+    <meta name="description" content="Check if your carry-on fits airline size rules — with real-world 'close call' guidance from Aly Smalls, who tests bags in actual airline sizers.">
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🧳</text></svg>">
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Will Your Bag Fit? Carry-On Checker by Aly Smalls">
+    <meta property="og:description" content="Check your carry-on against airlines' published size rules — plus real-world 'close call' guidance from bag tests in actual airline sizers.">
+    <meta property="og:url" content="https://jonfishr.github.io/carry-on-checker/">
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:title" content="Will Your Bag Fit? Carry-On Checker by Aly Smalls">
+    <meta name="twitter:description" content="Check your carry-on against airlines' published size rules — plus real-world 'close call' guidance.">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,600;1,400&family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto+Condensed:wght@400;600;700&family=Roboto:ital,wght@0,400;0,500;0,700;1,400&display=swap" rel="stylesheet">
     <style>
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
         }
-        
+
         :root {
-            /* Aly's website color palette - soft, natural, travel-inspired */
-            --primary-teal: #5a9a9f;
-            --dark-teal: #3d7175;
-            --soft-sage: #a8b5a0;
-            --cream: #f7f5f0;
-            --off-white: #fefdfb;
-            --warm-gray: #6d6d6d;
-            --text-dark: #333333;
-            --border-light: #e5e3dd;
-            --accent-coral: #d88c7b;
+            /* Palette drawn from likewhereyouregoing.com */
+            --navy: #243746;
+            --navy-deep: #16242f;
+            --slate: #393F4C;
+            --gray-soft: #66707d;
+            --bg: #F0F2F4;
+            --bg-warm: #FAFAFA;
+            --card: #ffffff;
+            --border: #dde2e7;
+            /* Verdict colors (contrast-checked on their backgrounds) */
+            --fit-text: #1e6b41;
+            --fit-bg: #e6f3eb;
+            --fit-edge: #3b9367;
+            --close-text: #7a5800;
+            --close-bg: #fdf2d7;
+            --close-edge: #d9a441;
+            --no-text: #a03c34;
+            --no-bg: #faecea;
+            --no-edge: #c96a62;
         }
-        
+
         body {
-            font-family: 'Montserrat', sans-serif;
-            background: var(--cream);
-            color: var(--text-dark);
+            font-family: 'Roboto', sans-serif;
+            background: var(--bg);
+            color: var(--slate);
             line-height: 1.7;
         }
-        
-        /* Header matching Aly's site style */
-        .site-header {
-            background: white;
-            padding: 20px 0;
-            border-bottom: 1px solid var(--border-light);
+
+        h1, h2, h3, .site-title, .tab, .wordmark {
+            font-family: 'Roboto Condensed', sans-serif;
         }
-        
+
+        /* Header echoing Aly's site */
+        .site-header {
+            background: var(--navy);
+            padding: 18px 0;
+        }
+
         .header-content {
-            max-width: 1200px;
+            max-width: 1100px;
             margin: 0 auto;
             padding: 0 20px;
             display: flex;
             justify-content: space-between;
             align-items: center;
             flex-wrap: wrap;
-            gap: 15px;
+            gap: 12px;
         }
-        
+
         .site-title {
-            font-family: 'Lora', serif;
-            font-size: 1.5rem;
-            color: var(--primary-teal);
+            font-size: 1.25rem;
+            font-weight: 700;
+            letter-spacing: 0.08em;
+            text-transform: uppercase;
+            color: #ffffff;
             text-decoration: none;
-            font-weight: 600;
         }
-        
+
+        .site-title span {
+            color: #bccbd8;
+            font-weight: 400;
+        }
+
         .header-links {
             display: flex;
-            gap: 25px;
+            gap: 22px;
             align-items: center;
         }
-        
+
         .header-link {
             font-size: 0.95rem;
-            color: var(--warm-gray);
+            color: #d5dee6;
             text-decoration: none;
-            transition: color 0.3s ease;
             font-weight: 500;
+            transition: color 0.2s ease;
         }
-        
-        .header-link:hover {
-            color: var(--primary-teal);
-        }
-        
-        /* Hero section */
-        .hero {
-            background: linear-gradient(to bottom, white, var(--cream));
-            padding: 60px 20px;
-            text-align: center;
-        }
-        
-        .hero h1 {
-            font-family: 'Lora', serif;
-            font-size: clamp(2rem, 5vw, 3.5rem);
-            color: var(--text-dark);
-            margin-bottom: 15px;
-            font-weight: 600;
-            line-height: 1.2;
-        }
-        
-        .hero .subtitle {
-            font-size: 1.15rem;
-            color: var(--warm-gray);
-            max-width: 600px;
-            margin: 0 auto 25px;
-        }
-        
-        .author-note {
-            display: inline-block;
-            background: var(--off-white);
-            padding: 15px 25px;
-            border-radius: 30px;
-            font-size: 0.95rem;
-            color: var(--warm-gray);
-            border: 1px solid var(--border-light);
-            margin-top: 10px;
-        }
-        
-        .author-note a {
-            color: var(--primary-teal);
-            text-decoration: none;
-            font-weight: 600;
-        }
-        
-        .author-note a:hover {
+
+        .header-link:hover, .header-link:focus-visible {
+            color: #ffffff;
             text-decoration: underline;
         }
-        
-        /* Container */
+
+        /* Hero */
+        .hero {
+            background: linear-gradient(to bottom, #ffffff, var(--bg));
+            padding: 56px 20px 48px;
+            text-align: center;
+        }
+
+        .hero h1 {
+            font-size: clamp(2.1rem, 5vw, 3.4rem);
+            font-weight: 700;
+            color: var(--navy);
+            margin-bottom: 12px;
+            line-height: 1.15;
+        }
+
+        .hero .subtitle {
+            font-size: 1.12rem;
+            color: var(--gray-soft);
+            max-width: 640px;
+            margin: 0 auto 24px;
+        }
+
+        .author-note {
+            display: inline-block;
+            background: var(--bg-warm);
+            padding: 13px 24px;
+            border-radius: 30px;
+            font-size: 0.95rem;
+            color: var(--gray-soft);
+            border: 1px solid var(--border);
+        }
+
+        .author-note a {
+            color: var(--navy);
+            text-decoration: none;
+            font-weight: 700;
+        }
+
+        .author-note a:hover, .author-note a:focus-visible {
+            text-decoration: underline;
+        }
+
         .container {
             max-width: 1100px;
             margin: 0 auto;
             padding: 40px 20px;
         }
-        
-        /* Main content card */
+
         .content-card {
-            background: white;
+            background: var(--card);
             border-radius: 8px;
-            box-shadow: 0 2px 12px rgba(0, 0, 0, 0.06);
+            box-shadow: 0 2px 12px rgba(36, 55, 70, 0.08);
             overflow: hidden;
             margin-bottom: 40px;
         }
-        
+
         /* Tabs */
         .tabs {
             display: flex;
-            border-bottom: 1px solid var(--border-light);
-            background: var(--off-white);
+            border-bottom: 1px solid var(--border);
+            background: var(--bg-warm);
         }
-        
+
         .tab {
             flex: 1;
-            padding: 20px;
+            padding: 18px 10px;
             background: none;
             border: none;
-            font-family: 'Montserrat', sans-serif;
             font-size: 1.05rem;
             font-weight: 600;
+            letter-spacing: 0.02em;
             cursor: pointer;
-            color: var(--warm-gray);
-            transition: all 0.3s ease;
+            color: var(--gray-soft);
+            transition: all 0.2s ease;
             position: relative;
         }
-        
-        .tab:hover {
-            color: var(--primary-teal);
-            background: rgba(90, 154, 159, 0.05);
+
+        .tab:hover, .tab:focus-visible {
+            color: var(--navy);
+            background: rgba(36, 55, 70, 0.05);
         }
-        
-        .tab.active {
-            color: var(--primary-teal);
-            background: white;
+
+        .tab[aria-selected="true"] {
+            color: var(--navy);
+            background: var(--card);
         }
-        
-        .tab.active::after {
+
+        .tab[aria-selected="true"]::after {
             content: '';
             position: absolute;
             bottom: 0;
             left: 0;
             right: 0;
             height: 3px;
-            background: var(--primary-teal);
+            background: var(--navy);
         }
-        
+
         .tab-content {
             display: none;
             padding: 40px;
         }
-        
+
         .tab-content.active {
             display: block;
         }
-        
-        /* Input section */
+
+        /* Inputs */
         .input-section {
-            background: var(--cream);
+            background: var(--bg);
             padding: 30px;
             border-radius: 8px;
-            margin-bottom: 35px;
-            border: 1px solid var(--border-light);
+            margin-bottom: 30px;
+            border: 1px solid var(--border);
         }
-        
+
         .input-section h3 {
-            font-family: 'Lora', serif;
-            font-size: 1.3rem;
-            color: var(--text-dark);
-            margin-bottom: 20px;
+            font-size: 1.35rem;
+            font-weight: 700;
+            color: var(--navy);
+            margin-bottom: 18px;
             text-align: center;
         }
-        
+
         .unit-toggle {
             display: flex;
             gap: 10px;
             justify-content: center;
-            margin-bottom: 25px;
+            margin-bottom: 24px;
         }
-        
+
         .unit-btn {
             padding: 10px 28px;
-            background: white;
-            border: 2px solid var(--border-light);
+            background: var(--card);
+            border: 2px solid var(--border);
             border-radius: 25px;
-            font-family: 'Montserrat', sans-serif;
+            font-family: 'Roboto', sans-serif;
             font-size: 0.95rem;
             font-weight: 600;
             cursor: pointer;
-            transition: all 0.3s ease;
-            color: var(--warm-gray);
+            transition: all 0.2s ease;
+            color: var(--gray-soft);
         }
-        
-        .unit-btn:hover {
-            border-color: var(--primary-teal);
-            color: var(--primary-teal);
+
+        .unit-btn:hover, .unit-btn:focus-visible {
+            border-color: var(--navy);
+            color: var(--navy);
         }
-        
-        .unit-btn.active {
-            background: var(--primary-teal);
-            color: white;
-            border-color: var(--primary-teal);
+
+        .unit-btn[aria-pressed="true"] {
+            background: var(--navy);
+            color: #ffffff;
+            border-color: var(--navy);
         }
-        
+
         .dimensions-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
@@ -244,374 +267,467 @@
             max-width: 600px;
             margin: 0 auto;
         }
-        
+
         .dimension-input label {
             display: block;
             font-weight: 600;
             margin-bottom: 8px;
-            color: var(--text-dark);
+            color: var(--slate);
             font-size: 0.9rem;
         }
-        
+
         .dimension-input input {
             width: 100%;
             padding: 12px 15px;
-            border: 2px solid var(--border-light);
+            border: 2px solid var(--border);
             border-radius: 6px;
             font-size: 1.1rem;
-            font-family: 'Montserrat', sans-serif;
-            transition: all 0.3s ease;
-            background: white;
+            font-family: 'Roboto', sans-serif;
+            background: var(--card);
+            transition: all 0.2s ease;
         }
-        
+
         .dimension-input input:focus {
             outline: none;
-            border-color: var(--primary-teal);
-            box-shadow: 0 0 0 3px rgba(90, 154, 159, 0.1);
+            border-color: var(--navy);
+            box-shadow: 0 0 0 3px rgba(36, 55, 70, 0.15);
         }
-        
+
         /* Results */
         .results-header {
             text-align: center;
-            padding: 30px;
-            background: var(--primary-teal);
-            color: white;
+            padding: 28px 20px;
+            background: var(--navy);
+            color: #ffffff;
             border-radius: 8px;
-            margin-bottom: 30px;
+            margin-bottom: 14px;
         }
-        
+
         .results-header h2 {
-            font-family: 'Lora', serif;
             font-size: 1.8rem;
+            font-weight: 700;
             margin-bottom: 10px;
         }
-        
-        .compatibility-score {
-            font-size: 1.6rem;
+
+        .verdict-tally {
+            display: flex;
+            gap: 10px 26px;
+            justify-content: center;
+            flex-wrap: wrap;
+            font-size: 1.15rem;
             font-weight: 700;
-            opacity: 0.95;
         }
-        
+
+        .method-note {
+            background: var(--bg-warm);
+            border: 1px solid var(--border);
+            border-radius: 8px;
+            padding: 16px 20px;
+            font-size: 0.95rem;
+            color: var(--gray-soft);
+            margin-bottom: 28px;
+        }
+
+        .method-note strong {
+            color: var(--slate);
+        }
+
+        .verdict-group-title {
+            font-family: 'Roboto Condensed', sans-serif;
+            font-size: 1.25rem;
+            font-weight: 700;
+            color: var(--navy);
+            margin: 26px 0 14px;
+        }
+
         .airline-grid {
             display: grid;
             grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
             gap: 18px;
         }
-        
+
         .airline-card {
-            background: white;
-            border: 1px solid var(--border-light);
+            background: var(--card);
+            border: 1px solid var(--border);
             border-radius: 6px;
-            padding: 20px;
-            transition: all 0.3s ease;
+            padding: 18px 20px;
+            transition: box-shadow 0.2s ease, transform 0.2s ease;
         }
-        
+
         .airline-card:hover {
-            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+            box-shadow: 0 4px 12px rgba(36, 55, 70, 0.12);
             transform: translateY(-2px);
         }
-        
-        .airline-card.fits {
-            border-left: 4px solid var(--soft-sage);
-            background: linear-gradient(to right, rgba(168, 181, 160, 0.05), white);
-        }
-        
-        .airline-card.no-fit {
-            opacity: 0.65;
-            border-left: 4px solid var(--accent-coral);
-        }
-        
+
+        .airline-card.fits { border-left: 4px solid var(--fit-edge); }
+        .airline-card.close { border-left: 4px solid var(--close-edge); }
+        .airline-card.no { border-left: 4px solid var(--no-edge); background: var(--bg-warm); }
+
         .airline-name {
             font-size: 1.1rem;
             font-weight: 700;
-            margin-bottom: 8px;
-            color: var(--text-dark);
+            margin-bottom: 6px;
+            color: var(--slate);
         }
-        
+
+        .airline-name a {
+            color: inherit;
+            text-decoration: none;
+        }
+
+        .airline-name a:hover, .airline-name a:focus-visible {
+            text-decoration: underline;
+        }
+
         .airline-dimensions {
             font-size: 0.9rem;
-            color: var(--warm-gray);
-            margin-bottom: 10px;
+            color: var(--gray-soft);
+            margin-bottom: 8px;
         }
-        
+
+        .airline-meta {
+            font-size: 0.82rem;
+            color: var(--gray-soft);
+            margin-top: 8px;
+        }
+
+        .airline-notes {
+            font-size: 0.85rem;
+            color: var(--slate);
+            background: var(--bg);
+            border-radius: 5px;
+            padding: 7px 10px;
+            margin-top: 8px;
+        }
+
         .fit-status {
             display: inline-block;
             padding: 5px 12px;
             border-radius: 15px;
             font-size: 0.85rem;
-            font-weight: 600;
+            font-weight: 700;
         }
-        
-        .fit-status.fits {
-            background: rgba(168, 181, 160, 0.2);
-            color: #4a6b45;
+
+        .fit-status.fits { background: var(--fit-bg); color: var(--fit-text); }
+        .fit-status.close { background: var(--close-bg); color: var(--close-text); }
+        .fit-status.no { background: var(--no-bg); color: var(--no-text); }
+
+        .over-detail {
+            font-size: 0.85rem;
+            color: var(--close-text);
+            margin-top: 7px;
         }
-        
-        .fit-status.no-fit {
-            background: rgba(216, 140, 123, 0.2);
-            color: #a85842;
-        }
-        
-        /* Luggage Library */
+
+        .airline-card.no .over-detail { color: var(--no-text); }
+
+        /* Library */
         .library-intro {
             text-align: center;
-            margin-bottom: 35px;
+            margin-bottom: 32px;
         }
-        
+
         .library-intro h2 {
-            font-family: 'Lora', serif;
             font-size: 2rem;
-            color: var(--text-dark);
-            margin-bottom: 12px;
+            font-weight: 700;
+            color: var(--navy);
+            margin-bottom: 10px;
         }
-        
+
         .library-intro p {
             font-size: 1.05rem;
-            color: var(--warm-gray);
+            color: var(--gray-soft);
             max-width: 700px;
             margin: 0 auto;
         }
-        
+
+        .category-title {
+            font-family: 'Roboto Condensed', sans-serif;
+            font-size: 1.4rem;
+            font-weight: 700;
+            color: var(--navy);
+            margin: 34px 0 6px;
+        }
+
+        .category-blurb {
+            font-size: 0.95rem;
+            color: var(--gray-soft);
+            margin-bottom: 18px;
+        }
+
         .luggage-grid {
             display: grid;
             grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-            gap: 25px;
+            gap: 22px;
         }
-        
+
         .luggage-card {
-            background: white;
-            border: 1px solid var(--border-light);
+            background: var(--card);
+            border: 1px solid var(--border);
             border-radius: 8px;
-            padding: 25px;
-            transition: all 0.3s ease;
-            cursor: pointer;
+            padding: 24px;
+            transition: box-shadow 0.2s ease, transform 0.2s ease, border-color 0.2s ease;
         }
-        
+
         .luggage-card:hover {
             transform: translateY(-3px);
-            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
-            border-color: var(--primary-teal);
+            box-shadow: 0 6px 20px rgba(36, 55, 70, 0.12);
+            border-color: var(--navy);
         }
-        
+
         .luggage-name {
-            font-family: 'Lora', serif;
+            font-family: 'Roboto Condensed', sans-serif;
             font-size: 1.3rem;
-            color: var(--primary-teal);
-            margin-bottom: 15px;
-            font-weight: 600;
+            font-weight: 700;
+            color: var(--navy);
+            margin-bottom: 14px;
         }
-        
+
         .luggage-dimensions {
             display: flex;
             justify-content: space-around;
-            padding: 18px;
-            background: var(--cream);
+            padding: 16px;
+            background: var(--bg);
             border-radius: 6px;
-            margin-bottom: 15px;
+            margin-bottom: 14px;
         }
-        
-        .dimension-item {
-            text-align: center;
-        }
-        
+
+        .dimension-item { text-align: center; }
+
         .dimension-value {
-            font-size: 1.4rem;
+            font-size: 1.35rem;
             font-weight: 700;
-            color: var(--primary-teal);
+            color: var(--navy);
         }
-        
+
         .dimension-label {
-            font-size: 0.75rem;
-            color: var(--warm-gray);
+            font-size: 0.72rem;
+            color: var(--gray-soft);
             text-transform: uppercase;
             letter-spacing: 0.5px;
         }
-        
+
         .luggage-notes {
             font-size: 0.95rem;
-            color: var(--warm-gray);
+            color: var(--gray-soft);
             line-height: 1.5;
             font-style: italic;
         }
-        
+
+        .luggage-weight {
+            font-size: 0.85rem;
+            color: var(--gray-soft);
+            margin-top: 6px;
+        }
+
         .use-this-bag {
             display: block;
             width: 100%;
-            margin-top: 18px;
+            margin-top: 16px;
             padding: 12px;
-            background: var(--primary-teal);
-            color: white;
+            background: var(--navy);
+            color: #ffffff;
             border: none;
             border-radius: 6px;
-            font-family: 'Montserrat', sans-serif;
+            font-family: 'Roboto', sans-serif;
             font-size: 0.95rem;
             font-weight: 600;
             cursor: pointer;
-            transition: all 0.3s ease;
+            transition: background 0.2s ease;
         }
-        
-        .use-this-bag:hover {
-            background: var(--dark-teal);
-            transform: scale(1.02);
+
+        .use-this-bag:hover, .use-this-bag:focus-visible {
+            background: var(--navy-deep);
         }
-        
+
+        /* About tab */
+        .about-content {
+            max-width: 720px;
+            margin: 0 auto;
+        }
+
+        .about-content h2 {
+            font-size: 1.9rem;
+            font-weight: 700;
+            color: var(--navy);
+            margin-bottom: 16px;
+        }
+
+        .about-content h3 {
+            font-size: 1.25rem;
+            font-weight: 700;
+            color: var(--navy);
+            margin: 26px 0 8px;
+        }
+
+        .about-content p, .about-content li {
+            color: var(--slate);
+            margin-bottom: 10px;
+        }
+
+        .about-content ul { padding-left: 22px; }
+
+        .about-content .disclaimer {
+            background: var(--bg-warm);
+            border: 1px solid var(--border);
+            border-radius: 8px;
+            padding: 16px 20px;
+            font-size: 0.95rem;
+            color: var(--gray-soft);
+            margin-top: 24px;
+        }
+
+        .data-freshness {
+            font-size: 0.9rem;
+            color: var(--gray-soft);
+        }
+
+        /* Notices */
+        .notice {
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        .notice-inner {
+            background: var(--close-bg);
+            color: var(--close-text);
+            border: 1px solid var(--close-edge);
+            border-radius: 8px;
+            padding: 12px 18px;
+            font-size: 0.92rem;
+            margin-top: 20px;
+        }
+
         /* Empty state */
         .empty-state {
             text-align: center;
-            padding: 60px 20px;
-            color: var(--warm-gray);
+            padding: 56px 20px;
+            color: var(--gray-soft);
         }
-        
+
         .empty-state-icon {
             font-size: 3.5rem;
-            margin-bottom: 15px;
-            opacity: 0.4;
+            margin-bottom: 14px;
+            opacity: 0.45;
         }
-        
-        .empty-state p {
-            font-size: 1.05rem;
-        }
-        
+
+        .empty-state p { font-size: 1.05rem; }
+
         /* Footer */
         footer {
-            background: white;
-            border-top: 1px solid var(--border-light);
+            background: var(--navy);
+            color: #d5dee6;
             padding: 40px 20px;
             margin-top: 60px;
         }
-        
+
         .footer-content {
             max-width: 1100px;
             margin: 0 auto;
             text-align: center;
         }
-        
+
         .footer-note {
             font-size: 0.95rem;
-            color: var(--warm-gray);
             margin-bottom: 20px;
             font-style: italic;
+            color: #bccbd8;
         }
-        
+
         .footer-links {
             display: flex;
             gap: 30px;
             justify-content: center;
             flex-wrap: wrap;
-            margin-bottom: 20px;
+            margin-bottom: 18px;
         }
-        
+
         .footer-link {
-            color: var(--primary-teal);
+            color: #ffffff;
             text-decoration: none;
             font-weight: 600;
             font-size: 0.95rem;
         }
-        
-        .footer-link:hover {
+
+        .footer-link:hover, .footer-link:focus-visible {
             text-decoration: underline;
         }
-        
+
         .footer-credit {
             font-size: 0.85rem;
-            color: var(--warm-gray);
-            margin-top: 20px;
+            color: #9fb2c1;
+            margin-top: 16px;
         }
-        
-        /* Mobile responsive */
+
+        /* Mobile */
         @media (max-width: 768px) {
-            .header-content {
-                justify-content: center;
-                text-align: center;
-            }
-            
-            .header-links {
-                width: 100%;
-                justify-content: center;
-            }
-            
-            .hero {
-                padding: 40px 20px;
-            }
-            
-            .hero h1 {
-                font-size: 2rem;
-            }
-            
-            .tab-content {
-                padding: 25px 20px;
-            }
-            
-            .input-section {
-                padding: 25px 20px;
-            }
-            
-            .dimensions-grid {
-                grid-template-columns: 1fr;
-            }
-            
-            .airline-grid {
-                grid-template-columns: 1fr;
-            }
-            
-            .luggage-grid {
-                grid-template-columns: 1fr;
-            }
+            .header-content { justify-content: center; text-align: center; }
+            .header-links { width: 100%; justify-content: center; }
+            .hero { padding: 40px 20px; }
+            .tab { font-size: 0.95rem; padding: 15px 6px; }
+            .tab-content { padding: 25px 18px; }
+            .input-section { padding: 25px 18px; }
+            .dimensions-grid, .airline-grid, .luggage-grid { grid-template-columns: 1fr; }
         }
     </style>
 </head>
 <body>
     <header class="site-header">
         <div class="header-content">
-            <a href="https://likewhereyouregoing.com" class="site-title">Like Where You're Going</a>
-            <nav class="header-links">
+            <a href="https://likewhereyouregoing.com" class="site-title">Like Where You're Going <span>· Carry-On Checker</span></a>
+            <nav class="header-links" aria-label="Aly Smalls links">
                 <a href="https://likewhereyouregoing.com" class="header-link">Main Site</a>
-                <a href="https://www.youtube.com/@alysmalls" target="_blank" class="header-link">YouTube</a>
+                <a href="https://www.youtube.com/@alysmalls" target="_blank" rel="noopener" class="header-link">YouTube</a>
             </nav>
         </div>
     </header>
 
     <div class="hero">
         <h1>Will Your Carry-On Fit?</h1>
-        <p class="subtitle">Check your bag against 74 airline size requirements instantly. No more gate-check surprises.</p>
+        <p class="subtitle">Check your bag against <span data-airline-count>dozens of</span> airlines' published size rules — including which "technically too big" bags usually fit anyway. No more gate-check surprises.</p>
         <div class="author-note">
-            By <a href="https://likewhereyouregoing.com" target="_blank">Aly Smalls</a> • 
-            Watch my <a href="https://www.youtube.com/@alysmalls" target="_blank">bag tests on YouTube</a>
+            By <a href="https://likewhereyouregoing.com" target="_blank" rel="noopener">Aly Smalls</a> •
+            Watch my <a href="https://www.youtube.com/@alysmalls" target="_blank" rel="noopener">bag tests on YouTube</a>
         </div>
+    </div>
+
+    <div class="notice" id="data-notice" hidden>
+        <div class="notice-inner">You're viewing a built-in copy of the airline data (the live data file couldn't be loaded). It may be slightly out of date.</div>
     </div>
 
     <div class="container">
         <div class="content-card">
-            <div class="tabs">
-                <button class="tab active" data-tab="check">Check My Bag</button>
-                <button class="tab" data-tab="library">Recommended Bags</button>
+            <div class="tabs" role="tablist" aria-label="Carry-on checker sections">
+                <button class="tab" id="tab-check" role="tab" aria-selected="true" aria-controls="check" data-tab="check">Check My Bag</button>
+                <button class="tab" id="tab-library" role="tab" aria-selected="false" aria-controls="library" data-tab="library">Recommended Bags</button>
+                <button class="tab" id="tab-about" role="tab" aria-selected="false" aria-controls="about" data-tab="about">How It Works</button>
             </div>
 
-            <!-- Check My Bag Tab -->
-            <div id="check" class="tab-content active">
+            <!-- Check My Bag -->
+            <div id="check" class="tab-content active" role="tabpanel" aria-labelledby="tab-check">
                 <div class="input-section">
                     <h3>Enter Your Bag's Dimensions</h3>
-                    <div class="unit-toggle">
-                        <button class="unit-btn active" data-unit="cm">Centimeters</button>
-                        <button class="unit-btn" data-unit="in">Inches</button>
+                    <div class="unit-toggle" role="group" aria-label="Measurement units">
+                        <button class="unit-btn" aria-pressed="true" data-unit="cm">Centimeters</button>
+                        <button class="unit-btn" aria-pressed="false" data-unit="in">Inches</button>
                     </div>
                     <div class="dimensions-grid">
                         <div class="dimension-input">
-                            <label for="height">Height</label>
-                            <input type="number" id="height" placeholder="55" step="0.1" min="0">
+                            <label for="height">Height (longest side)</label>
+                            <input type="number" id="height" placeholder="55" step="0.1" min="0" inputmode="decimal">
                         </div>
                         <div class="dimension-input">
                             <label for="width">Width</label>
-                            <input type="number" id="width" placeholder="40" step="0.1" min="0">
+                            <input type="number" id="width" placeholder="40" step="0.1" min="0" inputmode="decimal">
                         </div>
                         <div class="dimension-input">
                             <label for="depth">Depth</label>
-                            <input type="number" id="depth" placeholder="20" step="0.1" min="0">
+                            <input type="number" id="depth" placeholder="20" step="0.1" min="0" inputmode="decimal">
                         </div>
                     </div>
                 </div>
 
-                <div id="results-container">
+                <div id="results-container" aria-live="polite">
                     <div class="empty-state">
                         <div class="empty-state-icon">🧳</div>
                         <p>Enter your bag dimensions above to see which airlines it fits</p>
@@ -619,13 +735,39 @@
                 </div>
             </div>
 
-            <!-- Luggage Library Tab -->
-            <div id="library" class="tab-content">
+            <!-- Recommended Bags -->
+            <div id="library" class="tab-content" role="tabpanel" aria-labelledby="tab-library">
                 <div class="library-intro">
-                    <h2>My Tested & Recommended Bags</h2>
-                    <p>These bags fit the most airline size rules. I've tested many of these in real airline sizers — see the videos on my YouTube channel!</p>
+                    <h2>Aly's Tested &amp; Recommended Bags</h2>
+                    <p>These bags fit the most airline size rules and are great choices if you're not sure what to buy and want the fewest problems across airlines. Many are tested in real airline sizers on the YouTube channel.</p>
                 </div>
                 <div id="luggage-container"></div>
+            </div>
+
+            <!-- How It Works -->
+            <div id="about" class="tab-content" role="tabpanel" aria-labelledby="tab-about">
+                <div class="about-content">
+                    <h2>How This Tool Works</h2>
+                    <p>Type in your bag's height, width, and depth (including wheels and handles!) and this page compares them against each airline's published carry-on limit. You'll get one of three answers for every airline:</p>
+                    <ul>
+                        <li><strong>✅ Fits</strong> — your bag is within the airline's published size limit.</li>
+                        <li><strong>⚠️ Close call</strong> — your bag is over the limit, but by no more than 1&nbsp;inch (2.54&nbsp;cm). In Aly's real-world testing, bags this close usually slide into the sizer just fine.</li>
+                        <li><strong>❌ Too big</strong> — more than an inch over on at least one side. Expect trouble at the gate.</li>
+                    </ul>
+
+                    <h3>Why "close call" exists</h3>
+                    <p>Published limits are stricter than real life. For example, the Monos Carry-On measures 55.88&nbsp;cm tall while Air Canada's sizer says 55&nbsp;cm — technically too tall, but it fits in the actual sizer bin with ease, and Aly has flown with it on Air Canada many times. That's exactly the kind of nuance a plain checklist misses.</p>
+
+                    <h3>Not all dimensions matter equally</h3>
+                    <p>There's a hierarchy when it comes to carry-on sizing: <strong>height matters most</strong> — it's the first thing that keeps a bag out of a sizer or overhead bin. Width comes next, and depth matters least, especially on soft-sided bags that squish. If you're over on depth only, your odds are better than being over on height.</p>
+
+                    <h3>Where the data comes from</h3>
+                    <p>The size limits come from each airline's official baggage page, based on the dataset Aly Smalls built for her <em>Carry-On Compliance Checker</em> spreadsheet. Each airline shows when it was last checked, with a link to the official source. <span class="data-freshness" data-freshness></span></p>
+
+                    <div class="disclaimer">
+                        <strong>Please note:</strong> airlines can change their rules, and enforcement can vary. This tool is here to help you plan with confidence — not add stress. When in doubt, double-check with your airline before you fly.
+                    </div>
+                </div>
             </div>
         </div>
     </div>
@@ -633,216 +775,302 @@
     <footer>
         <div class="footer-content">
             <p class="footer-note">Airlines can change their rules, and enforcement can vary. This tool is here to help you plan with confidence — not add stress. When in doubt, double-check before you fly.</p>
-            
+
             <div class="footer-links">
-                <a href="https://likewhereyouregoing.com" target="_blank" class="footer-link">Like Where You're Going</a>
-                <a href="https://www.youtube.com/@alysmalls" target="_blank" class="footer-link">YouTube Channel</a>
-                <a href="https://likewhereyouregoing.com/about-me/" target="_blank" class="footer-link">About Aly</a>
+                <a href="https://likewhereyouregoing.com" target="_blank" rel="noopener" class="footer-link">Like Where You're Going</a>
+                <a href="https://www.youtube.com/@alysmalls" target="_blank" rel="noopener" class="footer-link">YouTube Channel</a>
+                <a href="https://likewhereyouregoing.com/about-me/" target="_blank" rel="noopener" class="footer-link">About Aly</a>
             </div>
-            
+
             <p class="footer-credit">Created by Aly Smalls • © 2026</p>
         </div>
     </footer>
 
     <script>
-        // Data embedded from JSON files
-        const AIRLINES_DATA = {"airlines": [{"id": "aegean", "name": "Aegean", "dimensions": {"height": 56.0, "width": 45.0, "depth": 25.0, "unit": "cm"}}, {"id": "aer-ling", "name": "Aer Ling", "dimensions": {"height": 55.0, "width": 40.0, "depth": 24.0, "unit": "cm"}}, {"id": "aeromexico", "name": "Aeromexico", "dimensions": {"height": 55.0, "width": 40.0, "depth": 25.0, "unit": "cm"}}, {"id": "air-canada", "name": "Air Canada", "dimensions": {"height": 55.0, "width": 40.0, "depth": 23.0, "unit": "cm"}}, {"id": "air-china", "name": "Air China", "dimensions": {"height": 55.0, "width": 40.0, "depth": 20.0, "unit": "cm"}}, {"id": "air-france", "name": "Air France", "dimensions": {"height": 55.0, "width": 35.0, "depth": 25.0, "unit": "cm"}}, {"id": "air-transat", "name": "Air Transat", "dimensions": {"height": 55.0, "width": 40.0, "depth": 23.0, "unit": "cm"}}, {"id": "airbaltic", "name": "Airbaltic", "dimensions": {"height": 55.0, "width": 40.0, "depth": 23.0, "unit": "cm"}}, {"id": "alaska", "name": "Alaska", "dimensions": {"height": 56.0, "width": 36.0, "depth": 23.0, "unit": "cm"}}, {"id": "allegiant", "name": "Allegiant", "dimensions": {"height": 55.0, "width": 40.0, "depth": 25.0, "unit": "cm"}}, {"id": "american", "name": "American", "dimensions": {"height": 56.0, "width": 36.0, "depth": 23.0, "unit": "cm"}}, {"id": "ana", "name": "ANA", "dimensions": {"height": 55.0, "width": 40.0, "depth": 25.0, "unit": "cm"}}, {"id": "austrian", "name": "Austrian", "dimensions": {"height": 55.0, "width": 40.0, "depth": 23.0, "unit": "cm"}}, {"id": "avianca", "name": "Avianca", "dimensions": {"height": 55.0, "width": 35.0, "depth": 25.0, "unit": "cm"}}, {"id": "azores", "name": "Azores", "dimensions": {"height": 55.0, "width": 40.0, "depth": 20.0, "unit": "cm"}}, {"id": "breeze-airways", "name": "Breeze Airways", "dimensions": {"height": 56.0, "width": 36.0, "depth": 23.0, "unit": "cm"}}, {"id": "british-airways", "name": "British Airways", "dimensions": {"height": 56.0, "width": 45.0, "depth": 25.0, "unit": "cm"}}, {"id": "brussels", "name": "Brussels", "dimensions": {"height": 55.0, "width": 40.0, "depth": 23.0, "unit": "cm"}}, {"id": "caribbean", "name": "Caribbean", "dimensions": {"height": 56.0, "width": 35.0, "depth": 23.0, "unit": "cm"}}, {"id": "cathay-pacific", "name": "Cathay Pacific", "dimensions": {"height": 56.0, "width": 36.0, "depth": 23.0, "unit": "cm"}}, {"id": "china-airlines", "name": "China Airlines", "dimensions": {"height": 56.0, "width": 36.0, "depth": 23.0, "unit": "cm"}}, {"id": "condor", "name": "Condor", "dimensions": {"height": 55.0, "width": 40.0, "depth": 20.0, "unit": "cm"}}, {"id": "copa", "name": "Copa", "dimensions": {"height": 55.0, "width": 35.0, "depth": 25.0, "unit": "cm"}}, {"id": "delta", "name": "Delta", "dimensions": {"height": 56.0, "width": 36.0, "depth": 23.0, "unit": "cm"}}, {"id": "easyjet", "name": "Easyjet", "dimensions": {"height": 56.0, "width": 45.0, "depth": 25.0, "unit": "cm"}}, {"id": "emirates", "name": "Emirates", "dimensions": {"height": 55.0, "width": 38.0, "depth": 22.0, "unit": "cm"}}, {"id": "etihad-airways", "name": "Etihad Airways", "dimensions": {"height": 56.0, "width": 36.0, "depth": 23.0, "unit": "cm"}}, {"id": "eva", "name": "EVA", "dimensions": {"height": 56.0, "width": 36.0, "depth": 23.0, "unit": "cm"}}, {"id": "fiji", "name": "FIJI", "dimensions": {"height": 55.0, "width": 40.0, "depth": 23.0, "unit": "cm"}}, {"id": "finnair", "name": "Finnair", "dimensions": {"height": 55.0, "width": 40.0, "depth": 23.0, "unit": "cm"}}, {"id": "flair", "name": "Flair", "dimensions": {"height": 55.0, "width": 40.0, "depth": 23.0, "unit": "cm"}}, {"id": "frontier", "name": "Frontier", "dimensions": {"height": 61.0, "width": 40.6, "depth": 25.4, "unit": "cm"}}, {"id": "hawaiian", "name": "Hawaiian", "dimensions": {"height": 56.0, "width": 36.0, "depth": 23.0, "unit": "cm"}}, {"id": "iberia", "name": "Iberia", "dimensions": {"height": 56.0, "width": 40.0, "depth": 25.0, "unit": "cm"}}, {"id": "icelandair", "name": "Icelandair", "dimensions": {"height": 55.0, "width": 40.0, "depth": 20.0, "unit": "cm"}}, {"id": "ita-airways", "name": "ITA Airways", "dimensions": {"height": 55.0, "width": 35.0, "depth": 25.0, "unit": "cm"}}, {"id": "jal", "name": "JAL", "dimensions": {"height": 55.0, "width": 40.0, "depth": 25.0, "unit": "cm"}}, {"id": "japan-airlines", "name": "Japan Airlines", "dimensions": {"height": 55.0, "width": 40.0, "depth": 25.0, "unit": "cm"}}, {"id": "jetblue", "name": "Jetblue", "dimensions": {"height": 56.0, "width": 36.0, "depth": 23.0, "unit": "cm"}}, {"id": "klm", "name": "KLM", "dimensions": {"height": 55.0, "width": 35.0, "depth": 25.0, "unit": "cm"}}, {"id": "korean-air", "name": "Korean Air", "dimensions": {"height": 55.0, "width": 40.0, "depth": 20.0, "unit": "cm"}}, {"id": "la-compagnie", "name": "La Compagnie", "dimensions": {"height": 55.0, "width": 35.0, "depth": 25.0, "unit": "cm"}}, {"id": "latam", "name": "LATAM", "dimensions": {"height": 55.0, "width": 35.0, "depth": 25.0, "unit": "cm"}}, {"id": "level", "name": "LEVEL", "dimensions": {"height": 56.0, "width": 40.0, "depth": 25.0, "unit": "cm"}}, {"id": "lot", "name": "LOT", "dimensions": {"height": 55.0, "width": 40.0, "depth": 23.0, "unit": "cm"}}, {"id": "lufthansa", "name": "Lufthansa", "dimensions": {"height": 55.0, "width": 40.0, "depth": 23.0, "unit": "cm"}}, {"id": "norse", "name": "Norse", "dimensions": {"height": 56.0, "width": 45.0, "depth": 25.0, "unit": "cm"}}, {"id": "norwegian", "name": "Norwegian", "dimensions": {"height": 55.0, "width": 40.0, "depth": 23.0, "unit": "cm"}}, {"id": "philippine-airlines", "name": "Philippine Airlines", "dimensions": {"height": 56.0, "width": 36.0, "depth": 23.0, "unit": "cm"}}, {"id": "play", "name": "PLAY", "dimensions": {"height": 56.0, "width": 45.0, "depth": 25.0, "unit": "cm"}}, {"id": "porter", "name": "Porter", "dimensions": {"height": 55.0, "width": 40.0, "depth": 23.0, "unit": "cm"}}, {"id": "qantas", "name": "Qantas", "dimensions": {"height": 55.0, "width": 35.0, "depth": 22.0, "unit": "cm"}}, {"id": "qatar", "name": "Qatar", "dimensions": {"height": 50.0, "width": 37.0, "depth": 25.0, "unit": "cm"}}, {"id": "royal-air-maroc", "name": "Royal Air Maroc", "dimensions": {"height": 55.0, "width": 40.0, "depth": 25.0, "unit": "cm"}}, {"id": "ryanair", "name": "Ryanair", "dimensions": {"height": 55.0, "width": 40.0, "depth": 20.0, "unit": "cm"}}, {"id": "sas", "name": "SAS", "dimensions": {"height": 55.0, "width": 40.0, "depth": 23.0, "unit": "cm"}}, {"id": "singapore-airlines", "name": "Singapore Airlines", "dimensions": {"height": 55.0, "width": 35.0, "depth": 25.0, "unit": "cm"}}, {"id": "southwest", "name": "Southwest", "dimensions": {"height": 61.0, "width": 40.6, "depth": 25.4, "unit": "cm"}}, {"id": "spirit", "name": "Spirit", "dimensions": {"height": 56.0, "width": 46.0, "depth": 25.0, "unit": "cm"}}, {"id": "sun-country", "name": "Sun Country", "dimensions": {"height": 61.0, "width": 40.64, "depth": 27.94, "unit": "cm"}}, {"id": "sunwing", "name": "Sunwing", "dimensions": {"height": 51.0, "width": 40.0, "depth": 23.0, "unit": "cm"}}, {"id": "swiss", "name": "SWISS", "dimensions": {"height": 55.0, "width": 40.0, "depth": 23.0, "unit": "cm"}}, {"id": "tap", "name": "TAP", "dimensions": {"height": 55.0, "width": 40.0, "depth": 25.0, "unit": "cm"}}, {"id": "tui", "name": "TUI", "dimensions": {"height": 55.0, "width": 40.0, "depth": 20.0, "unit": "cm"}}, {"id": "turkish-airlines", "name": "Turkish Airlines", "dimensions": {"height": 55.0, "width": 40.0, "depth": 23.0, "unit": "cm"}}, {"id": "united", "name": "United", "dimensions": {"height": 56.0, "width": 36.0, "depth": 23.0, "unit": "cm"}}, {"id": "virgin-atlantic", "name": "Virgin Atlantic", "dimensions": {"height": 56.0, "width": 36.0, "depth": 23.0, "unit": "cm"}}, {"id": "virgin-australia", "name": "Virgin Australia", "dimensions": {"height": 56.0, "width": 36.0, "depth": 23.0, "unit": "cm"}}, {"id": "viva-aerobus", "name": "Viva Aerobus", "dimensions": {"height": 55.0, "width": 40.0, "depth": 25.0, "unit": "cm"}}, {"id": "volaris", "name": "Volaris", "dimensions": {"height": 55.0, "width": 40.0, "depth": 25.0, "unit": "cm"}}, {"id": "vueling", "name": "Vueling", "dimensions": {"height": 55.0, "width": 40.0, "depth": 20.0, "unit": "cm"}}, {"id": "westjet-", "name": "WestJet ", "dimensions": {"height": 56.0, "width": 36.0, "depth": 23.0, "unit": "cm"}}, {"id": "wizz-air", "name": "Wizz Air", "dimensions": {"height": 55.0, "width": 40.0, "depth": 23.0, "unit": "cm"}}, {"id": "zipair", "name": "ZIPAIR", "dimensions": {"height": 55.0, "width": 40.0, "depth": 25.0, "unit": "cm"}}]};
-        const LUGGAGE_DATA = {"luggage": [{"id": "antler-cabin-suitcase-", "name": "Antler Cabin Suitcase", "dimensions": {"height": 55.0, "width": 40.0, "depth": 20.0, "unit": "cm"}, "notes": "Lightweight and minimalist, good maneuverability"}, {"id": "away-carry-on-", "name": "AWAY Carry-On", "dimensions": {"height": 55.0, "width": 36.7, "depth": 23.0, "unit": "cm"}, "notes": "A solid choice, especially for North American flights"}, {"id": "beis-small-carry-on", "name": "BEIS Small Carry-On", "dimensions": {"height": 53.0, "width": 33.0, "depth": 22.0, "unit": "cm"}, "notes": "One of the 'shortest' on my list, holds a surprising amount"}, {"id": "july-carry-on-light-expandable", "name": "July Carry On Light Expandable", "dimensions": {"height": 54.0, "width": 36.0, "depth": 22.0, "unit": "cm"}, "notes": "Choose this one if you need the most size but light weight"}, {"id": "july-carry-on-essential", "name": "July Carry-On Essential", "dimensions": {"height": 55.0, "width": 38.5, "depth": 21.5, "unit": "cm"}, "notes": "I haven't tried July luggage yet, but I've read many positive reviews"}, {"id": "monos-carry-on", "name": "Monos Carry-On", "dimensions": {"height": 55.88, "width": 35.56, "depth": 22.86, "unit": "cm"}, "notes": "I love my monos, has worked great all over Europe"}, {"id": "antler-soft-stripe-20", "name": "Antler Soft Stripe 2.0", "dimensions": {"height": 55.0, "width": 35.0, "depth": 20.0, "unit": "cm"}, "notes": "4.1 lb (1.9kg)"}, {"id": "away-softside-carry-on", "name": "AWAY Softside Carry-on", "dimensions": {"height": 55.5, "width": 38.0, "depth": 23.0, "unit": "cm"}, "notes": "I loved using this in Japan"}, {"id": "cotopaxi-allpa-35l-backpack", "name": "Cotopaxi Allpa 35L Backpack", "dimensions": {"height": 56.0, "width": 30.0, "depth": 25.0, "unit": "cm"}, "notes": "3 lb (1.33kg)"}, {"id": "bric's-x-travel-spinner", "name": "Bric's X-Travel Spinner", "dimensions": {"height": 53.0, "width": 33.0, "depth": 23.0, "unit": "cm"}, "notes": "One of my all-time 'go-tos' "}, {"id": "briggs-&-riley-global-20\"-carry-on-", "name": "Briggs & Riley Global 20\" Carry-on", "dimensions": {"height": 53.3, "width": 38.1, "depth": 22.9, "unit": "cm"}, "notes": "An investment, but one of the highest-rated brands in the luggage world"}, {"id": "travelpro-maxlite-5-softside-19\"-4-wheel", "name": "Travelpro Maxlite 5 Softside 19\" 4-wheel", "dimensions": {"height": 55.2, "width": 40.0, "depth": 19.6, "unit": "cm"}, "notes": "Trusty brand, good durability & lots of pockets"}, {"id": "travelpro-maxlite-5-softside-20\"-2-wheel", "name": "Travelpro Maxlite 5 Softside 20\" 2-wheel", "dimensions": {"height": 55.2, "width": 40.0, "depth": 19.6, "unit": "cm"}, "notes": "2-wheel has a litle more interior space than the 4 wheel"}, {"id": "amazon-basics-21\"", "name": "Amazon Basics 21\"", "dimensions": {"height": 55.0, "width": 37.5, "depth": 25.0, "unit": "cm"}, "notes": "I haven't tested the quality, but reviews are decent and price is right!"}, {"id": "bagsmart-blast-43l-roller-backpack", "name": "Bagsmart Blast 43L Roller Backpack", "dimensions": {"height": 55.0, "width": 35.0, "depth": 23.0, "unit": "cm"}, "notes": "Roller bag & backpack all-in-one for ultimate flexibility "}, {"id": "hanke-20-inch-top-opening", "name": "Hanke 20 Inch Top-Opening", "dimensions": {"height": 55.88, "width": 37.0, "depth": 24.0, "unit": "cm"}, "notes": "A rare hardshell that is 'top-open' design "}, {"id": "quince-small-carry-on-suitcase", "name": "Quince Small Carry-On Suitcase", "dimensions": {"height": 55.88, "width": 36.5, "depth": 23.0, "unit": "cm"}, "notes": "A perfect 'dupe' of the AWAY hardshell (make sure you choose this size)"}]};
-        
+        // ---------------------------------------------------------------
+        // Data loading: the JSON files are the source of truth. The
+        // fallback below is an auto-generated snapshot used when the
+        // files can't be fetched (e.g. opening this file directly from
+        // disk). Regenerate it with: python3 scripts/embed_fallback.py
+        // ---------------------------------------------------------------
+        // FALLBACK-DATA-START
+        const FALLBACK_AIRLINES = {"airlines": [{"id": "aegean","name": "Aegean","region": "Europe","dimensions": {"height": 56,"width": 45,"depth": 25,"unit": "cm"},"weight_limit_kg": 8,"notes": "Business class allows up to 13 kg. Smaller Olympic Air planes use a 55×40×23 cm, 8 kg limit.","source_url": "https://en.aegeanair.com/travel-info/travelling-with-aegean/baggage/baggage-allowance/","last_verified": "2026-07-02"},{"id": "aer-lingus","name": "Aer Lingus","region": "Europe","dimensions": {"height": 55,"width": 40,"depth": 24,"unit": "cm"},"weight_limit_kg": 10,"personal_item": {"height": 25,"width": 33,"depth": 20,"unit": "cm"},"notes": "Aer Lingus Regional flights now share the same 10 kg allowance as the mainline.","source_url": "https://www.aerlingus.com/prepare/bags/","last_verified": "2026-07-02"},{"id": "aeromexico","name": "Aeromexico","region": "Latin America & Caribbean","dimensions": {"height": 55,"width": 40,"depth": 25,"unit": "cm"},"weight_limit_kg": 10,"notes": "On Basic fares your carry-on and personal item together can weigh at most 10 kg.","source_url": "https://www.aeromexico.com/en-us/travel-information/baggage/carry-on-baggage","last_verified": "2026-07-02"},{"id": "air-canada","name": "Air Canada","region": "North America","dimensions": {"height": 55,"width": 40,"depth": 23,"unit": "cm"},"personal_item": {"height": 33,"width": 43,"depth": 16,"unit": "cm"},"notes": "Economy Basic fares (bought after Jan 3, 2025) don't include a carry-on within Canada/US/Mexico/Caribbean — personal item only.","source_url": "https://www.aircanada.com/ca/en/aco/home/plan/baggage/carry-on.html","last_verified": "2026-07-02"},{"id": "air-china","name": "Air China","region": "Asia-Pacific","dimensions": {"height": 55,"width": 40,"depth": 20,"unit": "cm"},"weight_limit_kg": 5,"notes": "The 5 kg limit is for economy; business and first get two bags at 8 kg each.","source_url": "https://www.airchina.us/US/GB/info/carry-on-baggage/","last_verified": "2026-07-02"},{"id": "air-france","name": "Air France","region": "Europe","dimensions": {"height": 55,"width": 35,"depth": 25,"unit": "cm"},"weight_limit_kg": 12,"personal_item": {"height": 40,"width": 30,"depth": 15,"unit": "cm"},"notes": "The 12 kg allowance covers your cabin bag and personal item together (18 kg in business).","source_url": "https://wwws.airfrance.us/information/bagages/bagage-cabine-soute","last_verified": "2026-07-02"},{"id": "air-transat","name": "Air Transat","region": "North America","dimensions": {"height": 55,"width": 40,"depth": 23,"unit": "cm"},"weight_limit_kg": 10,"personal_item": {"height": 43,"width": 31,"depth": 13,"unit": "cm"},"notes": "The cheapest Eco Budget fares on south/US routes include only a personal item; Club Class gets 15 kg.","source_url": "https://www.airtransat.com/en-CA/travel-information/baggage/weight-dimensions","last_verified": "2026-07-02"},{"id": "airbaltic","name": "airBaltic","region": "Europe","dimensions": {"height": 55,"width": 40,"depth": 23,"unit": "cm"},"weight_limit_kg": 8,"personal_item": {"height": 40,"width": 30,"depth": 15,"unit": "cm"},"notes": "The cheapest Economy MINI fare includes a personal item only; business allows up to 24 kg.","source_url": "https://www.airbaltic.com/en/baggage/cabin-baggage","last_verified": "2026-07-02"},{"id": "alaska","name": "Alaska","region": "North America","dimensions": {"height": 56,"width": 36,"depth": 23,"unit": "cm"},"notes": "No published weight limit — you just need to lift it into the bin yourself. Free on every fare, even the cheapest.","source_url": "https://www.alaskaair.com/content/travel-info/baggage/carry-on-luggage","last_verified": "2026-07-02"},{"id": "allegiant","name": "Allegiant","region": "North America","dimensions": {"height": 55,"width": 40,"depth": 25,"unit": "cm"},"personal_item": {"height": 45,"width": 35,"depth": 20,"unit": "cm"},"notes": "Carry-on bags always cost extra on Allegiant (cheaper if paid online in advance) — only the personal item is free.","source_url": "https://www.allegiantair.com/baggage-1","last_verified": "2026-07-02"},{"id": "american","name": "American","region": "North America","dimensions": {"height": 56,"width": 36,"depth": 23,"unit": "cm"},"personal_item": {"height": 45,"width": 35,"depth": 20,"unit": "cm"},"notes": "No published weight limit — the bag just has to fit the sizer.","source_url": "https://www.aa.com/i18n/travel-info/baggage/carry-on-baggage.jsp","last_verified": "2026-07-02"},{"id": "ana","name": "ANA","region": "Asia-Pacific","dimensions": {"height": 55,"width": 40,"depth": 25,"unit": "cm"},"weight_limit_kg": 10,"notes": "The 10 kg covers your carry-on and personal item together. Small domestic aircraft use a reduced 45×35×20 cm limit.","source_url": "https://www.ana.co.jp/en/us/travel-information/baggage-information/carry-on/","last_verified": "2026-07-02"},{"id": "austrian","name": "Austrian","region": "Europe","dimensions": {"height": 55,"width": 40,"depth": 23,"unit": "cm"},"weight_limit_kg": 8,"personal_item": {"height": 40,"width": 30,"depth": 15,"unit": "cm"},"notes": "Economy Basic fares on short-haul flights include only a personal item (40×30×15 cm), not a full cabin bag.","source_url": "https://www.austrian.com/xx/en/handgepaeck","last_verified": "2026-07-02"},{"id": "avianca","name": "Avianca","region": "Latin America & Caribbean","dimensions": {"height": 55,"width": 35,"depth": 25,"unit": "cm"},"weight_limit_kg": 10,"personal_item": {"height": 45,"width": 35,"depth": 20,"unit": "cm"},"notes": "Basic fares don't include a carry-on — it costs extra. The personal item is free on every fare.","source_url": "https://ayuda.avianca.com/hc/en-us/articles/13080259544219-What-is-carry-on-baggage-and-how-can-I-purchase-it","last_verified": "2026-07-02"},{"id": "azores","name": "Azores","region": "Europe","dimensions": {"height": 55,"width": 40,"depth": 20,"unit": "cm"},"weight_limit_kg": 8,"personal_item": {"height": 40,"width": 30,"depth": 15,"unit": "cm"},"notes": "8 kg on economy fares; Comfort Plus allows 15 kg. Your personal item counts within the weight allowance.","source_url": "https://www.azoresairlines.pt/en/information/baggage/carry-on-baggage","last_verified": "2026-07-02"},{"id": "breeze-airways","name": "Breeze Airways","region": "North America","dimensions": {"height": 56,"width": 36,"depth": 23,"unit": "cm"},"weight_limit_kg": 15.9,"personal_item": {"height": 43,"width": 33,"depth": 20,"unit": "cm"},"notes": "Carry-on isn't included in the base Nice fare — it's an add-on or comes in bundles. The personal item is always free.","source_url": "https://www.flybreeze.com/support?a=Bag-Allowance-and-Dimensions---id--EvTT15-VRZWup0Ivwy_VhA","last_verified": "2026-07-02"},{"id": "british-airways","name": "British Airways","region": "Europe","dimensions": {"height": 56,"width": 45,"depth": 25,"unit": "cm"},"personal_item": {"height": 40,"width": 30,"depth": 15,"unit": "cm"},"notes": "No hard weight limit — you just need to lift it into the bin yourself. One of the most generous size allowances out there.","source_url": "https://www.britishairways.com/content/en/us/information/baggage-essentials","last_verified": "2026-07-02"},{"id": "brussels","name": "Brussels","region": "Europe","dimensions": {"height": 55,"width": 40,"depth": 23,"unit": "cm"},"weight_limit_kg": 8,"personal_item": {"height": 40,"width": 30,"depth": 15,"unit": "cm"},"notes": "Economy Basic fares on short-haul flights include only a personal item (40×30×15 cm), not a full cabin bag.","source_url": "https://www.brusselsairlines.com/xx/en/extra-services/baggage/carry-on-baggage","last_verified": "2026-07-02"},{"id": "caribbean","name": "Caribbean","region": "Latin America & Caribbean","dimensions": {"height": 56,"width": 35,"depth": 23,"unit": "cm"},"weight_limit_kg": 10,"personal_item": {"height": 43,"width": 33,"depth": 15,"unit": "cm"},"source_url": "https://www.caribbean-airlines.com/#/baggage/carry-on","last_verified": "2026-07-02"},{"id": "cathay-pacific","name": "Cathay Pacific","region": "Asia-Pacific","dimensions": {"height": 56,"width": 36,"depth": 23,"unit": "cm"},"weight_limit_kg": 7,"personal_item": {"height": 40,"width": 30,"depth": 15,"unit": "cm"},"notes": "Allowance varies by cabin class and route — 7 kg in economy. Cathay's own baggage calculator is the source of truth.","source_url": "https://www.cathaypacific.com/cx/en_US/faqs/baggage/cabin-baggage-allowance/what-is-my-carry-on-baggage-allowance.html","last_verified": "2026-07-02"},{"id": "china-airlines","name": "China Airlines","region": "Asia-Pacific","dimensions": {"height": 56,"width": 36,"depth": 23,"unit": "cm"},"weight_limit_kg": 7,"personal_item": {"height": 40,"width": 30,"depth": 15,"unit": "cm"},"notes": "7 kg across all classes; business class gets a second carry-on.","source_url": "https://www.china-airlines.com/us/en/fly/prepare-for-the-fly/baggage/carry-on-baggage","last_verified": "2026-07-02"},{"id": "condor","name": "Condor","region": "Europe","dimensions": {"height": 55,"width": 40,"depth": 23,"unit": "cm"},"weight_limit_kg": 8,"personal_item": {"height": 40,"width": 30,"depth": 15,"unit": "cm"},"notes": "Condor enlarged its carry-on depth to 23 cm in May 2026 — older guides may still say 20 cm.","source_url": "https://condor-newsroom.condor.com/de/de/news-artikel/groesseres-handgepaeck-mehr-aufgabegepaeck-condor-verbessert-konditionen-fuer-ihre-gaeste/","last_verified": "2026-07-02"},{"id": "copa","name": "Copa","region": "Latin America & Caribbean","dimensions": {"height": 56,"width": 36,"depth": 23,"unit": "cm"},"weight_limit_kg": 10,"personal_item": {"height": 43,"width": 25,"depth": 22,"unit": "cm"},"notes": "Copa publishes this in inches (22 × 14 × 9 in) — the cm figures here are converted.","source_url": "https://www.copaair.com/en-us/travel-information/baggage-information/carry-on/","last_verified": "2026-07-02"},{"id": "delta","name": "Delta","region": "North America","dimensions": {"height": 56,"width": 35,"depth": 23,"unit": "cm"},"notes": "Published as 22 × 14 × 9 in including wheels and handles. No weight limit. Tiny Delta Connection planes (50 seats or fewer) take a personal item only.","source_url": "https://www.delta.com/us/en/baggage/carry-on-baggage","last_verified": "2026-07-02"},{"id": "easyjet","name": "easyJet","region": "Europe","dimensions": {"height": 56,"width": 45,"depth": 25,"unit": "cm"},"weight_limit_kg": 15,"personal_item": {"height": 45,"width": 36,"depth": 20,"unit": "cm"},"notes": "Everyone gets the small underseat bag (45×36×20 cm) free; this big cabin bag requires an add-on, an Inclusive Plus fare, or easyJet Plus membership.","source_url": "https://www.easyjet.com/en/help/baggage/cabin-bags","last_verified": "2026-07-02"},{"id": "emirates","name": "Emirates","region": "Middle East & Africa","dimensions": {"height": 55,"width": 38,"depth": 22,"unit": "cm"},"weight_limit_kg": 7,"notes": "7 kg in economy (10 kg premium economy). Flights departing India use a stricter 115 cm total rule.","source_url": "https://www.emirates.com/us/english/before-you-fly/baggage/cabin-baggage-rules/","last_verified": "2026-07-02"},{"id": "etihad-airways","name": "Etihad Airways","region": "Middle East & Africa","dimensions": {"height": 56,"width": 36,"depth": 23,"unit": "cm"},"weight_limit_kg": 7,"personal_item": {"height": 39,"width": 23,"depth": 19,"unit": "cm"},"notes": "Economy gets one 7 kg bag with no separate personal item; business/first get two bags plus a personal item.","source_url": "https://www.etihad.com/en/help/baggage-information","last_verified": "2026-07-02"},{"id": "eva-air","name": "EVA Air","region": "Asia-Pacific","dimensions": {"height": 56,"width": 36,"depth": 23,"unit": "cm"},"weight_limit_kg": 7,"notes": "7 kg per bag; business class may bring two.","source_url": "https://www.evaair.com/en-us/fly-prepare/baggage/free-baggage/carry-on-baggage/","last_verified": "2026-07-02"},{"id": "fiji-airways","name": "Fiji Airways","region": "Asia-Pacific","dimensions": {"height": 55,"width": 40,"depth": 23,"unit": "cm"},"weight_limit_kg": 7,"notes": "7 kg in economy — and your personal item counts as part of the piece allowance rather than extra.","source_url": "https://www.fijiairways.com/en-us/manage/baggage-allowances","last_verified": "2026-07-02"},{"id": "finnair","name": "Finnair","region": "Europe","dimensions": {"height": 55,"width": 40,"depth": 23,"unit": "cm"},"weight_limit_kg": 12,"personal_item": {"height": 40,"width": 30,"depth": 15,"unit": "cm"},"notes": "The 8–12 kg allowance (depending on ticket type) covers your cabin bag and small bag together.","source_url": "https://www.finnair.com/us-en/baggage-on-finnair-flights/carry-on-baggage","last_verified": "2026-07-02"},{"id": "flair","name": "Flair","region": "North America","dimensions": {"height": 55,"width": 40,"depth": 23,"unit": "cm"},"weight_limit_kg": 10,"personal_item": {"height": 43,"width": 33,"depth": 15,"unit": "cm"},"notes": "Carry-on costs extra unless your bundle includes it — only the personal item (43×33×15 cm) is free on every ticket.","source_url": "https://www.flyflair.com/travel-info/baggage","last_verified": "2026-07-02"},{"id": "frontier","name": "Frontier","region": "North America","dimensions": {"height": 61,"width": 40.6,"depth": 25.4,"unit": "cm"},"weight_limit_kg": 15.9,"personal_item": {"height": 35.6,"width": 45.7,"depth": 20.3,"unit": "cm"},"notes": "Carry-on is a paid add-on on Frontier — only the personal item is free. Weight limit 35 lb (about 16 kg).","source_url": "https://faq.flyfrontier.com/help/bags-seats-general-info-what-are-the-sizes-and-weight-limits-for-bags","last_verified": "2026-07-02"},{"id": "hawaiian","name": "Hawaiian","region": "North America","dimensions": {"height": 56,"width": 36,"depth": 23,"unit": "cm"},"notes": "Published as 22 × 14 × 9 in including wheels and handles; no stated weight limit.","source_url": "https://www.hawaiianairlines.com/content/travel-info/baggage/carry-on-luggage","last_verified": "2026-07-02"},{"id": "iberia","name": "Iberia","region": "Europe","dimensions": {"height": 56,"width": 40,"depth": 25,"unit": "cm"},"weight_limit_kg": 10,"personal_item": {"height": 40,"width": 30,"depth": 15,"unit": "cm"},"notes": "Business allows 14 kg on long-haul. Iberia flights operated by Vueling use the smaller 55×40×20 cm limit.","source_url": "https://www.iberia.com/us/luggage/hand-luggage/","last_verified": "2026-07-02"},{"id": "icelandair","name": "Icelandair","region": "Europe","dimensions": {"height": 55,"width": 40,"depth": 20,"unit": "cm"},"weight_limit_kg": 10,"notes": "Measured with handles and wheels included; oversize bags get checked at the gate.","source_url": "https://www.icelandair.com/support/baggage/allowance/","last_verified": "2026-07-02"},{"id": "ita-airways","name": "ITA Airways","region": "Europe","dimensions": {"height": 55,"width": 35,"depth": 25,"unit": "cm"},"weight_limit_kg": 8,"personal_item": {"height": 45,"width": 36,"depth": 20,"unit": "cm"},"notes": "ITA is known to actually weigh bags — keep to the 8 kg limit.","source_url": "https://www.ita-airways.com/en_us/fly-ita/baggage/hand-baggage.html","last_verified": "2026-07-02"},{"id": "japan-airlines","name": "Japan Airlines","region": "Asia-Pacific","dimensions": {"height": 55,"width": 40,"depth": 25,"unit": "cm"},"weight_limit_kg": 10,"notes": "The 10 kg covers your carry-on and personal item together; small domestic aircraft have tighter limits.","source_url": "https://www.jal.co.jp/jp/en/inter/baggage/inflight/","last_verified": "2026-07-02"},{"id": "jetblue","name": "JetBlue","region": "North America","dimensions": {"height": 56,"width": 36,"depth": 23,"unit": "cm"},"personal_item": {"height": 43.2,"width": 33,"depth": 20.3,"unit": "cm"},"notes": "Published as 22 × 14 × 9 in. No weight limit — and since 2024 even Blue Basic fares include a free carry-on.","source_url": "https://www.jetblue.com/help/carry-on-bags","last_verified": "2026-07-02"},{"id": "klm","name": "KLM","region": "Europe","dimensions": {"height": 55,"width": 35,"depth": 25,"unit": "cm"},"weight_limit_kg": 12,"personal_item": {"height": 40,"width": 30,"depth": 15,"unit": "cm"},"notes": "The 12 kg allowance covers your cabin bag and small bag together (18 kg in business).","source_url": "https://www.klm.com/information/baggage/hand-baggage-allowance","last_verified": "2026-07-02"},{"id": "korean-air","name": "Korean Air","region": "Asia-Pacific","dimensions": {"height": 55,"width": 40,"depth": 20,"unit": "cm"},"weight_limit_kg": 10,"notes": "The three sides must also total 115 cm or less; carry-on plus personal item together max 10 kg.","source_url": "https://www.koreanair.com/contents/plan-your-travel/baggage/carry-on-baggage?hl=en","last_verified": "2026-07-02"},{"id": "la-compagnie","name": "La Compagnie","region": "Europe","dimensions": {"height": 55,"width": 35,"depth": 25,"unit": "cm"},"weight_limit_kg": 18,"notes": "All-business-class airline — 18 kg total across all your cabin items.","source_url": "https://www.lacompagnie.com/en/plan/administrative-formalities","last_verified": "2026-07-02"},{"id": "latam","name": "LATAM","region": "Latin America & Caribbean","dimensions": {"height": 55,"width": 35,"depth": 25,"unit": "cm"},"weight_limit_kg": 10,"notes": "Weight allowance varies by market and cabin: 10 kg standard, up to 16 kg in premium cabins.","source_url": "https://www.latamairlines.com/us/en/experience/prepare-your-trip/baggage/carry-on","last_verified": "2026-07-02"},{"id": "level","name": "LEVEL","region": "Europe","dimensions": {"height": 56,"width": 40,"depth": 25,"unit": "cm"},"weight_limit_kg": 10,"personal_item": {"height": 40,"width": 30,"depth": 15,"unit": "cm"},"source_url": "https://www.flylevel.com/en/why-level/baggage","last_verified": "2026-07-02"},{"id": "lot","name": "LOT","region": "Europe","dimensions": {"height": 55,"width": 40,"depth": 23,"unit": "cm"},"weight_limit_kg": 8,"personal_item": {"height": 40,"width": 35,"depth": 12,"unit": "cm"},"notes": "The three sides can't total more than 118 cm. Personal item up to 2 kg.","source_url": "https://www.lot.com/us/en/journey/baggage/carry-on-baggage","last_verified": "2026-07-02"},{"id": "lufthansa","name": "Lufthansa","region": "Europe","dimensions": {"height": 55,"width": 40,"depth": 23,"unit": "cm"},"weight_limit_kg": 8,"personal_item": {"height": 40,"width": 30,"depth": 15,"unit": "cm"},"notes": "Economy Basic fares on short-haul flights include only a personal item (40×30×15 cm), not a full cabin bag.","source_url": "https://www.lufthansa.com/us/en/carry-on-baggage","last_verified": "2026-07-02"},{"id": "norse","name": "Norse","region": "Europe","dimensions": {"height": 56,"width": 45,"depth": 25,"unit": "cm"},"weight_limit_kg": 10,"personal_item": {"height": 40,"width": 30,"depth": 15,"unit": "cm"},"notes": "The cheapest Light fares don't include the big cabin bag — it's a paid add-on; only the personal item is free.","source_url": "https://help.flynorse.com/articles/baggage/hand-baggage/62668e2ed0c1607a2b555181","last_verified": "2026-07-02"},{"id": "norwegian","name": "Norwegian","region": "Europe","dimensions": {"height": 55,"width": 40,"depth": 23,"unit": "cm"},"weight_limit_kg": 10,"personal_item": {"height": 40,"width": 30,"depth": 20,"unit": "cm"},"notes": "The 10 kg limit covers the cabin bag and underseat bag (40×30×20 cm) together.","source_url": "https://www.norwegian.com/us/travel-info/baggage/hand-baggage/","last_verified": "2026-07-02"},{"id": "philippine-airlines","name": "Philippine Airlines","region": "Asia-Pacific","dimensions": {"height": 56,"width": 36,"depth": 23,"unit": "cm"},"weight_limit_kg": 7,"notes": "Published as 22 × 14 × 9 in, plus one personal item.","source_url": "https://www.philippineairlines.com/ph/en/before-you-fly/baggage-information/baggage-allowance/baggage-allowance-fees/carry-on-baggage.html","last_verified": "2026-07-02"},{"id": "porter","name": "Porter","region": "North America","dimensions": {"height": 55,"width": 40,"depth": 23,"unit": "cm"},"personal_item": {"height": 43,"width": 33,"depth": 16,"unit": "cm"},"notes": "Basic fares include only the personal item — the full carry-on costs extra. Otherwise no weight limit.","source_url": "https://www.flyporter.com/en-ca/travel-information/baggage/carry-on-allowance","last_verified": "2026-07-02"},{"id": "qantas","name": "Qantas","region": "Asia-Pacific","dimensions": {"height": 56,"width": 36,"depth": 23,"unit": "cm"},"weight_limit_kg": 7,"notes": "Qantas now publishes 56×36×23 cm at 7 kg; domestic flights also allow an underseat bag with a 14 kg combined limit.","source_url": "https://www.qantas.com/en-au/baggage/carry-on","last_verified": "2026-07-02"},{"id": "qatar","name": "Qatar","region": "Middle East & Africa","dimensions": {"height": 50,"width": 37,"depth": 25,"unit": "cm"},"weight_limit_kg": 7,"notes": "Economy gets one 7 kg piece; business/first get two at up to 15 kg each.","source_url": "https://www.qatarairways.com/en/baggage/allowance.html","last_verified": "2026-07-02"},{"id": "royal-air-maroc","name": "Royal Air Maroc","region": "Middle East & Africa","dimensions": {"height": 55,"width": 40,"depth": 25,"unit": "cm"},"weight_limit_kg": 10,"personal_item": {"height": 40,"width": 30,"depth": 15,"unit": "cm"},"notes": "10 kg in economy, 12 kg in business, plus a small 2 kg personal item.","source_url": "https://www.royalairmaroc.com/us-en/carry-on-baggage","last_verified": "2026-07-02"},{"id": "ryanair","name": "Ryanair","region": "Europe","dimensions": {"height": 55,"width": 40,"depth": 20,"unit": "cm"},"weight_limit_kg": 10,"personal_item": {"height": 40,"width": 30,"depth": 20,"unit": "cm"},"notes": "This bag needs the paid 'Priority & 2 Cabin Bags' add-on. Every fare includes a free personal bag (40×30×20 cm) that fits under the seat.","source_url": "https://help.ryanair.com/hc/en-us/articles/360017825358-Priority-2-Cabin-Bags","last_verified": "2026-07-02"},{"id": "sas","name": "SAS","region": "Europe","dimensions": {"height": 55,"width": 40,"depth": 23,"unit": "cm"},"weight_limit_kg": 8,"personal_item": {"height": 40,"width": 30,"depth": 15,"unit": "cm"},"notes": "The cheapest Go Light fares in Europe include only the underseat bag — and gate sizers are enforced.","source_url": "https://www.flysas.com/en/travel-info/baggage/carry-on","last_verified": "2026-07-02"},{"id": "singapore-airlines","name": "Singapore Airlines","region": "Asia-Pacific","dimensions": {"height": 55,"width": 40,"depth": 20,"unit": "cm"},"weight_limit_kg": 7,"personal_item": {"height": 40,"width": 30,"depth": 10,"unit": "cm"},"notes": "Singapore's real rule is a 115 cm total (height + width + depth), max 7 kg — this box is their published example, but any shape totalling 115 cm works.","source_url": "https://www.singaporeair.com/en_UK/us/travel-info/baggage/cabin-baggage/","last_verified": "2026-07-02"},{"id": "southwest","name": "Southwest","region": "North America","dimensions": {"height": 61,"width": 40.6,"depth": 25.4,"unit": "cm"},"notes": "Carry-on and personal item are still free on every fare — the 2025 change only ended free checked bags.","source_url": "https://support.southwest.com/helpcenter/s/article/carryon-baggage-policy","last_verified": "2026-07-02"},{"id": "sun-country","name": "Sun Country","region": "North America","dimensions": {"height": 61,"width": 40.6,"depth": 27.9,"unit": "cm"},"weight_limit_kg": 15.9,"personal_item": {"height": 43.2,"width": 33,"depth": 22.9,"unit": "cm"},"notes": "Carry-on is a paid add-on on every fare — only the underseat personal item is free.","source_url": "https://www.suncountry.com/help-center/bags-and-seats","last_verified": "2026-07-02"},{"id": "swiss","name": "SWISS","region": "Europe","dimensions": {"height": 55,"width": 40,"depth": 23,"unit": "cm"},"weight_limit_kg": 8,"personal_item": {"height": 40,"width": 30,"depth": 15,"unit": "cm"},"notes": "Measured with wheels, side pockets and handles included.","source_url": "https://www.swiss.com/us/en/prepare/baggage","last_verified": "2026-07-02"},{"id": "tap","name": "TAP","region": "Europe","dimensions": {"height": 55,"width": 40,"depth": 25,"unit": "cm"},"weight_limit_kg": 10,"personal_item": {"height": 40,"width": 30,"depth": 15,"unit": "cm"},"notes": "A small personal item (max 2 kg) rides free alongside the cabin bag.","source_url": "https://www.flytap.com/en-us/information/baggage/hand-baggage","last_verified": "2026-07-02"},{"id": "tui","name": "TUI","region": "Europe","dimensions": {"height": 55,"width": 40,"depth": 20,"unit": "cm"},"weight_limit_kg": 10,"personal_item": {"height": 40,"width": 30,"depth": 20,"unit": "cm"},"notes": "Plus a small underseat bag (40×30×20 cm). You need to lift the big one into the bin yourself.","source_url": "https://www.tui.co.uk/destinations/info/luggage-allowance","last_verified": "2026-07-02"},{"id": "turkish-airlines","name": "Turkish Airlines","region": "Europe","dimensions": {"height": 55,"width": 40,"depth": 23,"unit": "cm"},"weight_limit_kg": 8,"personal_item": {"height": 40,"width": 30,"depth": 15,"unit": "cm"},"notes": "Wheels and handles included. Business class gets two cabin bags.","source_url": "https://www.turkishairlines.com/en-us/any-questions/carry-on-baggage/","last_verified": "2026-07-02"},{"id": "united","name": "United","region": "North America","dimensions": {"height": 56,"width": 36,"depth": 23,"unit": "cm"},"personal_item": {"height": 43,"width": 25,"depth": 22,"unit": "cm"},"notes": "Published as 22 × 14 × 9 in including wheels and handles. No weight limit. Basic Economy on most domestic routes gets a personal item only.","source_url": "https://www.united.com/en/us/fly/baggage/carry-on-bags.html","last_verified": "2026-07-02"},{"id": "virgin-atlantic","name": "Virgin Atlantic","region": "Europe","dimensions": {"height": 56,"width": 36,"depth": 23,"unit": "cm"},"weight_limit_kg": 10,"personal_item": {"height": 40,"width": 30,"depth": 15,"unit": "cm"},"notes": "10 kg in economy and premium; Upper Class gets two bags at 16 kg combined. A free underseat item comes with every fare.","source_url": "https://help.virginatlantic.com/gb/en/baggage/hand-baggage.html","last_verified": "2026-07-02"},{"id": "virgin-australia","name": "Virgin Australia","region": "Asia-Pacific","dimensions": {"height": 56,"width": 36,"depth": 23,"unit": "cm"},"weight_limit_kg": 8,"personal_item": {"height": 45,"width": 33,"depth": 20,"unit": "cm"},"notes": "Since Feb 2026, economy gets one 56×36×23 cm bag at 8 kg (a two-smaller-bags option remains for business and top-tier flyers).","source_url": "https://www.virginaustralia.com/us/en/travel-info/baggage/carry-on-baggage/","last_verified": "2026-07-02"},{"id": "viva-aerobus","name": "Viva Aerobus","region": "Latin America & Caribbean","dimensions": {"height": 55,"width": 40,"depth": 25,"unit": "cm"},"weight_limit_kg": 10,"personal_item": {"height": 45,"width": 35,"depth": 20,"unit": "cm"},"notes": "The lowest Zero fare includes only the personal item — the full carry-on needs a higher fare or an added fee.","source_url": "https://blog.vivaaerobus.com/en/baggage-policies/","last_verified": "2026-07-02"},{"id": "volaris","name": "Volaris","region": "Latin America & Caribbean","dimensions": {"height": 55,"width": 40,"depth": 25,"unit": "cm"},"weight_limit_kg": 20,"personal_item": {"height": 45,"width": 35,"depth": 20,"unit": "cm"},"notes": "On Zero/Básica fares only the personal item is free — the carry-on costs extra unless you book the Plus fare.","source_url": "https://cms.volaris.com/es/informacion-util/politicas-de-equipaje/","last_verified": "2026-07-02"},{"id": "vueling","name": "Vueling","region": "Europe","dimensions": {"height": 55,"width": 40,"depth": 20,"unit": "cm"},"weight_limit_kg": 10,"personal_item": {"height": 40,"width": 30,"depth": 20,"unit": "cm"},"notes": "The cheapest Fly Light fare only includes the small underseat bag — this cabin bag costs extra or comes with higher fares.","source_url": "https://www.vueling.com/faq/html/ancillary-products.html","last_verified": "2026-07-02"},{"id": "westjet","name": "WestJet","region": "North America","dimensions": {"height": 56,"width": 36,"depth": 23,"unit": "cm"},"personal_item": {"height": 41,"width": 33,"depth": 15,"unit": "cm"},"notes": "No weight limit — you just need to lift it into the bin yourself. UltraBasic fares only include a personal item (no carry-on) except on Europe/Asia routes.","source_url": "https://www.westjet.com/en-ca/baggage/carry-on","last_verified": "2026-07-02"},{"id": "wizz-air","name": "Wizz Air","region": "Europe","dimensions": {"height": 55,"width": 40,"depth": 23,"unit": "cm"},"weight_limit_kg": 10,"personal_item": {"height": 40,"width": 30,"depth": 20,"unit": "cm"},"notes": "The trolley bag is only free with WIZZ Priority — the free allowance on every fare is the underseat bag (40×30×20 cm). Wheels and handles get up to 5 cm of grace.","source_url": "https://www.wizzair.com/en-gb/help-centre/booking-information-and-services/baggage/baggage-allowance/cabin-baggage","last_verified": "2026-07-02"},{"id": "zipair","name": "ZIPAIR","region": "Asia-Pacific","dimensions": {"height": 55,"width": 40,"depth": 25,"unit": "cm"},"weight_limit_kg": 7,"personal_item": {"height": 45,"width": 35,"depth": 25,"unit": "cm"},"notes": "Two cabin pieces allowed with a combined 7 kg free limit — you can pre-pay to raise it to 15 kg.","source_url": "https://www.zipair.net/en/service/baggage","last_verified": "2026-07-02"}]};
+        const FALLBACK_LUGGAGE = {"luggage": [{"id": "amazon-basics-21","name": "Amazon Basics 21\"","category": "value","dimensions": {"height": 55,"width": 37.5,"depth": 25,"unit": "cm"},"notes": "I haven't tested the quality, but reviews are decent and price is right!"},{"id": "antler-cabin-suitcase","name": "Antler Cabin Suitcase","category": "hardside","dimensions": {"height": 55,"width": 40,"depth": 20,"unit": "cm"},"notes": "Lightweight and minimalist, good maneuverability"},{"id": "antler-soft-stripe-2-0","name": "Antler Soft Stripe 2.0","category": "softside","dimensions": {"height": 55,"width": 35,"depth": 20,"unit": "cm"},"weight_kg": 1.9,"notes": "4.1 lb (1.9kg)"},{"id": "away-carry-on","name": "AWAY Carry-On","category": "hardside","dimensions": {"height": 55,"width": 36.7,"depth": 23,"unit": "cm"},"notes": "A solid choice, especially for North American flights"},{"id": "away-softside-carry-on","name": "AWAY Softside Carry-on","category": "softside","dimensions": {"height": 55.5,"width": 38,"depth": 23,"unit": "cm"},"notes": "I loved using this in Japan"},{"id": "bagsmart-blast-43l-roller-backpack","name": "Bagsmart Blast 43L Roller Backpack","category": "value","dimensions": {"height": 55,"width": 35,"depth": 23,"unit": "cm"},"notes": "Roller bag & backpack all-in-one for ultimate flexibility"},{"id": "beis-small-carry-on","name": "BEIS Small Carry-On","category": "hardside","dimensions": {"height": 53,"width": 33,"depth": 22,"unit": "cm"},"notes": "One of the 'shortest' on my list, holds a surprising amount"},{"id": "brics-x-travel-spinner","name": "Bric's X-Travel Spinner","category": "softside","dimensions": {"height": 53,"width": 33,"depth": 23,"unit": "cm"},"notes": "One of my all-time 'go-tos'"},{"id": "briggs-riley-global-20-carry-on","name": "Briggs & Riley Global 20\" Carry-on","category": "softside","dimensions": {"height": 53.3,"width": 38.1,"depth": 22.9,"unit": "cm"},"notes": "An investment, but one of the highest-rated brands in the luggage world"},{"id": "cotopaxi-allpa-35l-backpack","name": "Cotopaxi Allpa 35L Backpack","category": "softside","dimensions": {"height": 56,"width": 30,"depth": 25,"unit": "cm"},"weight_kg": 1.33,"notes": "3 lb (1.33kg)"},{"id": "hanke-20-inch-top-opening","name": "Hanke 20 Inch Top-Opening","category": "value","dimensions": {"height": 55.88,"width": 37,"depth": 24,"unit": "cm"},"notes": "A rare hardshell that is 'top-open' design"},{"id": "july-carry-on-essential","name": "July Carry-On Essential","category": "hardside","dimensions": {"height": 55,"width": 38.5,"depth": 21.5,"unit": "cm"},"notes": "I haven't tried July luggage yet, but I've read many positive reviews"},{"id": "july-carry-on-light-expandable","name": "July Carry On Light Expandable","category": "hardside","dimensions": {"height": 54,"width": 36,"depth": 22,"unit": "cm"},"notes": "Choose this one if you need the most size but light weight"},{"id": "monos-carry-on","name": "Monos Carry-On","category": "hardside","dimensions": {"height": 55.88,"width": 35.56,"depth": 22.86,"unit": "cm"},"notes": "I love my monos, has worked great all over Europe"},{"id": "quince-small-carry-on-suitcase","name": "Quince Small Carry-On Suitcase","category": "value","dimensions": {"height": 55.88,"width": 36.5,"depth": 23,"unit": "cm"},"notes": "A perfect 'dupe' of the AWAY hardshell (make sure you choose this size)"},{"id": "travelpro-maxlite-5-softside-19-4-wheel","name": "Travelpro Maxlite 5 Softside 19\" 4-wheel","category": "softside","dimensions": {"height": 55.2,"width": 40,"depth": 19.6,"unit": "cm"},"notes": "Trusty brand, good durability & lots of pockets"},{"id": "travelpro-maxlite-5-softside-20-2-wheel","name": "Travelpro Maxlite 5 Softside 20\" 2-wheel","category": "softside","dimensions": {"height": 55.2,"width": 40,"depth": 19.6,"unit": "cm"},"notes": "2-wheel has a litle more interior space than the 4 wheel"}]};
+        // FALLBACK-DATA-END
+
+        const CLOSE_CALL_CM = 2.54;   // Aly's rule: within ~1 inch usually fits in practice
+        const EPSILON_CM = 0.01;      // float-noise tolerance only
+        const CM_PER_IN = 2.54;
+
+        const CATEGORY_LABELS = {
+            hardside: { title: '🧳 Hard-shell favorites', blurb: 'Popular, recognizable hard-shells.' },
+            softside: { title: '🎒 Soft-side & flexible', blurb: 'A little squish goes a long way — these often fit more airlines.' },
+            value:    { title: '💸 Value picks', blurb: 'Budget-friendly options that still measure up.' }
+        };
+
+        let AIRLINES = [];
+        let LUGGAGE = [];
         let currentUnit = 'cm';
-        
-        // Initialize
-        document.addEventListener('DOMContentLoaded', () => {
+
+        document.addEventListener('DOMContentLoaded', async () => {
             setupTabs();
             setupUnitToggle();
             setupInputListeners();
+            await loadData();
+            renderCounts();
             renderLuggageLibrary();
+            checkCompatibility();
         });
-        
+
+        async function loadData() {
+            try {
+                const [aRes, lRes] = await Promise.all([
+                    fetch('airlines.json'), fetch('luggage.json')
+                ]);
+                if (!aRes.ok || !lRes.ok) throw new Error('fetch failed');
+                AIRLINES = (await aRes.json()).airlines;
+                LUGGAGE = (await lRes.json()).luggage;
+            } catch (err) {
+                AIRLINES = FALLBACK_AIRLINES.airlines;
+                LUGGAGE = FALLBACK_LUGGAGE.luggage;
+                document.getElementById('data-notice').hidden = false;
+            }
+        }
+
+        function esc(s) {
+            return String(s).replace(/[&<>"']/g, c => ({
+                '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;'
+            })[c]);
+        }
+
+        function renderCounts() {
+            document.querySelectorAll('[data-airline-count]').forEach(el => {
+                el.textContent = AIRLINES.length;
+            });
+            const dates = AIRLINES.map(a => a.last_verified).filter(Boolean).sort();
+            if (dates.length) {
+                const latest = new Date(dates[dates.length - 1] + 'T00:00:00');
+                const pretty = latest.toLocaleDateString('en-US', { month: 'long', year: 'numeric' });
+                document.querySelectorAll('[data-freshness]').forEach(el => {
+                    el.textContent = `Data most recently verified ${pretty}.`;
+                });
+            }
+        }
+
         function setupTabs() {
             const tabs = document.querySelectorAll('.tab');
             const contents = document.querySelectorAll('.tab-content');
-            
             tabs.forEach(tab => {
                 tab.addEventListener('click', () => {
-                    const targetId = tab.dataset.tab;
-                    
-                    tabs.forEach(t => t.classList.remove('active'));
+                    tabs.forEach(t => t.setAttribute('aria-selected', 'false'));
                     contents.forEach(c => c.classList.remove('active'));
-                    
-                    tab.classList.add('active');
-                    document.getElementById(targetId).classList.add('active');
+                    tab.setAttribute('aria-selected', 'true');
+                    document.getElementById(tab.dataset.tab).classList.add('active');
                 });
             });
         }
-        
+
         function setupUnitToggle() {
             const unitBtns = document.querySelectorAll('.unit-btn');
-            
             unitBtns.forEach(btn => {
                 btn.addEventListener('click', () => {
-                    unitBtns.forEach(b => b.classList.remove('active'));
-                    btn.classList.add('active');
-                    
+                    if (btn.dataset.unit === currentUnit) return;
+                    unitBtns.forEach(b => b.setAttribute('aria-pressed', 'false'));
+                    btn.setAttribute('aria-pressed', 'true');
                     const oldUnit = currentUnit;
                     currentUnit = btn.dataset.unit;
-                    
                     convertInputValues(oldUnit, currentUnit);
                     checkCompatibility();
                 });
             });
         }
-        
+
         function convertInputValues(fromUnit, toUnit) {
-            const inputs = ['height', 'width', 'depth'];
-            
-            inputs.forEach(id => {
+            ['height', 'width', 'depth'].forEach(id => {
                 const input = document.getElementById(id);
                 if (input.value) {
                     const value = parseFloat(input.value);
                     if (fromUnit === 'cm' && toUnit === 'in') {
-                        input.value = (value / 2.54).toFixed(1);
+                        input.value = (value / CM_PER_IN).toFixed(1);
                     } else if (fromUnit === 'in' && toUnit === 'cm') {
-                        input.value = (value * 2.54).toFixed(1);
+                        input.value = (value * CM_PER_IN).toFixed(1);
                     }
                 }
             });
         }
-        
+
         function setupInputListeners() {
-            const inputs = ['height', 'width', 'depth'];
-            inputs.forEach(id => {
+            ['height', 'width', 'depth'].forEach(id => {
                 document.getElementById(id).addEventListener('input', checkCompatibility);
             });
         }
-        
+
+        function fmtDim(cm) {
+            const v = currentUnit === 'in' ? cm / CM_PER_IN : cm;
+            return (Math.round(v * 10) / 10).toString();
+        }
+
+        function dimsLine(d) {
+            return `${fmtDim(d.height)} × ${fmtDim(d.width)} × ${fmtDim(d.depth)} ${currentUnit}`;
+        }
+
+        // Aly's tiered verdict: fits / close call (within ~1in) / too big
+        function verdictFor(bagCm, airline) {
+            const d = airline.dimensions;
+            const overs = [
+                { dim: 'height', over: bagCm.height - d.height },
+                { dim: 'width', over: bagCm.width - d.width },
+                { dim: 'depth', over: bagCm.depth - d.depth }
+            ].filter(o => o.over > EPSILON_CM);
+            const maxOver = overs.length ? Math.max(...overs.map(o => o.over)) : 0;
+            let verdict = 'fits';
+            if (maxOver > EPSILON_CM) verdict = maxOver <= CLOSE_CALL_CM + EPSILON_CM ? 'close' : 'no';
+            return { verdict, overs };
+        }
+
+        function overDetail(overs) {
+            if (!overs.length) return '';
+            const parts = overs.map(o => {
+                const amt = currentUnit === 'in' ? (o.over / CM_PER_IN).toFixed(1) + ' in' : o.over.toFixed(1) + ' cm';
+                return `${amt} over on ${o.dim}`;
+            });
+            return parts.join(', ');
+        }
+
         function checkCompatibility() {
             const height = parseFloat(document.getElementById('height').value);
             const width = parseFloat(document.getElementById('width').value);
             const depth = parseFloat(document.getElementById('depth').value);
-            
+            const container = document.getElementById('results-container');
+
             if (!height || !width || !depth) {
-                document.getElementById('results-container').innerHTML = `
+                container.innerHTML = `
                     <div class="empty-state">
                         <div class="empty-state-icon">🧳</div>
                         <p>Enter your bag dimensions above to see which airlines it fits</p>
-                    </div>
-                `;
+                    </div>`;
                 return;
             }
-            
-            // Convert to cm for comparison
-            let heightCm = currentUnit === 'in' ? height * 2.54 : height;
-            let widthCm = currentUnit === 'in' ? width * 2.54 : width;
-            let depthCm = currentUnit === 'in' ? depth * 2.54 : depth;
-            
-            const results = AIRLINES_DATA.airlines.map(airline => {
-                const fits = heightCm <= airline.dimensions.height + 0.01 &&
-                            widthCm <= airline.dimensions.width + 0.01 &&
-                            depthCm <= airline.dimensions.depth + 0.01;
-                
-                return { ...airline, fits };
-            });
-            
-            const fitsCount = results.filter(r => r.fits).length;
-            const totalCount = results.length;
-            const percentage = Math.round((fitsCount / totalCount) * 100);
-            
-            renderResults(results, fitsCount, totalCount, percentage);
+
+            const toCm = v => currentUnit === 'in' ? v * CM_PER_IN : v;
+            const bagCm = { height: toCm(height), width: toCm(width), depth: toCm(depth) };
+
+            const results = AIRLINES.map(airline => ({ airline, ...verdictFor(bagCm, airline) }));
+            renderResults(results);
         }
-        
-        function renderResults(results, fitsCount, totalCount, percentage) {
+
+        function airlineCard(r) {
+            const a = r.airline;
+            const statusLabel = { fits: '✅ Fits', close: '⚠️ Close call', no: '❌ Too big' }[r.verdict];
+            const name = a.source_url
+                ? `<a href="${esc(a.source_url)}" target="_blank" rel="noopener" title="Official baggage policy">${esc(a.name)}</a>`
+                : esc(a.name);
+            const meta = [];
+            if (a.weight_limit_kg) meta.push(`Weight limit: ${a.weight_limit_kg} kg`);
+            if (a.personal_item) meta.push(`Personal item: ${a.personal_item.height}×${a.personal_item.width}×${a.personal_item.depth} cm`);
+            if (a.last_verified) meta.push(`Checked ${a.last_verified}`);
+            return `
+                <div class="airline-card ${r.verdict}">
+                    <div class="airline-name">${name}</div>
+                    <div class="airline-dimensions">Max: ${dimsLine(a.dimensions)}</div>
+                    <span class="fit-status ${r.verdict}">${statusLabel}</span>
+                    ${r.overs.length ? `<div class="over-detail">${esc(overDetail(r.overs))}</div>` : ''}
+                    ${a.notes ? `<div class="airline-notes">${esc(a.notes)}</div>` : ''}
+                    ${meta.length ? `<div class="airline-meta">${esc(meta.join(' · '))}</div>` : ''}
+                </div>`;
+        }
+
+        function renderResults(results) {
             const container = document.getElementById('results-container');
-            
-            const fittingAirlines = results.filter(r => r.fits);
-            const nonFittingAirlines = results.filter(r => !r.fits);
-            
+            const groups = {
+                fits: results.filter(r => r.verdict === 'fits'),
+                close: results.filter(r => r.verdict === 'close'),
+                no: results.filter(r => r.verdict === 'no')
+            };
+
+            const sections = [];
+            if (groups.fits.length) {
+                sections.push(`<h3 class="verdict-group-title">✅ Fits the published limit (${groups.fits.length})</h3>
+                    <div class="airline-grid">${groups.fits.map(airlineCard).join('')}</div>`);
+            }
+            if (groups.close.length) {
+                sections.push(`<h3 class="verdict-group-title">⚠️ Close calls — usually fine in practice (${groups.close.length})</h3>
+                    <div class="airline-grid">${groups.close.map(airlineCard).join('')}</div>`);
+            }
+            if (groups.no.length) {
+                sections.push(`<h3 class="verdict-group-title">❌ Too big (${groups.no.length})</h3>
+                    <div class="airline-grid">${groups.no.map(airlineCard).join('')}</div>`);
+            }
+
             container.innerHTML = `
                 <div class="results-header">
                     <h2>Your Bag's Compatibility</h2>
-                    <div class="compatibility-score">
-                        Fits ${fitsCount} out of ${totalCount} airlines (${percentage}%)
+                    <div class="verdict-tally">
+                        <span>✅ Fits ${groups.fits.length}</span>
+                        <span>⚠️ Close call ${groups.close.length}</span>
+                        <span>❌ Too big ${groups.no.length}</span>
                     </div>
                 </div>
-                
-                <div class="airline-grid">
-                    ${fittingAirlines.map(airline => `
-                        <div class="airline-card fits">
-                            <div class="airline-name">${airline.name}</div>
-                            <div class="airline-dimensions">
-                                Max: ${airline.dimensions.height} × ${airline.dimensions.width} × ${airline.dimensions.depth} cm
-                            </div>
-                            <span class="fit-status fits">✓ Fits</span>
-                        </div>
-                    `).join('')}
-                    
-                    ${nonFittingAirlines.map(airline => `
-                        <div class="airline-card no-fit">
-                            <div class="airline-name">${airline.name}</div>
-                            <div class="airline-dimensions">
-                                Max: ${airline.dimensions.height} × ${airline.dimensions.width} × ${airline.dimensions.depth} cm
-                            </div>
-                            <span class="fit-status no-fit">✗ Too Large</span>
-                        </div>
-                    `).join('')}
+                <div class="method-note">
+                    <strong>⚠️ Close call</strong> means the bag is over the published limit by no more than
+                    1 in (2.54 cm). In Aly's real-world testing these usually fit the sizer with ease —
+                    height is the strictest dimension, width next, and depth is the most forgiving
+                    (soft bags squish!). See <strong>How It Works</strong> for details.
                 </div>
-            `;
+                ${sections.join('')}`;
         }
-        
+
         function renderLuggageLibrary() {
             const container = document.getElementById('luggage-container');
-            
-            container.innerHTML = `
-                <div class="luggage-grid">
-                    ${LUGGAGE_DATA.luggage.map(bag => `
-                        <div class="luggage-card">
-                            <div class="luggage-name">${bag.name}</div>
-                            <div class="luggage-dimensions">
-                                <div class="dimension-item">
-                                    <div class="dimension-value">${bag.dimensions.height}</div>
-                                    <div class="dimension-label">Height cm</div>
-                                </div>
-                                <div class="dimension-item">
-                                    <div class="dimension-value">${bag.dimensions.width}</div>
-                                    <div class="dimension-label">Width cm</div>
-                                </div>
-                                <div class="dimension-item">
-                                    <div class="dimension-value">${bag.dimensions.depth}</div>
-                                    <div class="dimension-label">Depth cm</div>
-                                </div>
-                            </div>
-                            ${bag.notes ? `<div class="luggage-notes">${bag.notes}</div>` : ''}
-                            <button class="use-this-bag" onclick="useBagDimensions(${bag.dimensions.height}, ${bag.dimensions.width}, ${bag.dimensions.depth})">
-                                Check This Bag
-                            </button>
-                        </div>
-                    `).join('')}
-                </div>
-            `;
+            const order = ['hardside', 'softside', 'value'];
+            const cats = order.filter(c => LUGGAGE.some(b => b.category === c));
+            const uncategorized = LUGGAGE.filter(b => !order.includes(b.category));
+
+            const bagCard = bag => `
+                <div class="luggage-card">
+                    <div class="luggage-name">${esc(bag.name)}</div>
+                    <div class="luggage-dimensions">
+                        ${['height', 'width', 'depth'].map(k => `
+                            <div class="dimension-item">
+                                <div class="dimension-value">${bag.dimensions[k]}</div>
+                                <div class="dimension-label">${k} cm</div>
+                            </div>`).join('')}
+                    </div>
+                    ${bag.notes ? `<div class="luggage-notes">${esc(bag.notes)}</div>` : ''}
+                    ${bag.weight_kg ? `<div class="luggage-weight">Weight: ${bag.weight_kg} kg</div>` : ''}
+                    <button class="use-this-bag" data-h="${bag.dimensions.height}" data-w="${bag.dimensions.width}" data-d="${bag.dimensions.depth}">
+                        Check This Bag
+                    </button>
+                </div>`;
+
+            const section = (title, blurb, bags) => `
+                <h3 class="category-title">${title}</h3>
+                ${blurb ? `<p class="category-blurb">${blurb}</p>` : ''}
+                <div class="luggage-grid">${bags.map(bagCard).join('')}</div>`;
+
+            container.innerHTML = cats.map(c => section(
+                CATEGORY_LABELS[c].title, CATEGORY_LABELS[c].blurb,
+                LUGGAGE.filter(b => b.category === c)
+            )).join('') + (uncategorized.length ? section('More bags', '', uncategorized) : '');
+
+            container.querySelectorAll('.use-this-bag').forEach(btn => {
+                btn.addEventListener('click', () => useBagDimensions(
+                    parseFloat(btn.dataset.h), parseFloat(btn.dataset.w), parseFloat(btn.dataset.d)
+                ));
+            });
         }
-        
+
         function useBagDimensions(height, width, depth) {
-            // Switch to Check My Bag tab
-            document.querySelector('[data-tab="check"]').click();
-            
-            // Set values (convert if needed)
-            if (currentUnit === 'in') {
-                document.getElementById('height').value = (height / 2.54).toFixed(1);
-                document.getElementById('width').value = (width / 2.54).toFixed(1);
-                document.getElementById('depth').value = (depth / 2.54).toFixed(1);
-            } else {
-                document.getElementById('height').value = height;
-                document.getElementById('width').value = width;
-                document.getElementById('depth').value = depth;
-            }
-            
-            // Trigger check
+            document.getElementById('tab-check').click();
+            const set = (id, cm) => {
+                document.getElementById(id).value = currentUnit === 'in'
+                    ? (cm / CM_PER_IN).toFixed(1) : cm;
+            };
+            set('height', height);
+            set('width', width);
+            set('depth', depth);
             checkCompatibility();
-            
-            // Smooth scroll to results
-            setTimeout(() => {
-                window.scrollTo({ top: 0, behavior: 'smooth' });
-            }, 100);
+            setTimeout(() => window.scrollTo({ top: 0, behavior: 'smooth' }), 100);
         }
     </script>
 </body>

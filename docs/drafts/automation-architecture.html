@@ -1,0 +1,1025 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Automation Architecture - Data Monitoring & Updates</title>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=Karla:wght@400;600;700&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        :root {
+            --primary: #2563eb;
+            --secondary: #7c3aed;
+            --accent: #059669;
+            --warning: #f59e0b;
+            --bg: #f8fafc;
+            --text: #1e293b;
+            --text-muted: #64748b;
+        }
+        
+        body {
+            font-family: 'Karla', sans-serif;
+            background: var(--bg);
+            color: var(--text);
+            line-height: 1.6;
+            padding: 20px;
+        }
+        
+        .container {
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+        
+        header {
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
+            color: white;
+            padding: 60px 40px;
+            border-radius: 20px;
+            margin-bottom: 40px;
+            text-align: center;
+        }
+        
+        header h1 {
+            font-family: 'DM Serif Display', serif;
+            font-size: 3rem;
+            margin-bottom: 15px;
+        }
+        
+        h2 {
+            font-family: 'DM Serif Display', serif;
+            font-size: 2rem;
+            color: var(--primary);
+            margin: 40px 0 20px;
+            padding-bottom: 10px;
+            border-bottom: 3px solid var(--primary);
+        }
+        
+        h3 {
+            font-size: 1.5rem;
+            color: var(--secondary);
+            margin: 30px 0 15px;
+        }
+        
+        .section {
+            background: white;
+            padding: 40px;
+            border-radius: 15px;
+            margin-bottom: 30px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.07);
+        }
+        
+        .architecture-flow {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 25px;
+            margin: 30px 0;
+        }
+        
+        .flow-step {
+            background: linear-gradient(135deg, #f0f9ff, #e0f2fe);
+            padding: 30px;
+            border-radius: 12px;
+            border-left: 4px solid var(--primary);
+            position: relative;
+        }
+        
+        .flow-step::after {
+            content: '→';
+            position: absolute;
+            right: -30px;
+            top: 50%;
+            transform: translateY(-50%);
+            font-size: 2rem;
+            color: var(--primary);
+            font-weight: bold;
+        }
+        
+        .flow-step:last-child::after {
+            display: none;
+        }
+        
+        .step-number {
+            display: inline-block;
+            width: 40px;
+            height: 40px;
+            background: var(--primary);
+            color: white;
+            border-radius: 50%;
+            text-align: center;
+            line-height: 40px;
+            font-weight: bold;
+            margin-bottom: 15px;
+        }
+        
+        .tech-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 20px;
+            margin: 25px 0;
+        }
+        
+        .tech-card {
+            background: white;
+            border: 2px solid #e2e8f0;
+            border-radius: 12px;
+            padding: 25px;
+            transition: all 0.3s ease;
+        }
+        
+        .tech-card:hover {
+            border-color: var(--primary);
+            box-shadow: 0 8px 16px rgba(0,0,0,0.1);
+            transform: translateY(-3px);
+        }
+        
+        .tech-card h4 {
+            color: var(--primary);
+            font-size: 1.3rem;
+            margin-bottom: 15px;
+        }
+        
+        .cost-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 25px 0;
+        }
+        
+        .cost-table th,
+        .cost-table td {
+            padding: 15px;
+            text-align: left;
+            border-bottom: 1px solid #e2e8f0;
+        }
+        
+        .cost-table th {
+            background: var(--primary);
+            color: white;
+            font-weight: 600;
+        }
+        
+        .cost-table tr:hover {
+            background: #f8fafc;
+        }
+        
+        .cost-free {
+            color: var(--accent);
+            font-weight: 700;
+        }
+        
+        .cost-paid {
+            color: var(--warning);
+            font-weight: 700;
+        }
+        
+        .alert {
+            background: #fef3c7;
+            border-left: 4px solid var(--warning);
+            padding: 20px;
+            border-radius: 8px;
+            margin: 25px 0;
+        }
+        
+        .alert h4 {
+            color: var(--warning);
+            margin-bottom: 10px;
+        }
+        
+        .info-box {
+            background: #dbeafe;
+            border-left: 4px solid var(--primary);
+            padding: 20px;
+            border-radius: 8px;
+            margin: 25px 0;
+        }
+        
+        .success-box {
+            background: #d1fae5;
+            border-left: 4px solid var(--accent);
+            padding: 20px;
+            border-radius: 8px;
+            margin: 25px 0;
+        }
+        
+        pre {
+            background: #1e293b;
+            color: #a5f3fc;
+            padding: 20px;
+            border-radius: 8px;
+            overflow-x: auto;
+            margin: 15px 0;
+        }
+        
+        code {
+            background: #e2e8f0;
+            padding: 2px 6px;
+            border-radius: 4px;
+            font-family: 'Courier New', monospace;
+            font-size: 0.9em;
+        }
+        
+        .comparison-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 25px 0;
+        }
+        
+        .comparison-table th,
+        .comparison-table td {
+            padding: 15px;
+            border: 1px solid #e2e8f0;
+            text-align: left;
+        }
+        
+        .comparison-table th {
+            background: #f1f5f9;
+            font-weight: 600;
+        }
+        
+        .comparison-table .highlight {
+            background: #dbeafe;
+            font-weight: 600;
+        }
+        
+        ul, ol {
+            margin-left: 20px;
+            margin-top: 10px;
+        }
+        
+        li {
+            margin-bottom: 10px;
+        }
+        
+        @media (max-width: 768px) {
+            header h1 {
+                font-size: 2rem;
+            }
+            
+            .section {
+                padding: 25px;
+            }
+            
+            .architecture-flow {
+                grid-template-columns: 1fr;
+            }
+            
+            .flow-step::after {
+                content: '↓';
+                right: 50%;
+                top: auto;
+                bottom: -30px;
+                transform: translateX(50%);
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>🤖 Automated Data Monitoring Architecture</h1>
+            <p style="font-size: 1.2rem; margin-top: 10px;">Keeping airline rules and luggage data up-to-date automatically</p>
+        </header>
+
+        <div class="section">
+            <h2>🎯 System Overview</h2>
+            <p>This architecture monitors airline websites and luggage manufacturers for changes to carry-on policies and product dimensions, then flags changes for admin review before automatically updating the website.</p>
+            
+            <div class="info-box">
+                <strong>Key Design Principles:</strong>
+                <ul>
+                    <li><strong>Human-in-the-Loop:</strong> All changes require admin verification before going live</li>
+                    <li><strong>Cost-Conscious:</strong> Leverages free tiers and serverless technology</li>
+                    <li><strong>Reliable:</strong> Multiple fallback strategies for data collection</li>
+                    <li><strong>Scalable:</strong> Can monitor hundreds of sources without infrastructure changes</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="section">
+            <h2>🏗️ Architecture Components</h2>
+            
+            <div class="architecture-flow">
+                <div class="flow-step">
+                    <div class="step-number">1</div>
+                    <h3>Web Scraping Service</h3>
+                    <p>Scheduled jobs that check airline websites and manufacturer pages for changes to dimensions and policies.</p>
+                </div>
+                
+                <div class="flow-step">
+                    <div class="step-number">2</div>
+                    <h3>Change Detection</h3>
+                    <p>Compares new data against existing database, flags differences, and calculates confidence scores.</p>
+                </div>
+                
+                <div class="flow-step">
+                    <div class="step-number">3</div>
+                    <h3>Admin Dashboard</h3>
+                    <p>Review interface where you approve/reject changes, edit details, and manage monitoring sources.</p>
+                </div>
+                
+                <div class="flow-step">
+                    <div class="step-number">4</div>
+                    <h3>Auto-Deployment</h3>
+                    <p>Approved changes update JSON files and trigger automatic website deployment via GitHub.</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="section">
+            <h2>🛠️ Technical Stack (Recommended)</h2>
+            
+            <div class="tech-grid">
+                <div class="tech-card">
+                    <h4>⏰ Scheduler</h4>
+                    <p><strong>GitHub Actions (Free)</strong></p>
+                    <p>Run monitoring scripts on a schedule (daily/weekly). 2,000 free minutes/month is more than enough.</p>
+                </div>
+                
+                <div class="tech-card">
+                    <h4>🔍 Scraping Engine</h4>
+                    <p><strong>Python + Playwright</strong></p>
+                    <p>Headless browser automation for JavaScript-heavy sites. More reliable than basic HTTP requests.</p>
+                </div>
+                
+                <div class="tech-card">
+                    <h4>🧠 LLM Processing</h4>
+                    <p><strong>Claude API (Haiku)</strong></p>
+                    <p>Extract structured data from scraped HTML. Haiku is fast and cheap ($0.25 per million tokens).</p>
+                </div>
+                
+                <div class="tech-card">
+                    <h4>💾 Database</h4>
+                    <p><strong>Airtable (Free Tier)</strong></p>
+                    <p>Acts as your data store, admin interface, and approval workflow. 1,200 records free is plenty.</p>
+                </div>
+                
+                <div class="tech-card">
+                    <h4>🔔 Notifications</h4>
+                    <p><strong>Email via Resend (Free)</strong></p>
+                    <p>100 emails/day free. Sends alerts when changes are detected for your review.</p>
+                </div>
+                
+                <div class="tech-card">
+                    <h4>🚀 Deployment</h4>
+                    <p><strong>GitHub Actions</strong></p>
+                    <p>Automatically deploys approved changes to Cloudflare Pages when you update the JSON files.</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="section">
+            <h2>💰 Cost Analysis</h2>
+            
+            <table class="cost-table">
+                <thead>
+                    <tr>
+                        <th>Component</th>
+                        <th>Service</th>
+                        <th>Free Tier</th>
+                        <th>Expected Usage</th>
+                        <th>Monthly Cost</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Scheduling</td>
+                        <td>GitHub Actions</td>
+                        <td>2,000 minutes/month</td>
+                        <td>~100 minutes/month</td>
+                        <td class="cost-free">$0</td>
+                    </tr>
+                    <tr>
+                        <td>Database + Admin UI</td>
+                        <td>Airtable</td>
+                        <td>1,200 records, unlimited bases</td>
+                        <td>~200 records</td>
+                        <td class="cost-free">$0</td>
+                    </tr>
+                    <tr>
+                        <td>LLM Processing</td>
+                        <td>Claude Haiku API</td>
+                        <td>None</td>
+                        <td>~500K tokens/month</td>
+                        <td class="cost-paid">~$0.12</td>
+                    </tr>
+                    <tr>
+                        <td>Email Notifications</td>
+                        <td>Resend</td>
+                        <td>100 emails/day</td>
+                        <td>~30 emails/month</td>
+                        <td class="cost-free">$0</td>
+                    </tr>
+                    <tr>
+                        <td>Website Hosting</td>
+                        <td>Cloudflare Pages</td>
+                        <td>Unlimited</td>
+                        <td>All traffic</td>
+                        <td class="cost-free">$0</td>
+                    </tr>
+                    <tr style="font-weight: bold; background: #f1f5f9;">
+                        <td colspan="4">Total Monthly Cost</td>
+                        <td class="cost-paid">~$0.12</td>
+                    </tr>
+                </tbody>
+            </table>
+            
+            <div class="success-box">
+                <strong>💡 Cost Optimization:</strong> The LLM cost is the only recurring expense. If you monitor 74 airlines + 20 luggage brands weekly, that's ~94 checks/week = ~376/month. At ~1,000 tokens per check, that's ~$0.10-0.15/month.
+            </div>
+        </div>
+
+        <div class="section">
+            <h2>🔄 Data Collection Workflow</h2>
+            
+            <h3>Phase 1: Airline Monitoring</h3>
+            <div class="info-box">
+                <strong>Sources to Monitor:</strong>
+                <ul>
+                    <li>Official airline baggage policy pages (e.g., united.com/baggage, delta.com/carry-on)</li>
+                    <li>Alternative: IATA database (if accessible)</li>
+                    <li>Backup: User-contributed changes (with verification)</li>
+                </ul>
+            </div>
+            
+            <pre>
+# Pseudo-code for airline monitoring
+def monitor_airline(airline_name, policy_url):
+    # 1. Fetch the page
+    page_html = scrape_with_playwright(policy_url)
+    
+    # 2. Extract dimensions using Claude
+    prompt = f"""
+    Extract carry-on baggage dimensions from this airline policy page.
+    Return JSON: {{"height": X, "width": Y, "depth": Z, "unit": "cm"}}
+    
+    HTML: {page_html}
+    """
+    
+    extracted_data = call_claude_api(prompt)
+    
+    # 3. Compare with existing data
+    if dimensions_changed(airline_name, extracted_data):
+        # 4. Save to Airtable with "Pending Review" status
+        airtable.create_record({
+            "airline": airline_name,
+            "old_dimensions": get_current_dimensions(airline_name),
+            "new_dimensions": extracted_data,
+            "source_url": policy_url,
+            "detected_date": today(),
+            "status": "Pending Review",
+            "confidence": calculate_confidence_score(extracted_data)
+        })
+        
+        # 5. Send notification
+        send_email_notification(airline_name, extracted_data)
+            </pre>
+            
+            <h3>Phase 2: Luggage Monitoring</h3>
+            <div class="info-box">
+                <strong>Sources to Monitor:</strong>
+                <ul>
+                    <li>Manufacturer websites (Away, Monos, Antler, etc.)</li>
+                    <li>E-commerce APIs (if available)</li>
+                    <li>Retailer websites (Amazon, REI, Nordstrom)</li>
+                </ul>
+            </div>
+            
+            <pre>
+# Pseudo-code for luggage monitoring
+def monitor_luggage_brands():
+    brands = ["Away", "Monos", "Antler", "July", ...]
+    
+    for brand in brands:
+        # Option 1: Check manufacturer website
+        products = scrape_product_pages(brand.website)
+        
+        # Option 2: Use Amazon Product API (if you have access)
+        products = query_amazon_api(brand.name)
+        
+        for product in products:
+            if is_carry_on_size(product):
+                dimensions = extract_dimensions_with_claude(product)
+                
+                if is_new_model(product.name):
+                    # Add to pending review
+                    airtable.create_record({
+                        "brand": brand.name,
+                        "model": product.name,
+                        "dimensions": dimensions,
+                        "status": "New Model - Pending Review",
+                        "source_url": product.url
+                    })
+            </pre>
+        </div>
+
+        <div class="section">
+            <h2>🎛️ Admin Dashboard (Airtable Setup)</h2>
+            
+            <p>Airtable serves as your admin interface. Here's the recommended structure:</p>
+            
+            <h3>Table 1: Airlines (Master Data)</h3>
+            <table class="comparison-table">
+                <tr>
+                    <th>Field</th>
+                    <th>Type</th>
+                    <th>Description</th>
+                </tr>
+                <tr>
+                    <td>Airline Name</td>
+                    <td>Single line text</td>
+                    <td>Display name</td>
+                </tr>
+                <tr>
+                    <td>Height (cm)</td>
+                    <td>Number</td>
+                    <td>Current max height</td>
+                </tr>
+                <tr>
+                    <td>Width (cm)</td>
+                    <td>Number</td>
+                    <td>Current max width</td>
+                </tr>
+                <tr>
+                    <td>Depth (cm)</td>
+                    <td>Number</td>
+                    <td>Current max depth</td>
+                </tr>
+                <tr>
+                    <td>Policy URL</td>
+                    <td>URL</td>
+                    <td>Official source</td>
+                </tr>
+                <tr>
+                    <td>Last Updated</td>
+                    <td>Date</td>
+                    <td>When data was verified</td>
+                </tr>
+                <tr>
+                    <td>Monitor Frequency</td>
+                    <td>Single select</td>
+                    <td>Daily / Weekly / Monthly</td>
+                </tr>
+            </table>
+            
+            <h3>Table 2: Change Requests (Pending Approvals)</h3>
+            <table class="comparison-table">
+                <tr>
+                    <th>Field</th>
+                    <th>Type</th>
+                    <th>Description</th>
+                </tr>
+                <tr>
+                    <td>Airline/Brand</td>
+                    <td>Link to record</td>
+                    <td>Links to master table</td>
+                </tr>
+                <tr>
+                    <td>Change Type</td>
+                    <td>Single select</td>
+                    <td>Dimension Update / New Product</td>
+                </tr>
+                <tr>
+                    <td>Old Values</td>
+                    <td>Long text</td>
+                    <td>Previous dimensions</td>
+                </tr>
+                <tr>
+                    <td>New Values</td>
+                    <td>Long text</td>
+                    <td>Detected dimensions</td>
+                </tr>
+                <tr>
+                    <td>Confidence Score</td>
+                    <td>Number (0-100)</td>
+                    <td>AI extraction confidence</td>
+                </tr>
+                <tr>
+                    <td>Status</td>
+                    <td>Single select</td>
+                    <td>Pending / Approved / Rejected</td>
+                </tr>
+                <tr>
+                    <td>Source URL</td>
+                    <td>URL</td>
+                    <td>Where data was found</td>
+                </tr>
+                <tr>
+                    <td>Screenshot</td>
+                    <td>Attachment</td>
+                    <td>Visual proof</td>
+                </tr>
+                <tr class="highlight">
+                    <td>Approve Button</td>
+                    <td>Button field</td>
+                    <td>Triggers auto-deployment</td>
+                </tr>
+            </table>
+            
+            <div class="alert">
+                <h4>⚠️ Important: Verification Steps</h4>
+                <p>When you see a pending change:</p>
+                <ol>
+                    <li>Click the source URL to verify the information</li>
+                    <li>Check the screenshot captured during scraping</li>
+                    <li>Review the confidence score (>80% is usually reliable)</li>
+                    <li>If correct, click "Approve" to update the website</li>
+                    <li>If wrong, click "Reject" and the system will learn from it</li>
+                </ol>
+            </div>
+        </div>
+
+        <div class="section">
+            <h2>🚀 Deployment Pipeline</h2>
+            
+            <p>When you approve a change in Airtable, here's what happens automatically:</p>
+            
+            <pre>
+# GitHub Actions workflow (.github/workflows/deploy.yml)
+
+name: Deploy Updates
+on:
+  # Trigger when Airtable sends webhook OR on manual dispatch
+  repository_dispatch:
+    types: [airtable-approval]
+  workflow_dispatch:
+
+jobs:
+  update-and-deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v3
+      
+      - name: Fetch approved changes from Airtable
+        run: python scripts/fetch_approved_changes.py
+        env:
+          AIRTABLE_API_KEY: ${{ secrets.AIRTABLE_API_KEY }}
+      
+      - name: Update JSON files
+        run: python scripts/update_json.py
+      
+      - name: Commit changes
+        run: |
+          git config user.name "Automation Bot"
+          git config user.email "bot@example.com"
+          git add data/*.json
+          git commit -m "Auto-update: Approved dimension changes"
+          git push
+      
+      - name: Trigger Cloudflare Pages deployment
+        # Cloudflare Pages auto-deploys on git push
+        run: echo "Deployment triggered!"
+            </pre>
+            
+            <div class="success-box">
+                <strong>🎉 Result:</strong> Within 30 seconds of clicking "Approve" in Airtable, your website is updated and live with the new data!
+            </div>
+        </div>
+
+        <div class="section">
+            <h2>🎯 Implementation Phases</h2>
+            
+            <h3>Phase 1: Manual Foundation (Week 1-2)</h3>
+            <ul>
+                <li>Set up Airtable with your current data (airlines + luggage)</li>
+                <li>Create simple admin interface for manual updates</li>
+                <li>Connect Airtable to GitHub via webhook for deployments</li>
+                <li><strong>Result:</strong> Easy manual updates with auto-deployment</li>
+            </ul>
+            
+            <h3>Phase 2: Automated Monitoring (Week 3-4)</h3>
+            <ul>
+                <li>Build web scraping scripts for top 20 airlines</li>
+                <li>Integrate Claude API for data extraction</li>
+                <li>Set up GitHub Actions for weekly runs</li>
+                <li><strong>Result:</strong> System detects changes automatically</li>
+            </ul>
+            
+            <h3>Phase 3: Scale & Refine (Month 2+)</h3>
+            <ul>
+                <li>Expand to all 74 airlines</li>
+                <li>Add luggage manufacturer monitoring</li>
+                <li>Implement confidence scoring and auto-approval for high-confidence changes</li>
+                <li>Add community reporting feature (users can submit changes)</li>
+                <li><strong>Result:</strong> Fully automated with minimal manual oversight</li>
+            </ul>
+        </div>
+
+        <div class="section">
+            <h2>🔍 Data Extraction Strategy</h2>
+            
+            <h3>Challenge: Airline websites are all different</h3>
+            <p>Each airline formats their baggage policy differently. Here's how we handle it:</p>
+            
+            <h3>Solution 1: Claude Vision (Recommended)</h3>
+            <pre>
+# Take a screenshot of the policy page and use Claude to extract data
+def extract_with_vision(screenshot_path):
+    response = anthropic.messages.create(
+        model="claude-sonnet-4-20250514",
+        max_tokens=1000,
+        messages=[{
+            "role": "user",
+            "content": [
+                {
+                    "type": "image",
+                    "source": {
+                        "type": "base64",
+                        "media_type": "image/png",
+                        "data": base64.b64encode(open(screenshot_path, 'rb').read()).decode()
+                    }
+                },
+                {
+                    "type": "text",
+                    "text": """
+                    Extract the carry-on baggage dimensions from this airline policy page.
+                    Look for maximum allowed dimensions (height x width x depth).
+                    
+                    Return ONLY JSON in this exact format:
+                    {
+                        "height": 55,
+                        "width": 40,
+                        "depth": 23,
+                        "unit": "cm",
+                        "confidence": 95
+                    }
+                    """
+                }
+            ]
+        }]
+    )
+    return json.loads(response.content[0].text)
+            </pre>
+            
+            <h3>Solution 2: HTML Parsing (Backup)</h3>
+            <pre>
+# Parse the raw HTML with Claude
+def extract_from_html(html_content):
+    response = anthropic.messages.create(
+        model="claude-haiku-4-20250514",  # Cheaper for text processing
+        max_tokens=500,
+        messages=[{
+            "role": "user",
+            "content": f"""
+            Extract carry-on dimensions from this HTML.
+            Focus on sections about 'carry-on', 'cabin baggage', or 'hand luggage'.
+            
+            HTML:
+            {html_content[:10000]}  # Truncate to save tokens
+            
+            Return JSON: {{"height": X, "width": Y, "depth": Z, "unit": "cm", "confidence": N}}
+            """
+        }]
+    )
+    return json.loads(response.content[0].text)
+            </pre>
+            
+            <div class="info-box">
+                <strong>Why this works:</strong>
+                <ul>
+                    <li>Claude understands context (e.g., "55x40x23cm" vs "Linear: 115cm")</li>
+                    <li>Can handle different formats (tables, lists, paragraphs)</li>
+                    <li>Returns confidence score so you know when to double-check</li>
+                    <li>Works across multiple languages (for international airlines)</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="section">
+            <h2>📊 Monitoring Strategy</h2>
+            
+            <table class="comparison-table">
+                <thead>
+                    <tr>
+                        <th>Priority</th>
+                        <th>Sources</th>
+                        <th>Frequency</th>
+                        <th>Reasoning</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><strong>High</strong></td>
+                        <td>Major US carriers (United, Delta, American, Southwest)</td>
+                        <td>Weekly</td>
+                        <td>Most traffic, policies change occasionally</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Medium</strong></td>
+                        <td>International carriers, budget airlines</td>
+                        <td>Bi-weekly</td>
+                        <td>Still important, less frequent changes</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Low</strong></td>
+                        <td>Regional carriers, less common airlines</td>
+                        <td>Monthly</td>
+                        <td>Rarely change policies</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Luggage</strong></td>
+                        <td>Popular brands (Away, Monos, etc.)</td>
+                        <td>Monthly</td>
+                        <td>New models launched periodically</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <div class="section">
+            <h2>🛡️ Error Handling & Quality Control</h2>
+            
+            <h3>Built-in Safety Mechanisms:</h3>
+            
+            <div class="tech-grid">
+                <div class="tech-card">
+                    <h4>1. Confidence Scoring</h4>
+                    <p>Claude returns a confidence level (0-100%). Only high-confidence changes (>80%) are flagged for quick review.</p>
+                </div>
+                
+                <div class="tech-card">
+                    <h4>2. Screenshot Evidence</h4>
+                    <p>Every change includes a screenshot of the source, so you can visually verify before approving.</p>
+                </div>
+                
+                <div class="tech-card">
+                    <h4>3. Sanity Checks</h4>
+                    <p>Automatic validation (e.g., height must be 40-60cm, width 30-50cm) prevents obviously wrong data.</p>
+                </div>
+                
+                <div class="tech-card">
+                    <h4>4. Change History</h4>
+                    <p>Airtable keeps full history. You can rollback if something goes wrong.</p>
+                </div>
+                
+                <div class="tech-card">
+                    <h4>5. Duplicate Detection</h4>
+                    <p>System won't flag the same change twice, reducing notification spam.</p>
+                </div>
+                
+                <div class="tech-card">
+                    <h4>6. Rate Limiting</h4>
+                    <p>Respects robots.txt and adds delays between requests to be a good citizen.</p>
+                </div>
+            </div>
+            
+            <pre>
+# Example validation logic
+def validate_dimensions(height, width, depth, unit="cm"):
+    # Convert to cm if needed
+    if unit == "in":
+        height, width, depth = height * 2.54, width * 2.54, depth * 2.54
+    
+    # Sanity checks
+    if not (40 <= height <= 65):
+        return False, "Height out of reasonable range"
+    if not (25 <= width <= 55):
+        return False, "Width out of reasonable range"
+    if not (15 <= depth <= 35):
+        return False, "Depth out of reasonable range"
+    
+    return True, "Valid"
+            </pre>
+        </div>
+
+        <div class="section">
+            <h2>🎛️ Alternative Approach: Community-Driven Updates</h2>
+            
+            <p>If full automation feels too complex initially, consider a hybrid approach:</p>
+            
+            <h3>Option A: User-Submitted Updates</h3>
+            <ul>
+                <li>Add a "Report a Change" button to your website</li>
+                <li>Users submit airline/luggage updates with source links</li>
+                <li>You review and approve in Airtable</li>
+                <li><strong>Pro:</strong> No scraping infrastructure needed, community engagement</li>
+                <li><strong>Con:</strong> Relies on user participation</li>
+            </ul>
+            
+            <h3>Option B: Semi-Automated (Best of Both)</h3>
+            <ul>
+                <li>Run automated checks monthly for major airlines</li>
+                <li>Accept community submissions for everything else</li>
+                <li>All changes still require your approval</li>
+                <li><strong>Pro:</strong> Balance of automation and community input</li>
+                <li><strong>Con:</strong> Still requires some monitoring infrastructure</li>
+            </ul>
+        </div>
+
+        <div class="section">
+            <h2>📝 Implementation Checklist</h2>
+            
+            <h3>Week 1: Foundation</h3>
+            <ul>
+                <li>☐ Create Airtable account and set up databases</li>
+                <li>☐ Import current airline/luggage data</li>
+                <li>☐ Set up GitHub repository</li>
+                <li>☐ Configure Cloudflare Pages deployment</li>
+                <li>☐ Test manual update → deployment flow</li>
+            </ul>
+            
+            <h3>Week 2: Basic Automation</h3>
+            <ul>
+                <li>☐ Get Claude API key from Anthropic</li>
+                <li>☐ Write scraping script for 5 test airlines</li>
+                <li>☐ Test Claude extraction on sample pages</li>
+                <li>☐ Set up GitHub Actions workflow</li>
+                <li>☐ Configure email notifications (Resend account)</li>
+            </ul>
+            
+            <h3>Week 3-4: Expand & Refine</h3>
+            <ul>
+                <li>☐ Add remaining airlines to monitoring list</li>
+                <li>☐ Build confidence scoring system</li>
+                <li>☐ Create admin review dashboard views in Airtable</li>
+                <li>☐ Add screenshot capture to workflow</li>
+                <li>☐ Test end-to-end: detection → review → deployment</li>
+            </ul>
+            
+            <h3>Month 2+: Production & Maintenance</h3>
+            <ul>
+                <li>☐ Monitor for false positives and adjust confidence thresholds</li>
+                <li>☐ Add luggage manufacturer monitoring</li>
+                <li>☐ (Optional) Build community submission feature</li>
+                <li>☐ Document processes for future reference</li>
+            </ul>
+        </div>
+
+        <div class="section">
+            <h2>🎓 Why This Architecture Works</h2>
+            
+            <div class="success-box">
+                <h3>Cost-Effective</h3>
+                <p>Total monthly cost: ~$0.12 using free tiers of multiple services. Scales to hundreds of sources without increasing costs significantly.</p>
+            </div>
+            
+            <div class="success-box">
+                <h3>Human-in-the-Loop</h3>
+                <p>You maintain full control. Every change requires your approval, but the system does the tedious monitoring work for you.</p>
+            </div>
+            
+            <div class="success-box">
+                <h3>Low Maintenance</h3>
+                <p>Once set up, you only spend 5-10 minutes per week reviewing flagged changes. The system handles everything else.</p>
+            </div>
+            
+            <div class="success-box">
+                <h3>Reliable</h3>
+                <p>Multiple safety checks and validations ensure bad data doesn't make it to production. Full change history allows easy rollbacks.</p>
+            </div>
+            
+            <div class="success-box">
+                <h3>Scalable</h3>
+                <p>Start with 20 airlines, scale to 200 without changing architecture. Add new sources by just updating a config file.</p>
+            </div>
+        </div>
+
+        <div class="section">
+            <h2>🚀 Quick Start (Minimum Viable Setup)</h2>
+            
+            <p>Want to get started with the simplest possible version? Here's a 30-minute setup:</p>
+            
+            <h3>Step 1: Airtable (10 min)</h3>
+            <ol>
+                <li>Sign up for free Airtable account</li>
+                <li>Create "Airlines" table with columns: Name, Height, Width, Depth, URL</li>
+                <li>Import your current 74 airlines</li>
+            </ol>
+            
+            <h3>Step 2: GitHub (10 min)</h3>
+            <ol>
+                <li>Create GitHub repo with your website files</li>
+                <li>Add Airtable API key as GitHub Secret</li>
+                <li>Create simple Python script that reads Airtable and generates JSON</li>
+            </ol>
+            
+            <h3>Step 3: Deploy (10 min)</h3>
+            <ol>
+                <li>Connect repo to Cloudflare Pages</li>
+                <li>Test: Update an airline in Airtable → Run script → JSON updates → Site deploys</li>
+            </ol>
+            
+            <div class="alert">
+                <h4>🎯 Result</h4>
+                <p>You now have a system where you can update your website by just editing Airtable. This alone is a huge upgrade from manually editing JSON files!</p>
+            </div>
+            
+            <p><strong>Then gradually add:</strong></p>
+            <ul>
+                <li>Week 2: Automated scraping for a few airlines</li>
+                <li>Week 3: Claude API integration</li>
+                <li>Week 4: Email notifications</li>
+                <li>Month 2+: Full monitoring of all sources</li>
+            </ul>
+        </div>
+
+        <footer style="text-align: center; padding: 40px 20px; color: var(--text-muted);">
+            <p>Ready to build this? Start with the MVP and iterate! 🚀</p>
+        </footer>
+    </div>
+</body>
+</html>

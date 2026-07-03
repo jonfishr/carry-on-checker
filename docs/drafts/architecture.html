@@ -1,0 +1,530 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Carry-On Compliance Checker - Architecture</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background: #f5f7fa;
+            padding: 20px;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            background: white;
+            border-radius: 12px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+            overflow: hidden;
+        }
+        
+        header {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 40px;
+            text-align: center;
+        }
+        
+        header h1 {
+            font-size: 2.5em;
+            margin-bottom: 10px;
+        }
+        
+        header p {
+            font-size: 1.2em;
+            opacity: 0.9;
+        }
+        
+        .content {
+            padding: 40px;
+        }
+        
+        section {
+            margin-bottom: 50px;
+        }
+        
+        h2 {
+            color: #667eea;
+            font-size: 1.8em;
+            margin-bottom: 20px;
+            padding-bottom: 10px;
+            border-bottom: 3px solid #667eea;
+        }
+        
+        h3 {
+            color: #555;
+            font-size: 1.3em;
+            margin: 25px 0 15px 0;
+        }
+        
+        .architecture-diagram {
+            background: #f8f9fa;
+            padding: 30px;
+            border-radius: 8px;
+            margin: 25px 0;
+            border: 2px solid #e9ecef;
+        }
+        
+        .layer {
+            background: white;
+            padding: 20px;
+            margin: 15px 0;
+            border-radius: 6px;
+            border-left: 4px solid #667eea;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+        }
+        
+        .layer h4 {
+            color: #667eea;
+            margin-bottom: 10px;
+            font-size: 1.1em;
+        }
+        
+        .tech-stack {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+            margin: 25px 0;
+        }
+        
+        .tech-card {
+            background: #f8f9fa;
+            padding: 20px;
+            border-radius: 8px;
+            border: 1px solid #e9ecef;
+        }
+        
+        .tech-card h4 {
+            color: #667eea;
+            margin-bottom: 10px;
+        }
+        
+        .cost-breakdown {
+            background: #e8f5e9;
+            padding: 25px;
+            border-radius: 8px;
+            margin: 25px 0;
+            border-left: 4px solid #4caf50;
+        }
+        
+        .cost-item {
+            display: flex;
+            justify-content: space-between;
+            padding: 10px 0;
+            border-bottom: 1px solid #c8e6c9;
+        }
+        
+        .cost-item:last-child {
+            border-bottom: none;
+            font-weight: bold;
+            font-size: 1.1em;
+            padding-top: 15px;
+            margin-top: 10px;
+            border-top: 2px solid #4caf50;
+        }
+        
+        .feature-list {
+            list-style: none;
+            padding: 0;
+        }
+        
+        .feature-list li {
+            padding: 12px 0 12px 30px;
+            position: relative;
+        }
+        
+        .feature-list li:before {
+            content: "✓";
+            position: absolute;
+            left: 0;
+            color: #4caf50;
+            font-weight: bold;
+            font-size: 1.2em;
+        }
+        
+        .data-model {
+            background: #fff3e0;
+            padding: 25px;
+            border-radius: 8px;
+            margin: 25px 0;
+            border-left: 4px solid #ff9800;
+        }
+        
+        pre {
+            background: #263238;
+            color: #aed581;
+            padding: 20px;
+            border-radius: 6px;
+            overflow-x: auto;
+            margin: 15px 0;
+            font-size: 0.9em;
+        }
+        
+        .alert {
+            background: #e3f2fd;
+            padding: 20px;
+            border-radius: 8px;
+            margin: 25px 0;
+            border-left: 4px solid #2196f3;
+        }
+        
+        .alert h4 {
+            color: #1976d2;
+            margin-bottom: 10px;
+        }
+        
+        @media (max-width: 768px) {
+            body {
+                padding: 10px;
+            }
+            
+            .content {
+                padding: 20px;
+            }
+            
+            header h1 {
+                font-size: 1.8em;
+            }
+            
+            .tech-stack {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>🧳 Carry-On Compliance Checker</h1>
+            <p>Software Architecture & Implementation Guide</p>
+        </header>
+        
+        <div class="content">
+            <section>
+                <h2>🎯 Architecture Overview</h2>
+                <p>This is a <strong>static, serverless architecture</strong> designed for minimal recurring costs while maintaining excellent performance and user experience. The entire application runs in the browser with no backend servers required.</p>
+                
+                <div class="architecture-diagram">
+                    <div class="layer">
+                        <h4>🌐 Frontend Layer (Browser)</h4>
+                        <p><strong>HTML + CSS + Vanilla JavaScript</strong></p>
+                        <p>Mobile-first responsive design with instant client-side calculations. No framework overhead means faster load times and better performance on mobile devices.</p>
+                    </div>
+                    
+                    <div class="layer">
+                        <h4>💾 Data Layer (Static JSON)</h4>
+                        <p><strong>JSON files embedded or loaded at startup</strong></p>
+                        <p>Two JSON files: <code>airlines.json</code> (airline overhead bin dimensions) and <code>luggage.json</code> (luggage library). Total size: ~5-10KB compressed.</p>
+                    </div>
+                    
+                    <div class="layer">
+                        <h4>☁️ Hosting Layer</h4>
+                        <p><strong>Cloudflare Pages, Netlify, or GitHub Pages</strong></p>
+                        <p>Static hosting with global CDN, automatic SSL, and zero-config deployments. All offer generous free tiers perfect for this use case.</p>
+                    </div>
+                </div>
+            </section>
+            
+            <section>
+                <h2>💰 Cost Breakdown</h2>
+                <div class="cost-breakdown">
+                    <div class="cost-item">
+                        <span>Hosting (Cloudflare Pages / Netlify)</span>
+                        <span><strong>$0/month</strong></span>
+                    </div>
+                    <div class="cost-item">
+                        <span>Domain Name (optional)</span>
+                        <span>$12-15/year</span>
+                    </div>
+                    <div class="cost-item">
+                        <span>CDN & Bandwidth</span>
+                        <span><strong>$0/month</strong></span>
+                    </div>
+                    <div class="cost-item">
+                        <span>SSL Certificate</span>
+                        <span><strong>$0/month</strong></span>
+                    </div>
+                    <div class="cost-item">
+                        <span>Database</span>
+                        <span><strong>$0/month</strong></span>
+                    </div>
+                    <div class="cost-item">
+                        <span><strong>Total Recurring Cost</strong></span>
+                        <span><strong>$0-1.25/month</strong></span>
+                    </div>
+                </div>
+                
+                <p><em>Note: This assumes moderate traffic (up to 100K visitors/month). The free tiers are extremely generous and will cover most indie projects.</em></p>
+            </section>
+            
+            <section>
+                <h2>🛠️ Tech Stack</h2>
+                <div class="tech-stack">
+                    <div class="tech-card">
+                        <h4>Frontend</h4>
+                        <ul>
+                            <li>HTML5</li>
+                            <li>CSS3 (with CSS Grid/Flexbox)</li>
+                            <li>Vanilla JavaScript (ES6+)</li>
+                            <li>No build tools required</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="tech-card">
+                        <h4>Hosting</h4>
+                        <ul>
+                            <li>Cloudflare Pages (recommended)</li>
+                            <li>Alternative: Netlify or Vercel</li>
+                            <li>Fallback: GitHub Pages</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="tech-card">
+                        <h4>Data Storage</h4>
+                        <ul>
+                            <li>Static JSON files</li>
+                            <li>LocalStorage for user preferences</li>
+                            <li>Optional: Airtable for admin updates</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="tech-card">
+                        <h4>Optional Enhancements</h4>
+                        <ul>
+                            <li>PWA capabilities (offline mode)</li>
+                            <li>Web Share API</li>
+                            <li>Google Analytics (free tier)</li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+            
+            <section>
+                <h2>📊 Data Model</h2>
+                <div class="data-model">
+                    <h3>airlines.json</h3>
+                    <pre>{
+  "airlines": [
+    {
+      "id": "aegean",
+      "name": "Aegean",
+      "dimensions": {
+        "height": 56,
+        "width": 45,
+        "depth": 25,
+        "unit": "cm"
+      },
+      "notes": "Height is most restrictive"
+    },
+    // ... more airlines
+  ]
+}</pre>
+                    
+                    <h3>luggage.json</h3>
+                    <pre>{
+  "luggage": [
+    {
+      "id": "antler-cabin",
+      "brand": "Antler",
+      "model": "Cabin Suitcase",
+      "dimensions": {
+        "height": 55,
+        "width": 40,
+        "depth": 20,
+        "unit": "cm"
+      },
+      "category": "hardshell",
+      "notes": "Lightweight and minimalist",
+      "affiliateLink": "" // optional
+    },
+    // ... more luggage
+  ]
+}</pre>
+                </div>
+            </section>
+            
+            <section>
+                <h2>✨ Core Features</h2>
+                <ul class="feature-list">
+                    <li><strong>Bag Size Input:</strong> Users enter height, width, depth (with cm/inches toggle)</li>
+                    <li><strong>Instant Compatibility Check:</strong> Real-time calculation showing which airlines accept the bag</li>
+                    <li><strong>Airline Score:</strong> "Fits X out of Y airlines (Z%)" display</li>
+                    <li><strong>Luggage Library:</strong> Browse pre-vetted bags with airline compatibility</li>
+                    <li><strong>Responsive Design:</strong> Mobile-first UI that works great on all devices</li>
+                    <li><strong>Search & Filter:</strong> Find bags by brand, size, or airline compatibility</li>
+                    <li><strong>Share Results:</strong> Generate shareable links for specific bag configurations</li>
+                </ul>
+            </section>
+            
+            <section>
+                <h2>🚀 User Flow</h2>
+                <div class="architecture-diagram">
+                    <div class="layer">
+                        <h4>Step 1: Landing Page</h4>
+                        <p>User sees two primary options: "Check My Bag" or "Browse Luggage Library"</p>
+                    </div>
+                    
+                    <div class="layer">
+                        <h4>Step 2: Input Dimensions</h4>
+                        <p>User enters bag dimensions or selects from library. Unit selector (cm/inches) prominently displayed.</p>
+                    </div>
+                    
+                    <div class="layer">
+                        <h4>Step 3: View Results</h4>
+                        <p>Instant display of compatible airlines with visual indicators (✅/❌). Airlines sorted by compatibility score.</p>
+                    </div>
+                    
+                    <div class="layer">
+                        <h4>Step 4: Explore Options</h4>
+                        <p>User can adjust dimensions, view airline notes, or browse alternative bags from the library.</p>
+                    </div>
+                </div>
+            </section>
+            
+            <section>
+                <h2>🎨 UI Components</h2>
+                <div class="tech-stack">
+                    <div class="tech-card">
+                        <h4>Dimension Input</h4>
+                        <p>Clean number inputs with unit toggle. Mobile-optimized numeric keyboard.</p>
+                    </div>
+                    
+                    <div class="tech-card">
+                        <h4>Results Table</h4>
+                        <p>Sortable, filterable airline list with visual compatibility indicators.</p>
+                    </div>
+                    
+                    <div class="tech-card">
+                        <h4>Luggage Cards</h4>
+                        <p>Grid of bag options with key specs and compatibility scores.</p>
+                    </div>
+                    
+                    <div class="tech-card">
+                        <h4>Summary Stats</h4>
+                        <p>Overall compatibility percentage displayed prominently.</p>
+                    </div>
+                </div>
+            </section>
+            
+            <section>
+                <h2>📱 Mobile Optimization</h2>
+                <ul class="feature-list">
+                    <li>Touch-friendly input controls (large tap targets)</li>
+                    <li>Numeric keyboards for dimension inputs</li>
+                    <li>Collapsible airline details to reduce scrolling</li>
+                    <li>Fast loading (~50KB total page weight)</li>
+                    <li>Works offline with Service Worker caching</li>
+                    <li>Add to homescreen capability (PWA)</li>
+                </ul>
+            </section>
+            
+            <section>
+                <h2>🔄 Data Update Strategy</h2>
+                <div class="alert">
+                    <h4>Easy Updates Without Redeployment</h4>
+                    <p>Since airline rules change periodically, consider one of these strategies:</p>
+                    <ul style="margin-top: 10px;">
+                        <li><strong>Option 1 (Simplest):</strong> Edit JSON files in your GitHub repo and commit. Cloudflare Pages auto-deploys in ~30 seconds.</li>
+                        <li><strong>Option 2 (Recommended):</strong> Use Airtable as a free CMS. Fetch JSON from Airtable's API on page load (adds ~100ms latency but allows non-technical updates).</li>
+                        <li><strong>Option 3 (Advanced):</strong> Build a simple admin interface using Cloudflare Workers + KV storage (still free tier).</li>
+                    </ul>
+                </div>
+            </section>
+            
+            <section>
+                <h2>⚡ Performance Targets</h2>
+                <div class="tech-stack">
+                    <div class="tech-card">
+                        <h4>Load Time</h4>
+                        <p><strong>&lt; 1 second</strong> on 3G mobile</p>
+                    </div>
+                    
+                    <div class="tech-card">
+                        <h4>Page Weight</h4>
+                        <p><strong>&lt; 100KB</strong> total (including JSON)</p>
+                    </div>
+                    
+                    <div class="tech-card">
+                        <h4>Lighthouse Score</h4>
+                        <p><strong>95+</strong> on all metrics</p>
+                    </div>
+                    
+                    <div class="tech-card">
+                        <h4>Response Time</h4>
+                        <p><strong>Instant</strong> calculation (client-side)</p>
+                    </div>
+                </div>
+            </section>
+            
+            <section>
+                <h2>🔒 Security & Privacy</h2>
+                <ul class="feature-list">
+                    <li>No user data collected or stored on servers</li>
+                    <li>All calculations happen client-side</li>
+                    <li>Optional: LocalStorage only for user preferences (unit selection)</li>
+                    <li>HTTPS by default (via Cloudflare)</li>
+                    <li>No cookies required</li>
+                    <li>Privacy-friendly analytics (Plausible or Simple Analytics)</li>
+                </ul>
+            </section>
+            
+            <section>
+                <h2>🎯 Future Enhancements (Optional)</h2>
+                <ul class="feature-list">
+                    <li>User photos/reviews of bags in actual airline sizers</li>
+                    <li>Integration with your YouTube channel for video demonstrations</li>
+                    <li>Affiliate links for recommended bags (revenue stream)</li>
+                    <li>Email updates when airline rules change (via free email service)</li>
+                    <li>Community-submitted bag dimensions (with moderation)</li>
+                    <li>PWA installation for offline access</li>
+                </ul>
+            </section>
+            
+            <section>
+                <h2>📝 Implementation Checklist</h2>
+                <div class="architecture-diagram">
+                    <ol style="padding-left: 20px;">
+                        <li>Convert Excel data to JSON format (airlines + luggage)</li>
+                        <li>Create HTML structure with semantic markup</li>
+                        <li>Build CSS with mobile-first responsive design</li>
+                        <li>Implement JavaScript calculation logic</li>
+                        <li>Add unit conversion (cm ↔ inches)</li>
+                        <li>Create filterable luggage library view</li>
+                        <li>Test on various mobile devices</li>
+                        <li>Set up Cloudflare Pages / Netlify account</li>
+                        <li>Connect GitHub repo for auto-deployment</li>
+                        <li>Configure custom domain (optional)</li>
+                        <li>Add basic analytics (optional)</li>
+                        <li>Submit to search engines</li>
+                    </ol>
+                </div>
+            </section>
+            
+            <section>
+                <h2>🎓 Why This Architecture?</h2>
+                <p><strong>Cost:</strong> Hosting is completely free. Your only cost is a domain name (~$1/month) if you want one.</p>
+                
+                <p><strong>Performance:</strong> Static sites served from a CDN are the fastest possible option. Your site will load in under a second worldwide.</p>
+                
+                <p><strong>Scalability:</strong> CDNs handle millions of visitors effortlessly. You'll never worry about server costs scaling with traffic.</p>
+                
+                <p><strong>Simplicity:</strong> No backend to maintain, no databases to manage, no server updates. Just HTML, CSS, and JavaScript.</p>
+                
+                <p><strong>Reliability:</strong> Static sites have 99.99%+ uptime. No databases to crash or servers to go down.</p>
+                
+                <p><strong>Mobile-First:</strong> Lightweight and fast = perfect for mobile users checking bags before their flight.</p>
+            </section>
+        </div>
+    </div>
+</body>
+</html>

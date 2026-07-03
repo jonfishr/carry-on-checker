@@ -1,352 +1,117 @@
-# 🧳 Carry-On Compliance Checker
+# 🧳 Carry-On Checker — Will Your Bag Fit?
 
-**Check if your carry-on luggage fits airline size requirements**
+**Check any carry-on against airlines' published size rules — with real-world
+"close call" guidance from [Aly Smalls](https://likewhereyouregoing.com), who
+tests bags in actual airline sizers.**
 
-A simple, fast tool to compare your bag against 74 airlines' carry-on policies. Created by [Aly Smalls](https://likewhereyouregoing.com).
+👉 **[Try it live](https://jonfishr.github.io/carry-on-checker/)**
 
-👉 **[View Live Demo](#)** (add your GitHub Pages URL here after deployment)
-
----
-
-## ✨ Features
-
-- ✅ Check any bag dimensions against 74 airlines instantly
-- ✅ Toggle between centimeters and inches
-- ✅ Browse 17+ recommended, tested carry-on bags
-- ✅ Mobile-friendly, responsive design
-- ✅ No backend required - runs entirely in the browser
-- ✅ Zero cost to host and maintain
+Built from Aly's *Carry-On Compliance Checker* spreadsheet as a thank-you for
+years of genuinely useful travel content. Data and methodology are hers;
+the site just makes them instant.
 
 ---
 
-## 🚀 Quick Deploy to GitHub Pages
+## ✨ What it does
 
-### Option 1: Upload Files Directly (Easiest)
+- Checks your bag's dimensions against **70 airlines** in real time, in cm or inches
+- Three-tier verdicts using Aly's methodology:
+  **✅ Fits** · **⚠️ Close call** (≤ 1 in / 2.54 cm over — usually fine in real
+  sizers) · **❌ Too big** — with exactly which dimension is over, and by how much
+- Explains the **height → width → depth** hierarchy (why an over-depth bag
+  beats an over-height bag)
+- **Recommended bags** library — Aly's tested hard-shell / soft-side / value
+  picks, one tap to check any of them
+- Per-airline **official source links** and **last-verified dates**
+- 100% static: no backend, no build step, loads instantly, costs $0 to host
 
-1. **Create a new GitHub repository**
-   - Go to [github.com/new](https://github.com/new)
-   - Name it `carry-on-checker` (or whatever you prefer)
-   - Make it **Public**
-   - Don't initialize with README
+## 🗂 How data flows
 
-2. **Upload the files**
-   - Click "uploading an existing file"
-   - Drag and drop these files:
-     - `index.html` (main website file)
-     - `airlines.json` (airline data)
-     - `luggage.json` (luggage library data)
-     - `README.md` (this file)
-   - Click "Commit changes"
+```
+Google Sheet (Aly edits)          airlines.json / luggage.json
+  Airlines tab  ──┐   daily         (source of truth, fetched
+  Luggage tab   ──┴──► GitHub ────► by index.html at runtime)
+                      Action              │
+                                          └─► embedded fallback snapshot
+                                              (for opening the file offline)
+```
 
-3. **Enable GitHub Pages**
-   - Go to repository **Settings**
-   - Click **Pages** in the left sidebar
-   - Under **Source**, select `main` branch
-   - Click **Save**
+- **Normal updates:** edit the Google Sheet — the *Update data from Google
+  Sheet* workflow syncs it daily (or run it manually from the Actions tab).
+  Invalid rows never reach the site; the workflow opens an issue explaining
+  the problem instead.
+- **Direct updates (developers):** edit the JSON files, then run
+  `python3 scripts/embed_fallback.py && python3 scripts/json_to_csv.py`
+  and commit. CI enforces that everything stays in sync.
+- **Freshness:** a monthly workflow diffs each airline's official baggage
+  page and opens an issue when a page changes, so a human can re-check the
+  numbers. Data is never edited automatically.
 
-4. **Access your site!**
-   - Your site will be live at: `https://YOUR-USERNAME.github.io/carry-on-checker/`
-   - Wait 1-2 minutes for the initial build
+Owner documentation:
+- **[docs/GUIDE-FOR-ALY.md](docs/GUIDE-FOR-ALY.md)** — plain-English owner's
+  guide (how it works, how to update, what to do when something breaks)
+- **[MAINTENANCE.md](MAINTENANCE.md)** — one-time sheet setup, local dev,
+  transfer/custom-domain instructions
 
-### Option 2: Using Git (For Developers)
+## 📁 Repository layout
+
+```
+index.html                     the whole site (data fetched from the JSON files)
+airlines.json / luggage.json   the data
+scripts/                       sheet↔JSON converters, fallback embedder, tests
+docs/sheet-template/           CSV mirrors of the data — import to (re)create the Sheet
+docs/GUIDE-FOR-ALY.md          non-technical owner's guide
+docs/drafts/                   early design docs kept for reference
+.github/workflows/             daily sheet sync · CI validation · policy-page watch
+```
+
+## 📊 Data format
+
+```jsonc
+// airlines.json — dimensions in cm, height = longest side, incl. wheels/handles
+{
+  "id": "air-canada",              // derived from name; kebab-case
+  "name": "Air Canada",
+  "region": "North America",
+  "dimensions": { "height": 55.0, "width": 40.0, "depth": 23.0, "unit": "cm" },
+  "weight_limit_kg": 10,           // optional
+  "personal_item": { "height": 43, "width": 33, "depth": 16, "unit": "cm" }, // optional
+  "notes": "…",                    // optional, shown on the airline card
+  "source_url": "https://…",       // optional, official baggage page
+  "last_verified": "2026-07-02"    // optional, ISO date
+}
+
+// luggage.json
+{
+  "id": "monos-carry-on",
+  "name": "Monos Carry-On",
+  "category": "hardside",          // hardside | softside | value
+  "dimensions": { "height": 55.88, "width": 35.56, "depth": 22.86, "unit": "cm" },
+  "weight_kg": 1.9,                // optional
+  "notes": "…"                     // optional, Aly's take, shown verbatim
+}
+```
+
+## 🧪 Development
 
 ```bash
-# Clone this repository
-git clone https://github.com/YOUR-USERNAME/carry-on-checker.git
-cd carry-on-checker
-
-# Make your changes (if any)
-
-# Commit and push
-git add .
-git commit -m "Initial commit"
-git push origin main
+python3 -m http.server 8765           # run locally → http://localhost:8765
+python3 -m unittest discover scripts  # test suite
 ```
-
-Then follow step 3 above to enable GitHub Pages.
-
----
-
-## 🔄 How to Update Data
-
-### When Airlines Change Their Carry-On Rules
-
-Airlines occasionally update their carry-on size restrictions. Here's how to update them:
-
-#### Method 1: Edit the JSON File Directly (Recommended)
-
-1. **Edit `airlines.json` on GitHub:**
-   - Navigate to the file in your repository
-   - Click the pencil icon (✏️) to edit
-   - Find the airline you need to update
-   - Modify the dimensions:
-
-   ```json
-   {
-     "id": "united",
-     "name": "United Airlines",
-     "dimensions": {
-       "height": 56.0,    ← Change these numbers
-       "width": 35.0,     ← 
-       "depth": 22.0,     ← 
-       "unit": "cm"
-     }
-   }
-   ```
-
-2. **Commit your changes:**
-   - Scroll down and click "Commit changes"
-   - Your site will automatically rebuild in ~30 seconds!
-
-#### Method 2: Re-embed the Data in index.html
-
-If you prefer to keep everything in a single file:
-
-1. **Edit the data in `index.html`:**
-   - Open `index.html` in a text editor
-   - Find the line: `const AIRLINES_DATA = {`
-   - Update the airline dimensions directly in the JavaScript object
-   - Save the file
-
-2. **Upload the updated file:**
-   - Go to your repository on GitHub
-   - Click on `index.html`
-   - Click the pencil icon to edit
-   - Paste your updated HTML
-   - Commit changes
-
-### When Adding New Luggage to the Library
-
-To add new tested bags:
-
-1. **Edit `luggage.json`:**
-
-   ```json
-   {
-     "id": "new-bag-model",
-     "name": "Brand Name Carry-On",
-     "dimensions": {
-       "height": 55.0,
-       "width": 40.0,
-       "depth": 20.0,
-       "unit": "cm"
-     },
-     "notes": "Your review or notes about the bag"
-   }
-   ```
-
-2. **Commit the changes** - the site updates automatically!
-
-### Removing an Airline or Bag
-
-Simply delete the entire object (including the curly braces `{ }`) from the JSON file, making sure to remove any trailing comma if it's the last item in the list.
-
----
-
-## 📊 Data Structure Reference
-
-### Airlines Data Format
-
-```json
-{
-  "airlines": [
-    {
-      "id": "unique-id",           // Lowercase, no spaces
-      "name": "Display Name",      // How it appears to users
-      "dimensions": {
-        "height": 56.0,            // Always in cm
-        "width": 45.0,
-        "depth": 25.0,
-        "unit": "cm"               // Always "cm"
-      }
-    }
-  ]
-}
-```
-
-### Luggage Data Format
-
-```json
-{
-  "luggage": [
-    {
-      "id": "unique-id",
-      "name": "Brand Model Name",
-      "dimensions": {
-        "height": 55.0,
-        "width": 40.0,
-        "depth": 20.0,
-        "unit": "cm"
-      },
-      "notes": "Optional description or review"
-    }
-  ]
-}
-```
-
-**Important Notes:**
-- All dimensions must be in **centimeters** (the site handles conversion to inches automatically)
-- The `id` field should be lowercase with hyphens instead of spaces
-- Dimensions use decimal points (e.g., `55.0` not `55`)
-
----
-
-## 🛠️ Technical Details
-
-### File Structure
-
-```
-carry-on-checker/
-├── index.html          # Main website (includes embedded data)
-├── airlines.json       # Airline carry-on size data
-├── luggage.json        # Recommended luggage library
-└── README.md          # This file
-```
-
-### How It Works
-
-- **100% static**: No server, database, or API required
-- **Client-side only**: All calculations happen in the browser
-- **Data embedded**: JSON data is embedded directly in the HTML for instant loading
-- **Responsive**: Works on desktop, tablet, and mobile devices
-
-### Browser Compatibility
-
-Works in all modern browsers:
-- Chrome/Edge (latest)
-- Firefox (latest)
-- Safari (latest)
-- Mobile browsers (iOS Safari, Chrome Mobile)
-
----
-
-## 🎨 Customization
-
-### Changing Colors
-
-Edit the CSS variables in `index.html` (around line 15):
-
-```css
-:root {
-    --primary-teal: #5a9a9f;      /* Main brand color */
-    --dark-teal: #3d7175;         /* Hover states */
-    --soft-sage: #a8b5a0;         /* Accent color */
-    --cream: #f7f5f0;             /* Background */
-    /* ... more colors ... */
-}
-```
-
-### Changing Fonts
-
-The site uses Google Fonts (Lora + Montserrat). To change:
-
-1. Find the Google Fonts link in the `<head>` section
-2. Replace with your preferred fonts
-3. Update the `font-family` declarations in CSS
-
----
-
-## 📱 Using a Custom Domain
-
-Want to use your own domain (e.g., `carryon.alysmalls.com`)?
-
-1. **Buy a domain** (Namecheap, Google Domains, etc.)
-
-2. **In GitHub Pages settings:**
-   - Enter your custom domain
-   - Check "Enforce HTTPS"
-
-3. **In your domain registrar:**
-   - Add a CNAME record pointing to `YOUR-USERNAME.github.io`
-
-[Detailed GitHub Pages custom domain guide →](https://docs.github.com/en/pages/configuring-a-custom-domain-for-your-github-pages-site)
-
----
-
-## 🔄 Deployment Alternatives
-
-While this README focuses on GitHub Pages, you can also deploy to:
-
-### Cloudflare Pages
-- Faster global CDN
-- Unlimited bandwidth
-- Free SSL
-- [Deploy Guide](https://pages.cloudflare.com/)
-
-### Netlify
-- Drag-and-drop deployment
-- Instant preview URLs
-- Free SSL
-- [Deploy Guide](https://www.netlify.com/)
-
-All three options are **100% free** for static sites like this!
-
----
-
-## 📝 Maintenance Schedule
-
-**Recommended update frequency:**
-
-- **Major Airlines** (United, Delta, American, Southwest, etc.): Check quarterly
-- **International Airlines**: Check bi-annually
-- **Budget Airlines**: Check quarterly (they change policies more often)
-- **Luggage Library**: Add new bags as you test them
-
-**Where to check for airline updates:**
-- Official airline websites (baggage/carry-on policy pages)
-- Set Google Alerts for "airline name + carry-on policy change"
-- Aviation news sites and forums
-
----
 
 ## 🤝 Contributing
 
-Found an airline with outdated dimensions? Tested a new bag?
+Spotted an outdated limit or a bag worth adding? Open an issue or PR with
+the airline/bag name, a link to the **official** source, and the date you
+checked it.
 
-1. Fork this repository
-2. Make your changes to `airlines.json` or `luggage.json`
-3. Submit a pull request with:
-   - The airline/bag name
-   - Link to the official source
-   - Date you verified the information
+## 🙏 Credits & license
 
----
+- **Data & methodology:** [Aly Smalls](https://likewhereyouregoing.com) —
+  [YouTube @alysmalls](https://www.youtube.com/@alysmalls) — from her
+  *Carry-On Compliance Checker* spreadsheet
+- **License:** [MIT](LICENSE)
 
-## 📄 License
-
-This project is open source and available under the [MIT License](LICENSE).
-
-Feel free to fork, modify, and use for your own projects!
-
----
-
-## 🙏 Credits
-
-- **Created by:** [Aly Smalls](https://likewhereyouregoing.com)
-- **YouTube:** [@alysmalls](https://www.youtube.com/@alysmalls)
-- **Design:** Inspired by Like Where You're Going blog aesthetic
-
----
-
-## 💡 Future Enhancements (Ideas)
-
-Want to take this further? Consider:
-
-- [ ] Add airline logos/icons
-- [ ] Filter airlines by region (US, Europe, Asia, etc.)
-- [ ] Sort results by airline popularity
-- [ ] Add "bookmark" feature to save favorite bags
-- [ ] Include personal item dimensions
-- [ ] Add weight restrictions
-- [ ] Community submissions for bag reviews
-
----
-
-## 🐛 Issues or Questions?
-
-- Open an issue on GitHub
-- Contact Aly via [her website](https://likewhereyouregoing.com/connect-with-me/)
-
----
-
-**Happy travels! ✈️**
+*Airlines can change their rules, and enforcement can vary. This tool is
+here to help you plan with confidence — not add stress. When in doubt,
+double-check before you fly.* ✈️

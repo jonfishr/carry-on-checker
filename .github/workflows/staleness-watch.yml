@@ -1,0 +1,49 @@
+name: Watch airline policy pages
+
+on:
+  schedule:
+    - cron: "43 7 3 * *"   # monthly, 3rd day 7:43 UTC
+  workflow_dispatch: {}
+
+permissions:
+  contents: write
+  issues: write
+
+jobs:
+  watch:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Compare policy pages against last snapshot
+        id: check
+        run: |
+          python3 scripts/staleness_check.py | tee report.txt
+          changed=$(head -1 report.txt | cut -d= -f2)
+          echo "changed=$changed" >> "$GITHUB_OUTPUT"
+
+      - name: Open issue if pages changed
+        if: steps.check.outputs.changed != '0'
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          body="$(tail -n +2 report.txt)"
+          existing=$(gh issue list --label policy-watch --state open --json number --jq '.[0].number // empty' || true)
+          if [ -n "$existing" ]; then
+            gh issue comment "$existing" --body "$body"
+          else
+            gh label create policy-watch --description "Airline policy page changed" --color FBCA04 2>/dev/null || true
+            gh issue create \
+              --title "Some airline baggage pages changed — worth a quick look" \
+              --label policy-watch \
+              --body "$body"
+          fi
+
+      - name: Commit updated snapshots
+        run: |
+          git add .github/staleness-hashes.json
+          if git diff --cached --quiet; then exit 0; fi
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git commit -m "Update policy-page snapshots"
+          git push
