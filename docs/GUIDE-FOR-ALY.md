@@ -18,7 +18,7 @@ recommended bags), and instantly see how it stacks up against every
 airline in your list — with your signature real-world judgment built in:
 
 - **✅ Fits** — within the airline's published limit.
-- **⚠️ Close call** — over by no more than 2.5 cm / 1 inch. Your rule: bags
+- **⚠️ Close call** — over by no more than 1 inch (2.54 cm). Your rule: bags
   this close usually slide into the sizer just fine (like your Monos on
   Air Canada).
 - **❌ Too big** — more than an inch over. Trouble at the gate.
