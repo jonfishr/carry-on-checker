@@ -14,7 +14,7 @@ the site just makes them instant.
 
 ## ✨ What it does
 
-- Checks your bag's dimensions against **73 airlines** in real time, in cm or inches
+- Checks your bag's dimensions against **70 airlines** in real time, in cm or inches
 - Three-tier verdicts using Aly's methodology:
   **✅ Fits** · **⚠️ Close call** (≤ 2.5 cm / 1 in over — usually fine in real
   sizers) · **❌ Too big** — with exactly which dimension is over, and by how much

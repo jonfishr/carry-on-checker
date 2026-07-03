@@ -9,7 +9,11 @@
         "width": 45.0,
         "depth": 25.0,
         "unit": "cm"
-      }
+      },
+      "weight_limit_kg": 8,
+      "notes": "Business class allows up to 13 kg. Smaller Olympic Air planes use a 55×40×23 cm, 8 kg limit.",
+      "source_url": "https://en.aegeanair.com/travel-info/travelling-with-aegean/baggage/baggage-allowance/",
+      "last_verified": "2026-07-02"
     },
     {
       "id": "aer-lingus",
@@ -20,7 +24,17 @@
         "width": 40.0,
         "depth": 24.0,
         "unit": "cm"
-      }
+      },
+      "weight_limit_kg": 10,
+      "personal_item": {
+        "height": 25.0,
+        "width": 33.0,
+        "depth": 20.0,
+        "unit": "cm"
+      },
+      "notes": "Aer Lingus Regional flights now share the same 10 kg allowance as the mainline.",
+      "source_url": "https://www.aerlingus.com/prepare/bags/",
+      "last_verified": "2026-07-02"
     },
     {
       "id": "aeromexico",
@@ -31,7 +45,11 @@
         "width": 40.0,
         "depth": 25.0,
         "unit": "cm"
-      }
+      },
+      "weight_limit_kg": 10,
+      "notes": "On Basic fares your carry-on and personal item together can weigh at most 10 kg.",
+      "source_url": "https://www.aeromexico.com/en-us/travel-information/baggage/carry-on-baggage",
+      "last_verified": "2026-07-02"
     },
     {
       "id": "air-canada",
@@ -42,7 +60,16 @@
         "width": 40.0,
         "depth": 23.0,
         "unit": "cm"
-      }
+      },
+      "personal_item": {
+        "height": 33.0,
+        "width": 43.0,
+        "depth": 16.0,
+        "unit": "cm"
+      },
+      "notes": "Economy Basic fares (bought after Jan 3, 2025) don't include a carry-on within Canada/US/Mexico/Caribbean — personal item only.",
+      "source_url": "https://www.aircanada.com/ca/en/aco/home/plan/baggage/carry-on.html",
+      "last_verified": "2026-07-02"
     },
     {
       "id": "air-china",
@@ -53,7 +80,11 @@
         "width": 40.0,
         "depth": 20.0,
         "unit": "cm"
-      }
+      },
+      "weight_limit_kg": 5,
+      "notes": "The 5 kg limit is for economy; business and first get two bags at 8 kg each.",
+      "source_url": "https://www.airchina.us/US/GB/info/carry-on-baggage/",
+      "last_verified": "2026-07-02"
     },
     {
       "id": "air-france",
@@ -64,7 +95,17 @@
         "width": 35.0,
         "depth": 25.0,
         "unit": "cm"
-      }
+      },
+      "weight_limit_kg": 12,
+      "personal_item": {
+        "height": 40.0,
+        "width": 30.0,
+        "depth": 15.0,
+        "unit": "cm"
+      },
+      "notes": "The 12 kg allowance covers your cabin bag and personal item together (18 kg in business).",
+      "source_url": "https://wwws.airfrance.us/information/bagages/bagage-cabine-soute",
+      "last_verified": "2026-07-02"
     },
     {
       "id": "air-transat",
@@ -75,7 +116,17 @@
         "width": 40.0,
         "depth": 23.0,
         "unit": "cm"
-      }
+      },
+      "weight_limit_kg": 10,
+      "personal_item": {
+        "height": 43.0,
+        "width": 31.0,
+        "depth": 13.0,
+        "unit": "cm"
+      },
+      "notes": "The cheapest Eco Budget fares on south/US routes include only a personal item; Club Class gets 15 kg.",
+      "source_url": "https://www.airtransat.com/en-CA/travel-information/baggage/weight-dimensions",
+      "last_verified": "2026-07-02"
     },
     {
       "id": "airbaltic",
@@ -86,7 +137,17 @@
         "width": 40.0,
         "depth": 23.0,
         "unit": "cm"
-      }
+      },
+      "weight_limit_kg": 8,
+      "personal_item": {
+        "height": 40.0,
+        "width": 30.0,
+        "depth": 15.0,
+        "unit": "cm"
+      },
+      "notes": "The cheapest Economy MINI fare includes a personal item only; business allows up to 24 kg.",
+      "source_url": "https://www.airbaltic.com/en/baggage/cabin-baggage",
+      "last_verified": "2026-07-02"
     },
     {
       "id": "alaska",
@@ -97,7 +158,10 @@
         "width": 36.0,
         "depth": 23.0,
         "unit": "cm"
-      }
+      },
+      "notes": "No published weight limit — you just need to lift it into the bin yourself. Free on every fare, even the cheapest.",
+      "source_url": "https://www.alaskaair.com/content/travel-info/baggage/carry-on-luggage",
+      "last_verified": "2026-07-02"
     },
     {
       "id": "allegiant",
@@ -108,7 +172,16 @@
         "width": 40.0,
         "depth": 25.0,
         "unit": "cm"
-      }
+      },
+      "personal_item": {
+        "height": 45.0,
+        "width": 35.0,
+        "depth": 20.0,
+        "unit": "cm"
+      },
+      "notes": "Carry-on bags always cost extra on Allegiant (cheaper if paid online in advance) — only the personal item is free.",
+      "source_url": "https://www.allegiantair.com/baggage-1",
+      "last_verified": "2026-07-02"
     },
     {
       "id": "american",
@@ -119,7 +192,16 @@
         "width": 36.0,
         "depth": 23.0,
         "unit": "cm"
-      }
+      },
+      "personal_item": {
+        "height": 45.0,
+        "width": 35.0,
+        "depth": 20.0,
+        "unit": "cm"
+      },
+      "notes": "No published weight limit — the bag just has to fit the sizer.",
+      "source_url": "https://www.aa.com/i18n/travel-info/baggage/carry-on-baggage.jsp",
+      "last_verified": "2026-07-02"
     },
     {
       "id": "ana",
@@ -130,7 +212,11 @@
         "width": 40.0,
         "depth": 25.0,
         "unit": "cm"
-      }
+      },
+      "weight_limit_kg": 10,
+      "notes": "The 10 kg covers your carry-on and personal item together. Small domestic aircraft use a reduced 45×35×20 cm limit.",
+      "source_url": "https://www.ana.co.jp/en/us/travel-information/baggage-information/carry-on/",
+      "last_verified": "2026-07-02"
     },
     {
       "id": "austrian",
@@ -141,7 +227,17 @@
         "width": 40.0,
         "depth": 23.0,
         "unit": "cm"
-      }
+      },
+      "weight_limit_kg": 8,
+      "personal_item": {
+        "height": 40.0,
+        "width": 30.0,
+        "depth": 15.0,
+        "unit": "cm"
+      },
+      "notes": "Economy Basic fares on short-haul flights include only a personal item (40×30×15 cm), not a full cabin bag.",
+      "source_url": "https://www.austrian.com/xx/en/handgepaeck",
+      "last_verified": "2026-07-02"
     },
     {
       "id": "avianca",
@@ -152,7 +248,17 @@
         "width": 35.0,
         "depth": 25.0,
         "unit": "cm"
-      }
+      },
+      "weight_limit_kg": 10,
+      "personal_item": {
+        "height": 45.0,
+        "width": 35.0,
+        "depth": 20.0,
+        "unit": "cm"
+      },
+      "notes": "Basic fares don't include a carry-on — it costs extra. The personal item is free on every fare.",
+      "source_url": "https://ayuda.avianca.com/hc/en-us/articles/13080259544219-What-is-carry-on-baggage-and-how-can-I-purchase-it",
+      "last_verified": "2026-07-02"
     },
     {
       "id": "azores",
@@ -163,7 +269,17 @@
         "width": 40.0,
         "depth": 20.0,
         "unit": "cm"
-      }
+      },
+      "weight_limit_kg": 8,
+      "personal_item": {
+        "height": 40.0,
+        "width": 30.0,
+        "depth": 15.0,
+        "unit": "cm"
+      },
+      "notes": "8 kg on economy fares; Comfort Plus allows 15 kg. Your personal item counts within the weight allowance.",
+      "source_url": "https://www.azoresairlines.pt/en/information/baggage/carry-on-baggage",
+      "last_verified": "2026-07-02"
     },
     {
       "id": "breeze-airways",
@@ -174,7 +290,17 @@
         "width": 36.0,
         "depth": 23.0,
         "unit": "cm"
-      }
+      },
+      "weight_limit_kg": 15.9,
+      "personal_item": {
+        "height": 43.0,
+        "width": 33.0,
+        "depth": 20.0,
+        "unit": "cm"
+      },
+      "notes": "Carry-on isn't included in the base Nice fare — it's an add-on or comes in bundles. The personal item is always free.",
+      "source_url": "https://www.flybreeze.com/support?a=Bag-Allowance-and-Dimensions---id--EvTT15-VRZWup0Ivwy_VhA",
+      "last_verified": "2026-07-02"
     },
     {
       "id": "british-airways",
@@ -185,7 +311,17 @@
         "width": 45.0,
         "depth": 25.0,
         "unit": "cm"
-      }
+      },
+      "weight_limit_kg": 23,
+      "personal_item": {
+        "height": 40.0,
+        "width": 30.0,
+        "depth": 15.0,
+        "unit": "cm"
+      },
+      "notes": "No hard weight limit — you just need to lift it into the bin yourself. One of the most generous size allowances out there.",
+      "source_url": "https://www.britishairways.com/content/en/us/information/baggage-essentials",
+      "last_verified": "2026-07-02"
     },
     {
       "id": "brussels",
@@ -196,7 +332,17 @@
         "width": 40.0,
         "depth": 23.0,
         "unit": "cm"
-      }
+      },
+      "weight_limit_kg": 8,
+      "personal_item": {
+        "height": 40.0,
+        "width": 30.0,
+        "depth": 15.0,
+        "unit": "cm"
+      },
+      "notes": "Economy Basic fares on short-haul flights include only a personal item (40×30×15 cm), not a full cabin bag.",
+      "source_url": "https://www.brusselsairlines.com/xx/en/extra-services/baggage/carry-on-baggage",
+      "last_verified": "2026-07-02"
     },
     {
       "id": "caribbean",
@@ -207,7 +353,16 @@
         "width": 35.0,
         "depth": 23.0,
         "unit": "cm"
-      }
+      },
+      "weight_limit_kg": 10,
+      "personal_item": {
+        "height": 43.0,
+        "width": 33.0,
+        "depth": 15.0,
+        "unit": "cm"
+      },
+      "source_url": "https://www.caribbean-airlines.com/#/baggage/carry-on",
+      "last_verified": "2026-07-02"
     },
     {
       "id": "cathay-pacific",
@@ -218,7 +373,17 @@
         "width": 36.0,
         "depth": 23.0,
         "unit": "cm"
-      }
+      },
+      "weight_limit_kg": 7,
+      "personal_item": {
+        "height": 40.0,
+        "width": 30.0,
+        "depth": 15.0,
+        "unit": "cm"
+      },
+      "notes": "Allowance varies by cabin class and route — 7 kg in economy. Cathay's own baggage calculator is the source of truth.",
+      "source_url": "https://www.cathaypacific.com/cx/en_US/faqs/baggage/cabin-baggage-allowance/what-is-my-carry-on-baggage-allowance.html",
+      "last_verified": "2026-07-02"
     },
     {
       "id": "china-airlines",
@@ -229,7 +394,17 @@
         "width": 36.0,
         "depth": 23.0,
         "unit": "cm"
-      }
+      },
+      "weight_limit_kg": 7,
+      "personal_item": {
+        "height": 40.0,
+        "width": 30.0,
+        "depth": 15.0,
+        "unit": "cm"
+      },
+      "notes": "7 kg across all classes; business class gets a second carry-on.",
+      "source_url": "https://www.china-airlines.com/us/en/fly/prepare-for-the-fly/baggage/carry-on-baggage",
+      "last_verified": "2026-07-02"
     },
     {
       "id": "condor",
@@ -238,20 +413,40 @@
       "dimensions": {
         "height": 55.0,
         "width": 40.0,
-        "depth": 20.0,
+        "depth": 23.0,
         "unit": "cm"
-      }
+      },
+      "weight_limit_kg": 8,
+      "personal_item": {
+        "height": 40.0,
+        "width": 30.0,
+        "depth": 15.0,
+        "unit": "cm"
+      },
+      "notes": "Condor enlarged its carry-on depth to 23 cm in May 2026 — older guides may still say 20 cm.",
+      "source_url": "https://condor-newsroom.condor.com/de/de/news-artikel/groesseres-handgepaeck-mehr-aufgabegepaeck-condor-verbessert-konditionen-fuer-ihre-gaeste/",
+      "last_verified": "2026-07-02"
     },
     {
       "id": "copa",
       "name": "Copa",
       "region": "Latin America & Caribbean",
       "dimensions": {
-        "height": 55.0,
-        "width": 35.0,
-        "depth": 25.0,
+        "height": 56.0,
+        "width": 36.0,
+        "depth": 23.0,
         "unit": "cm"
-      }
+      },
+      "weight_limit_kg": 10,
+      "personal_item": {
+        "height": 43.0,
+        "width": 25.0,
+        "depth": 22.0,
+        "unit": "cm"
+      },
+      "notes": "Copa publishes this in inches (22 × 14 × 9 in) — the cm figures here are converted.",
+      "source_url": "https://www.copaair.com/en-us/travel-information/baggage-information/carry-on/",
+      "last_verified": "2026-07-02"
     },
     {
       "id": "delta",
@@ -259,10 +454,13 @@
       "region": "North America",
       "dimensions": {
         "height": 56.0,
-        "width": 36.0,
+        "width": 35.0,
         "depth": 23.0,
         "unit": "cm"
-      }
+      },
+      "notes": "Published as 22 × 14 × 9 in including wheels and handles. No weight limit. Tiny Delta Connection planes (50 seats or fewer) take a personal item only.",
+      "source_url": "https://www.delta.com/us/en/baggage/carry-on-baggage",
+      "last_verified": "2026-07-02"
     },
     {
       "id": "easyjet",
@@ -273,7 +471,17 @@
         "width": 45.0,
         "depth": 25.0,
         "unit": "cm"
-      }
+      },
+      "weight_limit_kg": 15,
+      "personal_item": {
+        "height": 45.0,
+        "width": 36.0,
+        "depth": 20.0,
+        "unit": "cm"
+      },
+      "notes": "Everyone gets the small underseat bag (45×36×20 cm) free; this big cabin bag requires an add-on, an Inclusive Plus fare, or easyJet Plus membership.",
+      "source_url": "https://www.easyjet.com/en/help/baggage/cabin-bags",
+      "last_verified": "2026-07-02"
     },
     {
       "id": "emirates",
@@ -284,7 +492,11 @@
         "width": 38.0,
         "depth": 22.0,
         "unit": "cm"
-      }
+      },
+      "weight_limit_kg": 7,
+      "notes": "7 kg in economy (10 kg premium economy). Flights departing India use a stricter 115 cm total rule.",
+      "source_url": "https://www.emirates.com/us/english/before-you-fly/baggage/cabin-baggage-rules/",
+      "last_verified": "2026-07-02"
     },
     {
       "id": "etihad-airways",
@@ -295,7 +507,17 @@
         "width": 36.0,
         "depth": 23.0,
         "unit": "cm"
-      }
+      },
+      "weight_limit_kg": 7,
+      "personal_item": {
+        "height": 39.0,
+        "width": 23.0,
+        "depth": 19.0,
+        "unit": "cm"
+      },
+      "notes": "Economy gets one 7 kg bag with no separate personal item; business/first get two bags plus a personal item.",
+      "source_url": "https://www.etihad.com/en/help/baggage-information",
+      "last_verified": "2026-07-02"
     },
     {
       "id": "eva-air",
@@ -306,7 +528,11 @@
         "width": 36.0,
         "depth": 23.0,
         "unit": "cm"
-      }
+      },
+      "weight_limit_kg": 7,
+      "notes": "7 kg per bag; business class may bring two.",
+      "source_url": "https://www.evaair.com/en-us/fly-prepare/baggage/free-baggage/carry-on-baggage/",
+      "last_verified": "2026-07-02"
     },
     {
       "id": "fiji-airways",
@@ -317,7 +543,11 @@
         "width": 40.0,
         "depth": 23.0,
         "unit": "cm"
-      }
+      },
+      "weight_limit_kg": 7,
+      "notes": "7 kg in economy — and your personal item counts as part of the piece allowance rather than extra.",
+      "source_url": "https://www.fijiairways.com/en-us/manage/baggage-allowances",
+      "last_verified": "2026-07-02"
     },
     {
       "id": "finnair",
@@ -328,7 +558,17 @@
         "width": 40.0,
         "depth": 23.0,
         "unit": "cm"
-      }
+      },
+      "weight_limit_kg": 12,
+      "personal_item": {
+        "height": 40.0,
+        "width": 30.0,
+        "depth": 15.0,
+        "unit": "cm"
+      },
+      "notes": "The 8–12 kg allowance (depending on ticket type) covers your cabin bag and small bag together.",
+      "source_url": "https://www.finnair.com/us-en/baggage-on-finnair-flights/carry-on-baggage",
+      "last_verified": "2026-07-02"
     },
     {
       "id": "flair",
@@ -339,7 +579,17 @@
         "width": 40.0,
         "depth": 23.0,
         "unit": "cm"
-      }
+      },
+      "weight_limit_kg": 10,
+      "personal_item": {
+        "height": 43.0,
+        "width": 33.0,
+        "depth": 15.0,
+        "unit": "cm"
+      },
+      "notes": "Carry-on costs extra unless your bundle includes it — only the personal item (43×33×15 cm) is free on every ticket.",
+      "source_url": "https://www.flyflair.com/travel-info/baggage",
+      "last_verified": "2026-07-02"
     },
     {
       "id": "frontier",
@@ -350,7 +600,17 @@
         "width": 40.6,
         "depth": 25.4,
         "unit": "cm"
-      }
+      },
+      "weight_limit_kg": 15.9,
+      "personal_item": {
+        "height": 35.6,
+        "width": 45.7,
+        "depth": 20.3,
+        "unit": "cm"
+      },
+      "notes": "Carry-on is a paid add-on on Frontier — only the personal item is free. Weight limit 35 lb (about 16 kg).",
+      "source_url": "https://faq.flyfrontier.com/help/bags-seats-general-info-what-are-the-sizes-and-weight-limits-for-bags",
+      "last_verified": "2026-07-02"
     },
     {
       "id": "hawaiian",
@@ -361,7 +621,10 @@
         "width": 36.0,
         "depth": 23.0,
         "unit": "cm"
-      }
+      },
+      "notes": "Published as 22 × 14 × 9 in including wheels and handles; no stated weight limit.",
+      "source_url": "https://www.hawaiianairlines.com/content/travel-info/baggage/carry-on-luggage",
+      "last_verified": "2026-07-02"
     },
     {
       "id": "iberia",
@@ -372,7 +635,17 @@
         "width": 40.0,
         "depth": 25.0,
         "unit": "cm"
-      }
+      },
+      "weight_limit_kg": 10,
+      "personal_item": {
+        "height": 40.0,
+        "width": 30.0,
+        "depth": 15.0,
+        "unit": "cm"
+      },
+      "notes": "Business allows 14 kg on long-haul. Iberia flights operated by Vueling use the smaller 55×40×20 cm limit.",
+      "source_url": "https://www.iberia.com/us/luggage/hand-luggage/",
+      "last_verified": "2026-07-02"
     },
     {
       "id": "icelandair",
@@ -383,7 +656,11 @@
         "width": 40.0,
         "depth": 20.0,
         "unit": "cm"
-      }
+      },
+      "weight_limit_kg": 10,
+      "notes": "Measured with handles and wheels included; oversize bags get checked at the gate.",
+      "source_url": "https://www.icelandair.com/support/baggage/allowance/",
+      "last_verified": "2026-07-02"
     },
     {
       "id": "ita-airways",
@@ -394,7 +671,17 @@
         "width": 35.0,
         "depth": 25.0,
         "unit": "cm"
-      }
+      },
+      "weight_limit_kg": 8,
+      "personal_item": {
+        "height": 45.0,
+        "width": 36.0,
+        "depth": 20.0,
+        "unit": "cm"
+      },
+      "notes": "ITA is known to actually weigh bags — keep to the 8 kg limit.",
+      "source_url": "https://www.ita-airways.com/en_us/fly-ita/baggage/hand-baggage.html",
+      "last_verified": "2026-07-02"
     },
     {
       "id": "japan-airlines",
@@ -405,7 +692,11 @@
         "width": 40.0,
         "depth": 25.0,
         "unit": "cm"
-      }
+      },
+      "weight_limit_kg": 10,
+      "notes": "The 10 kg covers your carry-on and personal item together; small domestic aircraft have tighter limits.",
+      "source_url": "https://www.jal.co.jp/jp/en/inter/baggage/inflight/",
+      "last_verified": "2026-07-02"
     },
     {
       "id": "jetblue",
@@ -416,7 +707,16 @@
         "width": 36.0,
         "depth": 23.0,
         "unit": "cm"
-      }
+      },
+      "personal_item": {
+        "height": 43.2,
+        "width": 33.0,
+        "depth": 20.3,
+        "unit": "cm"
+      },
+      "notes": "Published as 22 × 14 × 9 in. No weight limit — and since 2024 even Blue Basic fares include a free carry-on.",
+      "source_url": "https://www.jetblue.com/help/carry-on-bags",
+      "last_verified": "2026-07-02"
     },
     {
       "id": "klm",
@@ -427,7 +727,17 @@
         "width": 35.0,
         "depth": 25.0,
         "unit": "cm"
-      }
+      },
+      "weight_limit_kg": 12,
+      "personal_item": {
+        "height": 40.0,
+        "width": 30.0,
+        "depth": 15.0,
+        "unit": "cm"
+      },
+      "notes": "The 12 kg allowance covers your cabin bag and small bag together (18 kg in business).",
+      "source_url": "https://www.klm.com/information/baggage/hand-baggage-allowance",
+      "last_verified": "2026-07-02"
     },
     {
       "id": "korean-air",
@@ -438,7 +748,11 @@
         "width": 40.0,
         "depth": 20.0,
         "unit": "cm"
-      }
+      },
+      "weight_limit_kg": 10,
+      "notes": "The three sides must also total 115 cm or less; carry-on plus personal item together max 10 kg.",
+      "source_url": "https://www.koreanair.com/contents/plan-your-travel/baggage/carry-on-baggage?hl=en",
+      "last_verified": "2026-07-02"
     },
     {
       "id": "la-compagnie",
@@ -449,7 +763,11 @@
         "width": 35.0,
         "depth": 25.0,
         "unit": "cm"
-      }
+      },
+      "weight_limit_kg": 18,
+      "notes": "All-business-class airline — 18 kg total across all your cabin items.",
+      "source_url": "https://www.lacompagnie.com/en/plan/administrative-formalities",
+      "last_verified": "2026-07-02"
     },
     {
       "id": "latam",
@@ -460,7 +778,11 @@
         "width": 35.0,
         "depth": 25.0,
         "unit": "cm"
-      }
+      },
+      "weight_limit_kg": 10,
+      "notes": "Weight allowance varies by market and cabin: 10 kg standard, up to 16 kg in premium cabins.",
+      "source_url": "https://www.latamairlines.com/us/en/experience/prepare-your-trip/baggage/carry-on",
+      "last_verified": "2026-07-02"
     },
     {
       "id": "level",
@@ -471,7 +793,16 @@
         "width": 40.0,
         "depth": 25.0,
         "unit": "cm"
-      }
+      },
+      "weight_limit_kg": 10,
+      "personal_item": {
+        "height": 40.0,
+        "width": 30.0,
+        "depth": 15.0,
+        "unit": "cm"
+      },
+      "source_url": "https://www.flylevel.com/en/why-level/baggage",
+      "last_verified": "2026-07-02"
     },
     {
       "id": "lot",
@@ -482,7 +813,17 @@
         "width": 40.0,
         "depth": 23.0,
         "unit": "cm"
-      }
+      },
+      "weight_limit_kg": 8,
+      "personal_item": {
+        "height": 40.0,
+        "width": 35.0,
+        "depth": 12.0,
+        "unit": "cm"
+      },
+      "notes": "The three sides can't total more than 118 cm. Personal item up to 2 kg.",
+      "source_url": "https://www.lot.com/us/en/journey/baggage/carry-on-baggage",
+      "last_verified": "2026-07-02"
     },
     {
       "id": "lufthansa",
@@ -493,7 +834,17 @@
         "width": 40.0,
         "depth": 23.0,
         "unit": "cm"
-      }
+      },
+      "weight_limit_kg": 8,
+      "personal_item": {
+        "height": 40.0,
+        "width": 30.0,
+        "depth": 15.0,
+        "unit": "cm"
+      },
+      "notes": "Economy Basic fares on short-haul flights include only a personal item (40×30×15 cm), not a full cabin bag.",
+      "source_url": "https://www.lufthansa.com/us/en/carry-on-baggage",
+      "last_verified": "2026-07-02"
     },
     {
       "id": "norse",
@@ -504,7 +855,17 @@
         "width": 45.0,
         "depth": 25.0,
         "unit": "cm"
-      }
+      },
+      "weight_limit_kg": 10,
+      "personal_item": {
+        "height": 40.0,
+        "width": 30.0,
+        "depth": 15.0,
+        "unit": "cm"
+      },
+      "notes": "The cheapest Light fares don't include the big cabin bag — it's a paid add-on; only the personal item is free.",
+      "source_url": "https://help.flynorse.com/articles/baggage/hand-baggage/62668e2ed0c1607a2b555181",
+      "last_verified": "2026-07-02"
     },
     {
       "id": "norwegian",
@@ -515,7 +876,17 @@
         "width": 40.0,
         "depth": 23.0,
         "unit": "cm"
-      }
+      },
+      "weight_limit_kg": 10,
+      "personal_item": {
+        "height": 40.0,
+        "width": 30.0,
+        "depth": 20.0,
+        "unit": "cm"
+      },
+      "notes": "The 10 kg limit covers the cabin bag and underseat bag (40×30×20 cm) together.",
+      "source_url": "https://www.norwegian.com/us/travel-info/baggage/hand-baggage/",
+      "last_verified": "2026-07-02"
     },
     {
       "id": "philippine-airlines",
@@ -526,18 +897,11 @@
         "width": 36.0,
         "depth": 23.0,
         "unit": "cm"
-      }
-    },
-    {
-      "id": "play",
-      "name": "PLAY",
-      "region": "Europe",
-      "dimensions": {
-        "height": 56.0,
-        "width": 45.0,
-        "depth": 25.0,
-        "unit": "cm"
-      }
+      },
+      "weight_limit_kg": 7,
+      "notes": "Published as 22 × 14 × 9 in, plus one personal item.",
+      "source_url": "https://www.philippineairlines.com/ph/en/before-you-fly/baggage-information/baggage-allowance/baggage-allowance-fees/carry-on-baggage.html",
+      "last_verified": "2026-07-02"
     },
     {
       "id": "porter",
@@ -548,18 +912,31 @@
         "width": 40.0,
         "depth": 23.0,
         "unit": "cm"
-      }
+      },
+      "personal_item": {
+        "height": 43.0,
+        "width": 33.0,
+        "depth": 16.0,
+        "unit": "cm"
+      },
+      "notes": "Basic fares include only the personal item — the full carry-on costs extra. Otherwise no weight limit.",
+      "source_url": "https://www.flyporter.com/en-ca/travel-information/baggage/carry-on-allowance",
+      "last_verified": "2026-07-02"
     },
     {
       "id": "qantas",
       "name": "Qantas",
       "region": "Asia-Pacific",
       "dimensions": {
-        "height": 55.0,
-        "width": 35.0,
-        "depth": 22.0,
+        "height": 56.0,
+        "width": 36.0,
+        "depth": 23.0,
         "unit": "cm"
-      }
+      },
+      "weight_limit_kg": 7,
+      "notes": "Qantas now publishes 56×36×23 cm at 7 kg; domestic flights also allow an underseat bag with a 14 kg combined limit.",
+      "source_url": "https://www.qantas.com/en-au/baggage/carry-on",
+      "last_verified": "2026-07-02"
     },
     {
       "id": "qatar",
@@ -570,7 +947,11 @@
         "width": 37.0,
         "depth": 25.0,
         "unit": "cm"
-      }
+      },
+      "weight_limit_kg": 7,
+      "notes": "Economy gets one 7 kg piece; business/first get two at up to 15 kg each.",
+      "source_url": "https://www.qatarairways.com/en/baggage/allowance.html",
+      "last_verified": "2026-07-02"
     },
     {
       "id": "royal-air-maroc",
@@ -581,7 +962,17 @@
         "width": 40.0,
         "depth": 25.0,
         "unit": "cm"
-      }
+      },
+      "weight_limit_kg": 10,
+      "personal_item": {
+        "height": 40.0,
+        "width": 30.0,
+        "depth": 15.0,
+        "unit": "cm"
+      },
+      "notes": "10 kg in economy, 12 kg in business, plus a small 2 kg personal item.",
+      "source_url": "https://www.royalairmaroc.com/us-en/carry-on-baggage",
+      "last_verified": "2026-07-02"
     },
     {
       "id": "ryanair",
@@ -592,7 +983,17 @@
         "width": 40.0,
         "depth": 20.0,
         "unit": "cm"
-      }
+      },
+      "weight_limit_kg": 10,
+      "personal_item": {
+        "height": 40.0,
+        "width": 30.0,
+        "depth": 20.0,
+        "unit": "cm"
+      },
+      "notes": "This bag needs the paid 'Priority & 2 Cabin Bags' add-on. Every fare includes a free personal bag (40×30×20 cm) that fits under the seat.",
+      "source_url": "https://help.ryanair.com/hc/en-us/articles/360017825358-Priority-2-Cabin-Bags",
+      "last_verified": "2026-07-02"
     },
     {
       "id": "sas",
@@ -603,7 +1004,17 @@
         "width": 40.0,
         "depth": 23.0,
         "unit": "cm"
-      }
+      },
+      "weight_limit_kg": 8,
+      "personal_item": {
+        "height": 40.0,
+        "width": 30.0,
+        "depth": 15.0,
+        "unit": "cm"
+      },
+      "notes": "The cheapest Go Light fares in Europe include only the underseat bag — and gate sizers are enforced.",
+      "source_url": "https://www.flysas.com/en/travel-info/baggage/carry-on",
+      "last_verified": "2026-07-02"
     },
     {
       "id": "singapore-airlines",
@@ -611,10 +1022,20 @@
       "region": "Asia-Pacific",
       "dimensions": {
         "height": 55.0,
-        "width": 35.0,
-        "depth": 25.0,
+        "width": 40.0,
+        "depth": 20.0,
         "unit": "cm"
-      }
+      },
+      "weight_limit_kg": 7,
+      "personal_item": {
+        "height": 40.0,
+        "width": 30.0,
+        "depth": 10.0,
+        "unit": "cm"
+      },
+      "notes": "Singapore's real rule is a 115 cm total (height + width + depth), max 7 kg — this box is their published example, but any shape totalling 115 cm works.",
+      "source_url": "https://www.singaporeair.com/en_UK/us/travel-info/baggage/cabin-baggage/",
+      "last_verified": "2026-07-02"
     },
     {
       "id": "southwest",
@@ -625,18 +1046,10 @@
         "width": 40.6,
         "depth": 25.4,
         "unit": "cm"
-      }
-    },
-    {
-      "id": "spirit",
-      "name": "Spirit",
-      "region": "North America",
-      "dimensions": {
-        "height": 56.0,
-        "width": 46.0,
-        "depth": 25.0,
-        "unit": "cm"
-      }
+      },
+      "notes": "Carry-on and personal item are still free on every fare — the 2025 change only ended free checked bags.",
+      "source_url": "https://support.southwest.com/helpcenter/s/article/carryon-baggage-policy",
+      "last_verified": "2026-07-02"
     },
     {
       "id": "sun-country",
@@ -644,21 +1057,20 @@
       "region": "North America",
       "dimensions": {
         "height": 61.0,
-        "width": 40.64,
-        "depth": 27.94,
+        "width": 40.6,
+        "depth": 27.9,
         "unit": "cm"
-      }
-    },
-    {
-      "id": "sunwing",
-      "name": "Sunwing",
-      "region": "North America",
-      "dimensions": {
-        "height": 51.0,
-        "width": 40.0,
-        "depth": 23.0,
+      },
+      "weight_limit_kg": 15.9,
+      "personal_item": {
+        "height": 43.2,
+        "width": 33.0,
+        "depth": 22.9,
         "unit": "cm"
-      }
+      },
+      "notes": "Carry-on is a paid add-on on every fare — only the underseat personal item is free.",
+      "source_url": "https://www.suncountry.com/help-center/bags-and-seats",
+      "last_verified": "2026-07-02"
     },
     {
       "id": "swiss",
@@ -669,7 +1081,17 @@
         "width": 40.0,
         "depth": 23.0,
         "unit": "cm"
-      }
+      },
+      "weight_limit_kg": 8,
+      "personal_item": {
+        "height": 40.0,
+        "width": 30.0,
+        "depth": 15.0,
+        "unit": "cm"
+      },
+      "notes": "Measured with wheels, side pockets and handles included.",
+      "source_url": "https://www.swiss.com/us/en/prepare/baggage",
+      "last_verified": "2026-07-02"
     },
     {
       "id": "tap",
@@ -680,7 +1102,17 @@
         "width": 40.0,
         "depth": 25.0,
         "unit": "cm"
-      }
+      },
+      "weight_limit_kg": 10,
+      "personal_item": {
+        "height": 40.0,
+        "width": 30.0,
+        "depth": 15.0,
+        "unit": "cm"
+      },
+      "notes": "A small personal item (max 2 kg) rides free alongside the cabin bag.",
+      "source_url": "https://www.flytap.com/en-us/information/baggage/hand-baggage",
+      "last_verified": "2026-07-02"
     },
     {
       "id": "tui",
@@ -691,7 +1123,17 @@
         "width": 40.0,
         "depth": 20.0,
         "unit": "cm"
-      }
+      },
+      "weight_limit_kg": 10,
+      "personal_item": {
+        "height": 40.0,
+        "width": 30.0,
+        "depth": 20.0,
+        "unit": "cm"
+      },
+      "notes": "Plus a small underseat bag (40×30×20 cm). You need to lift the big one into the bin yourself.",
+      "source_url": "https://www.tui.co.uk/destinations/info/luggage-allowance",
+      "last_verified": "2026-07-02"
     },
     {
       "id": "turkish-airlines",
@@ -702,7 +1144,17 @@
         "width": 40.0,
         "depth": 23.0,
         "unit": "cm"
-      }
+      },
+      "weight_limit_kg": 8,
+      "personal_item": {
+        "height": 40.0,
+        "width": 30.0,
+        "depth": 15.0,
+        "unit": "cm"
+      },
+      "notes": "Wheels and handles included. Business class gets two cabin bags.",
+      "source_url": "https://www.turkishairlines.com/en-us/any-questions/carry-on-baggage/",
+      "last_verified": "2026-07-02"
     },
     {
       "id": "united",
@@ -713,7 +1165,16 @@
         "width": 36.0,
         "depth": 23.0,
         "unit": "cm"
-      }
+      },
+      "personal_item": {
+        "height": 43.0,
+        "width": 25.0,
+        "depth": 22.0,
+        "unit": "cm"
+      },
+      "notes": "Published as 22 × 14 × 9 in including wheels and handles. No weight limit. Basic Economy on most domestic routes gets a personal item only.",
+      "source_url": "https://www.united.com/en/us/fly/baggage/carry-on-bags.html",
+      "last_verified": "2026-07-02"
     },
     {
       "id": "virgin-atlantic",
@@ -724,7 +1185,17 @@
         "width": 36.0,
         "depth": 23.0,
         "unit": "cm"
-      }
+      },
+      "weight_limit_kg": 10,
+      "personal_item": {
+        "height": 40.0,
+        "width": 30.0,
+        "depth": 15.0,
+        "unit": "cm"
+      },
+      "notes": "10 kg in economy and premium; Upper Class gets two bags at 16 kg combined. A free underseat item comes with every fare.",
+      "source_url": "https://help.virginatlantic.com/gb/en/baggage/hand-baggage.html",
+      "last_verified": "2026-07-02"
     },
     {
       "id": "virgin-australia",
@@ -735,7 +1206,17 @@
         "width": 36.0,
         "depth": 23.0,
         "unit": "cm"
-      }
+      },
+      "weight_limit_kg": 8,
+      "personal_item": {
+        "height": 45.0,
+        "width": 33.0,
+        "depth": 20.0,
+        "unit": "cm"
+      },
+      "notes": "Since Feb 2026, economy gets one 56×36×23 cm bag at 8 kg (a two-smaller-bags option remains for business and top-tier flyers).",
+      "source_url": "https://www.virginaustralia.com/us/en/travel-info/baggage/carry-on-baggage/",
+      "last_verified": "2026-07-02"
     },
     {
       "id": "viva-aerobus",
@@ -746,7 +1227,17 @@
         "width": 40.0,
         "depth": 25.0,
         "unit": "cm"
-      }
+      },
+      "weight_limit_kg": 10,
+      "personal_item": {
+        "height": 45.0,
+        "width": 35.0,
+        "depth": 20.0,
+        "unit": "cm"
+      },
+      "notes": "The lowest Zero fare includes only the personal item — the full carry-on needs a higher fare or an added fee.",
+      "source_url": "https://blog.vivaaerobus.com/en/baggage-policies/",
+      "last_verified": "2026-07-02"
     },
     {
       "id": "volaris",
@@ -757,7 +1248,17 @@
         "width": 40.0,
         "depth": 25.0,
         "unit": "cm"
-      }
+      },
+      "weight_limit_kg": 20,
+      "personal_item": {
+        "height": 45.0,
+        "width": 35.0,
+        "depth": 20.0,
+        "unit": "cm"
+      },
+      "notes": "On Zero/Básica fares only the personal item is free — the carry-on costs extra unless you book the Plus fare.",
+      "source_url": "https://cms.volaris.com/es/informacion-util/politicas-de-equipaje/",
+      "last_verified": "2026-07-02"
     },
     {
       "id": "vueling",
@@ -768,7 +1269,17 @@
         "width": 40.0,
         "depth": 20.0,
         "unit": "cm"
-      }
+      },
+      "weight_limit_kg": 10,
+      "personal_item": {
+        "height": 40.0,
+        "width": 30.0,
+        "depth": 20.0,
+        "unit": "cm"
+      },
+      "notes": "The cheapest Fly Light fare only includes the small underseat bag — this cabin bag costs extra or comes with higher fares.",
+      "source_url": "https://www.vueling.com/faq/html/ancillary-products.html",
+      "last_verified": "2026-07-02"
     },
     {
       "id": "westjet",
@@ -779,7 +1290,16 @@
         "width": 36.0,
         "depth": 23.0,
         "unit": "cm"
-      }
+      },
+      "personal_item": {
+        "height": 41.0,
+        "width": 33.0,
+        "depth": 15.0,
+        "unit": "cm"
+      },
+      "notes": "No weight limit — you just need to lift it into the bin yourself. UltraBasic fares only include a personal item (no carry-on) except on Europe/Asia routes.",
+      "source_url": "https://www.westjet.com/en-ca/baggage/carry-on",
+      "last_verified": "2026-07-02"
     },
     {
       "id": "wizz-air",
@@ -790,7 +1310,17 @@
         "width": 40.0,
         "depth": 23.0,
         "unit": "cm"
-      }
+      },
+      "weight_limit_kg": 10,
+      "personal_item": {
+        "height": 40.0,
+        "width": 30.0,
+        "depth": 20.0,
+        "unit": "cm"
+      },
+      "notes": "The trolley bag is only free with WIZZ Priority — the free allowance on every fare is the underseat bag (40×30×20 cm). Wheels and handles get up to 5 cm of grace.",
+      "source_url": "https://www.wizzair.com/en-gb/help-centre/booking-information-and-services/baggage/baggage-allowance/cabin-baggage",
+      "last_verified": "2026-07-02"
     },
     {
       "id": "zipair",
@@ -801,7 +1331,17 @@
         "width": 40.0,
         "depth": 25.0,
         "unit": "cm"
-      }
+      },
+      "weight_limit_kg": 7,
+      "personal_item": {
+        "height": 45.0,
+        "width": 35.0,
+        "depth": 25.0,
+        "unit": "cm"
+      },
+      "notes": "Two cabin pieces allowed with a combined 7 kg free limit — you can pre-pay to raise it to 15 kg.",
+      "source_url": "https://www.zipair.net/en/service/baggage",
+      "last_verified": "2026-07-02"
     }
   ]
 }
